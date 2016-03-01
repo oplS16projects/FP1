@@ -1,5 +1,5 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE --tbd--
+Josh Blanchette's FP1 report.
 
 #Part 1: Get github
 If you don't have a github account, go get one. https://github.com/
