@@ -1,10 +1,3 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE --tbd--
-
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
 #Part 2: Try a Library
 In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
 
