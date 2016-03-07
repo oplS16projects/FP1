@@ -5,6 +5,9 @@
 For the Final Project Exploration Assignment I explored two link encryption librarys the TCP/SSL racket library: OpenSSL.
 I also tried out the racket HTTPS library built on top of SSL.
 
+In the OpenSSL demo I verifiy OpenSSL is installed, 
+create an SSL socket with localhost write a message and then receive a message back.
+
 ###OpenSSL Demo
 ```
 #lang racket
@@ -27,6 +30,11 @@ ssl-available? ;verifies OpenSSl is installed
 (close-input-port in)
 (close-output-port out)
 ```
+
+In the HTTPS demo I display the HTTPS configurtion, 
+then create an impure port to request a page from www.google.com.
+The response is printed.
+
 ###HTTPS Demo
 ```
 #lang racket
@@ -44,7 +52,7 @@ ssl-available? ;verifies OpenSSl is installed
 ; Display entire HTTP response headers along with the HTTP body
 (display-pure-port port)
 ```
-###Output
+###Output from HTTPS demo
 ```
 'auto <- current-https-protocol setting
 
@@ -87,5 +95,5 @@ Transfer-Encoding: chunked
 </body></html>
 ```
 
-###A link that satisfies confidentiality, integrity, authentication.
+###A link that satisfies confidentiality, integrity, authentication (SSL).
 ![Alt text](https://github.com/ChristianEverett/FP1/blob/master/README.PNG "title")
