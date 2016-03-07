@@ -87,5 +87,5 @@ Transfer-Encoding: chunked
 </body></html>
 ```
 
-###A link the satisfies confidentiality, integrity, authentication.
-![Alt text](/relative/path/to/img.jpg?raw=true "title")
+###A link that satisfies confidentiality, integrity, authentication.
+![Alt text](https://github.com/ChristianEverett/FP1/blob/master/README.PNG "title")
