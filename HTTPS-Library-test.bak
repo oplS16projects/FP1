@@ -1,4 +1,0 @@
-#lang racket
-(require openssl)
-
-ssl-available? ;verifys open ssl is installed on the system
