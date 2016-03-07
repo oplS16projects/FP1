@@ -36,7 +36,7 @@ then create an impure port to request a page from www.google.com.
 The response is printed.
 
 ###HTTPS Demo
-```
+```racket
 #lang racket
 
 (require net/url)
