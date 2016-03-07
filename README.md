@@ -1,5 +1,5 @@
 # Final Project Assignment 1: Exploration (FP1)
-
+Christian Everett
 ## My Library: OpenSSL and HTTPS
 
 For the Final Project Exploration Assignment I explored two link encryption librarys the TCP/SSL racket library: OpenSSL.
@@ -9,7 +9,7 @@ In the OpenSSL demo I verifiy OpenSSL is installed,
 create an SSL socket with localhost write a message and then receive a message back.
 
 ###OpenSSL Demo
-```
+```racket
 #lang racket
 
 (require openssl)
