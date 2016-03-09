@@ -48,6 +48,9 @@ This will create a simple 2-D plot which will two graphs overlap and then I shad
 ```racket
 #:color 4
 ```
+The output for the project is: 
+
+![alt tag](https://github.com/mkhalid578/FP1/blob/master/output.png)
 
 
 
