@@ -1,95 +1,56 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+My Library: (Plot Library)
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+# What did I Do? 
+I played around with the Plot library which simply plots 
+a graph to the interpreter. I created a R x R --> R function 
+which is a three-dimensional graph since it incorporates the 
+x, y, and z axes. It looks pretty cool and now all the cool 
+polar coordinate graphs we solved in Calc III can be visualized. 
+By using the mouse, the graph can also be rotated. 
 
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
+# Code Highlights 
 ```racket
 #lang racket
+(require plot)
 
-(require net/url)
+(plot3d (surface3d (lambda (x y) (* (cos x) (sin y)))
+                   (- pi) pi (- pi) pi)
+        #:title "An R x R -> R function"
+        #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)")
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+(plot (list (function-interval (lambda (x) (- (sin x) 3))
+                               (lambda (x) (+ (sin x) 3)))
+            (function-interval (lambda (x) (- (sqr x))) sqr #:color 4
+                               #:line1-color 4 #:line2-color 4))
+      #:x-min (- pi) #:x-max pi)
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+So I make a call to  
+``` racket 
+(plot3d (surface3d (lambda (x y) (* (cos x) (sin y)))
 ```
-#lang racket
+Which calls surface3d and creates an anonymous function to lambda which creates the product of sin(x) and cos(x)
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+Then I create the graph and axes titles using: 
+```racket
+#:title 
+#:x-label
+#:y-label
 ```
+Then for fun, I found something on the Racket Documentation and implemented it. 
+To do so, I call plot which creates a list which calls function-interval which in turn calls 3 anonymous functions
+```racket
+(plot(list (function-interval (lambda (x) (- (sin x) 3))
+                              (lambda (x) (+ (sin x) 3)))
+           (function-interval (lambda (x) (- (sqr x))) 
+```
+This will create a simple 2-D plot which will two graphs overlap and then I shade one of the graphs by using: 
+```racket
+#:color 4
+```
+The output for the project is: 
 
-## My Library: (library name here)
-Write what you did!
-Remember that this report must include:
+![alt tag](https://github.com/mkhalid578/FP1/blob/master/output.png)
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
