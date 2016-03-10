@@ -22,7 +22,7 @@ Having accomplished that much, I created a function which accepted a 2D function
   
 >(funct (lambda (x) (* x x)))
 ```
-This code accepts a function which should have one parameter, and draws a graph of the function. The x coordinates are from -3 to 3.
+This code accepts a function which should have one parameter, and draws a graph of the function. The x coordinates are from -3 to 3. 
 
 ![ScreenShot](graph3d.jpg)
 ```Racket
