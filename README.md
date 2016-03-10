@@ -4,7 +4,8 @@
 My name: John Kuczynski. 
 
 I installed the plot-gui-lib package, and then I used the functions in the library to draw a graph of a single function, x^2. 
-Then, I created a graph with several functions. Finally, I created several 3D graphs. 
+Then, I created a graph with several functions. After that, I created several 3D graphs. 
+Having accomplished that much, I created a function which accepted a function, and would draw the graph of the function. 
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
