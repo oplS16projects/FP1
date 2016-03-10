@@ -30,7 +30,7 @@ The narrative itself should be no longer than 350 words. Yes, you need at least 
   ```
 This code accepts a function which should have one parameter, and draws a graph of the function.
 
-
+![ScreenShot](graph3d.jpg)
 ```Racket
 #lang racket
 (define (funct3D f)
