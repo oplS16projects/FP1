@@ -29,7 +29,7 @@ My function utilizes the *save-turtle-bitmap* function, but sends back confirmat
 
 Here are some of the patterns I created.
 
-![Image of Yaktocat](https://adam-melle.github.com/images/pattern1.jpg)
-![Image of Yaktocat](https://adam-melle.github.com/images/pattern2.jpg)
-![Image of Yaktocat](https://adam-melle.github.com/images/pattern3.jpg)
-![Image of Yaktocat](https://adam-melle.github.com/images/pattern4.jpg)
+![](https://raw.githubusercontent.com/adam-melle/FP1/master/pattern1.JPG)
+![](https://raw.githubusercontent.com/adam-melle/FP1/master/pattern2.JPG)
+![](https://raw.githubusercontent.com/adam-melle/FP1/master/pattern3.JPG)
+![](https://raw.githubusercontent.com/adam-melle/FP1/master/pattern4.JPG)
