@@ -33,13 +33,26 @@ Finally, ping openweathermap.org for weather data and display that data.
 
 |#
 
-; Let's first get the current IP address for this PC.
-; This is used to get the user's location for the weather API call.
-(define myurl (string->url "https://api.ipify.org?format=json"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+;; Let's first get the current IP address for this PC.
+;; This is used to get the user's location for the weather API call.
+(define ipify (string->url "https://api.ipify.org?format=json"))
+(define get_ip (get-pure-port ipify))
+(define ip_response (port->string get_ip))
+(close-input-port get_ip)
 
-; From FP1 Github, for random testing.
-;(define myurl (string->url "http://www.cs.uml.edu/"))
-;(define myport (get-pure-port myurl))
-;(display-pure-port myport)
+; now ip_response has a JSON object of "ip" : "IP_ADDRESS_HERE"
+; Let's pass that to a JSON parser
+(define ip_obj (string->jsexpr ip_response))
+
+;; Now we have a JSON object (represented under the hood as a hash table)
+;; If we want to get just the IP into a string, we could do so by doing:
+(define ip_addr (hash-ref ip_obj 'ip))
+
+;; So why don't we use this string, ip_addr, which contains our current IP,
+;; such as "129.63.253.73", to get a rough lat/long for the user?
+(define get_loc ("https://freegeoip.net/json/" + ip_addr))
+
+(define geo_ip (string->url get_loc))
+(define get_ip (get-pure-port ipify))
+(define ip_response (port->string get_ip))
+(close-input-port get_ip)
