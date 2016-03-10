@@ -1,16 +1,13 @@
 #lang racket
 
 (require net/url
-         hostname
          json)
 
 #|
-
 URLs to the libraries I'm using:
 
-Hostname (to get IP address): https://docs.racket-lang.org/hostname/index.html
-JSON (to parse JSON): http://docs.racket-lang.org/json/index.html
 net/url (making requests): https://docs.racket-lang.org/net/url.html
+JSON (to parse JSON): http://docs.racket-lang.org/json/index.html
 
 Using the following site to get the IP address for the current machine:
 https://www.ipify.org/
@@ -181,5 +178,10 @@ The object might look something like this:
 (printf "Lat/Long: ~a / ~a\n" coord_lat coord_long)
 (printf "Weather conditions: ~a\n" conditions)
 (printf "Wind speed: ~aMPH\n" wind_speed)
+
+;; Debug info for future reference.
+;(printf "API URL for IP address lookup: https://api.ipify.org?format=json\n")
+;(printf "API URL for Lat/Long lookup via IP: ~a\n" get_loc)
+;(printf "API URL for weather lookup: ~a\n" get_weather)
 
 ;; AND we're done!
