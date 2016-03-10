@@ -50,9 +50,35 @@ Finally, ping openweathermap.org for weather data and display that data.
 
 ;; So why don't we use this string, ip_addr, which contains our current IP,
 ;; such as "129.63.253.73", to get a rough lat/long for the user?
-(define get_loc ("https://freegeoip.net/json/" + ip_addr))
+(define get_loc (string-append "https://freegeoip.net/json/" ip_addr))
 
 (define geo_ip (string->url get_loc))
-(define get_ip (get-pure-port ipify))
-(define ip_response (port->string get_ip))
-(close-input-port get_ip)
+(define get_geo (get-pure-port geo_ip))
+(define geo_response (port->string get_geo))
+(close-input-port get_geo)
+
+;; So now we have a bunch of JSON from the freegeoip API call.
+;; It kind of looks something like this:
+#|
+> geo_response
+"{\"ip\":\"129.63.253.73\",
+\"country_code\":\"US\",
+\"country_name\":\"United States\",
+\"region_code\":\"MA\",
+\"region_name\":\"Massachusetts\",
+\"city\":\"Lowell\",
+\"zip_code\":\"01854\",
+\"time_zone\":\"America/New_York\",
+\"latitude\":42.6523,
+\"longitude\":-71.3506,
+\"metro_code\":506}\n"
+|#
+
+;; All we care about though is the "latitude" and "longitude" code, so let's
+;; just grab those and stick them into two string objects.
+(define user_lat (hash-ref geo_response 'latitude))     ;; Latitude string
+(define user_long (hash-ref geo_response 'longitude))   ;; Longitude string
+
+
+
+
