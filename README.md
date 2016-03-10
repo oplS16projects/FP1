@@ -12,7 +12,6 @@ Having accomplished that much, I created a function which accepted a 2D function
 #lang racket
 (plot (function (lambda (a) (* a a)) -3 3 #:label "x^2)"))
 
->(funct (lambda (x) (* x x)))
 ```
 
 ![ScreenShot](funct-picture.jpg)
@@ -20,6 +19,8 @@ Having accomplished that much, I created a function which accepted a 2D function
 #lang racket
 (define (funct f)
   (plot (function f -3 3)))
+  
+  >(funct (lambda (x) (* x x)))
   ```
 This code accepts a function which should have one parameter, and draws a graph of the function. The x coordinates are from -3 to 3.
 
