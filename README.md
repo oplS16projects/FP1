@@ -20,6 +20,8 @@ The narrative itself should be no longer than 350 words. Yes, you need at least 
 ``` Racket
 #lang racket
 (plot (function (lambda (a) (* a a)) -3 3 #:label "x^2)"))
+
+>(funct (lambda (x) (* x x)))
 ```
 
 ![ScreenShot](funct-picture.jpg)
@@ -35,6 +37,8 @@ This code accepts a function which should have one parameter, and draws a graph 
 #lang racket
 (define (funct3D f)
   (plot3d (surface3d f -4 4 -4 4)))
+  
+>(funct (lambda (x y) (+ (+ x x) (/ y 2))))
 ```
 This code acepts a function which should have 2 parameters, and draws a graph of the function. The x coordinates are from -4 to 4, and the y coordinates are from -4 4. 
 
