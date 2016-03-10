@@ -17,9 +17,15 @@ The narrative itself should be no longer than 350 words. Yes, you need at least 
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
 ![ScreenShot](picture1.jpg)
+``` Racket
+#lang racket
 (plot (function (lambda (a) (* a a)) -3 3 #:label "x^2)"))
+```
 
 ![ScreenShot](funct-picture.jpg)
+``` Racket
+#lang racket
 (define (funct f)
   (plot (function f -3 3)))
+  ```
 This code accepts a function which should have one parameter, and draws a graph of the function.
