@@ -139,7 +139,7 @@ The object might look something like this:
 > weather_obj
 '#hasheq((id . 4942618)
          (coord . #hasheq((lon . -71.32) (lat . 42.63)))
-         (weather . (#hasheq((id . 500) (description . "light rain") (icon . "10d") (main . "Rain"))))
+         (weather . '(#hasheq((id . 500) (description . "light rain") (icon . "10d") (main . "Rain"))))
          (wind . #hasheq((speed . 1.43) (deg . 226.503)))
          (rain . #hasheq((3h . 0.595)))
          (clouds . #hasheq((all . 92)))
@@ -166,12 +166,20 @@ The object might look something like this:
 
 |#
 
-;; Strings to print out here.
-(define city-name (hash-ref weather_obj 'name))         ;; Example - "Lowell"
-(define coord_obj ((hash-ref weather_obj 'cord))           ;; Should get the coord hashtable inside the weather hashtable.
-(define coord_lat (hash-ref coord_obj 'lat))          ;; Example - "42.63"
-(define coord_long (hash-ref coord_obj 'lon))         ;; Example - "-71.32"
+;; Strings here.
+(define city_name (hash-ref weather_obj 'name))               ;; Example - "Lowell"
+(define coord_obj (hash-ref weather_obj 'coord))              ;; Should get the coord hashtable inside the weather hashtable.
+(define coord_lat (hash-ref coord_obj 'lat))                  ;; Example - "42.63"
+(define coord_long (hash-ref coord_obj 'lon))                 ;; Example - "-71.32"
+(define cond_obj (hash-ref weather_obj 'weather))             ;; Should get the conditions obj inside the weather obj.
+(define conditions (hash-ref (car cond_obj) 'description))    ;; Example - "light rain"
+(define wind_obj (hash-ref weather_obj 'wind))                ;; Should get the wind obj inside the weather obj.
+(define wind_speed (hash-ref wind_obj 'speed))                ;; Example - "1.43"
 
+;; Print out the strings.              
+(printf "CURRENT CITY: ~a\n" city_name)
+(printf "Lat/Long: ~a / ~a\n" coord_lat coord_long)
+(printf "Weather conditions: ~a\n" conditions)
+(printf "Wind speed: ~aMPH\n" wind_speed)
 
-
-                     
+;; AND we're done!
