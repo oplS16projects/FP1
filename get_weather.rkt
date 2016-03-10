@@ -177,7 +177,7 @@ The object might look something like this:
 (printf "CURRENT CITY: ~a\n" city_name)
 (printf "Lat/Long: ~a / ~a\n" coord_lat coord_long)
 (printf "Weather conditions: ~a\n" conditions)
-(printf "Wind speed: ~aMPH\n" wind_speed)
+(printf "Wind speed: ~a MPH\n" wind_speed)
 
 ;; Debug info for future reference.
 ;(printf "API URL for IP address lookup: https://api.ipify.org?format=json\n")

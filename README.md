@@ -1,4 +1,8 @@
-## My Library: net/url and json
+# Final Project Assignment 1: Exploration (FP1)
+My Library: net/url and json
+My Name: Jason Downing
+
+## What I did
 I decided to mess around with two racket libraries, net/url and json.
 I used net/url to make HTTP GET requests to various APIs, and json to
 parse the JSON response text from these APIs. The three APIs I used were:
@@ -15,13 +19,11 @@ of my current location. I then did a API call to OpenWeatherMap to get the
 current weather conditions for my location. All of this is stored using racket
 variables, and printed out the screen.
 
-An example run of my program:
+## An example run of my program:
 
 ![alt text](https://github.com/JasonD94/FP1/blob/master/example.png?raw=true)
 
-Code highlights:
-
-
+# Code highlights
 ## Getting the IP Address.
 ```
 ;; Let's first get the current IP address for this PC.
@@ -68,5 +70,5 @@ Code highlights:
 (printf "CURRENT CITY: ~a\n" city_name)
 (printf "Lat/Long: ~a / ~a\n" coord_lat coord_long)
 (printf "Weather conditions: ~a\n" conditions)
-(printf "Wind speed: ~aMPH\n" wind_speed)
+(printf "Wind speed: ~a MPH\n" wind_speed)
 ```
