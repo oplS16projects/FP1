@@ -5,7 +5,7 @@ My name: John Kuczynski.
 
 I installed the plot-gui-lib package, and then I used the functions in the library to draw a graph of a single function, x^2. 
 Then, I created a graph with several functions. After that, I created several 3D graphs. 
-Having accomplished that much, I created a function which accepted a 2D function, and would draw the graph of the function. 
+Having accomplished that much, I created a function which accepted a 2D function, and would draw the graph of the function. Then, I created a function which accepted a 3d function, and would draw the graph of the function. 
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
@@ -29,3 +29,14 @@ The narrative itself should be no longer than 350 words. Yes, you need at least 
   (plot (function f -3 3)))
   ```
 This code accepts a function which should have one parameter, and draws a graph of the function.
+
+
+```Racket
+#lang racket
+(define (funct3D f)
+  (plot3d (surface3d f -4 4 -4 4)))
+```
+
+
+
+
