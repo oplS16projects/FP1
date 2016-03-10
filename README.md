@@ -55,8 +55,8 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
+## My Library: HTML: Parsing Library
+My name: John Adams
 
 Write what you did!
 Remember that this report must include:
