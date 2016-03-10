@@ -18,4 +18,4 @@ Code should be delivered in two ways:
 
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-![ScreenShot](picture1.jpg)
+![ScreenShot](picture2.jpg)
