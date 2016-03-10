@@ -14,11 +14,11 @@ Having accomplished that much, I created a function which accepted a 2D function
 
 The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
-Code should be delivered in two ways:
-
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
 ![ScreenShot](picture1.jpg)
 (plot (function (lambda (a) (* a a)) -3 3 #:label "x^2)"))
 
-
+(define (funct f)
+  (plot (function f -3 3)))
+This code accepts a function which should have one parameter, and draws a graph of the function.
