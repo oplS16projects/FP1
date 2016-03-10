@@ -36,7 +36,7 @@ This code accepts a function which should have one parameter, and draws a graph 
 (define (funct3D f)
   (plot3d (surface3d f -4 4 -4 4)))
 ```
-This code aceepts a function which should have 2 parameters, and draws a graph of the function. The x coordinates are from -4 to 4, and the y coordinates are from -4 4. 
+This code acepts a function which should have 2 parameters, and draws a graph of the function. The x coordinates are from -4 to 4, and the y coordinates are from -4 4. 
 
 
 
