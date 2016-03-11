@@ -19,7 +19,7 @@ The code is straightforward, where as the syntax is easy to understand.  Customi
 
 And here is the rest of the code I wrote.
 
-![alt tag] (https://github.com/JoshB53/FP1/blob/master/Joshua_Blanchette_FP1.rkt)
+![alt tag](https://github.com/JoshB53/FP1/blob/master/Joshua_Blanchette_FP1.rkt)
 
 
 ![alt tag](https://github.com/JoshB53/FP1/blob/master/FP1Image.jpg)
