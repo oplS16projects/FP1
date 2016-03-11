@@ -15,6 +15,7 @@ My name: Brendan Bousquet
                        (beside x x x))))))
  ```
  `(sierpinski-squares 4)`
+ 
  ![squares.png](https://github.com/BrendanBousquet/FP1/blob/master/img/squares.png)
  
  The method was obviously similar for sierpinski triangles which used the same two procedure to draw the fractal, just in a slightly different way.
@@ -27,6 +28,7 @@ My name: Brendan Bousquet
       (freeze (above x (beside x x))))))
  ```
  `(sierpinski 4)`
+ 
   ![triangles.png](https://github.com/BrendanBousquet/FP1/blob/master/img/triangles.png)
   
  I used the `freeze` procedure for the sierpinski triangles and square because the documentation claimed that for an image of sub-images it was very efficient.  Fractals seemed like a perfect instance for that. I did not use it for the koch curve becuase it would make the image not show up on the bottom. I assume this is because the nature of the fractal is different from sierpinski and less suited to it's use.
@@ -44,4 +46,5 @@ My name: Brendan Bousquet
                    smaller))))
  ```
  `(koch 3)`
+ 
   ![koch.png](https://github.com/BrendanBousquet/FP1/blob/master/img/koch.png)
