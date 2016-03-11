@@ -15,9 +15,13 @@ Then I proceeded to explore the library a bit.
 Here is a brief description of the commands I used:
 
 `(ssl-make-client-context)` Creates an SSL context  accepts an argument for what protocol should be used during the ssl session. 
+
 `(ssl-secure-client-context)` Same as `(ssl-make-client-context)` but automatically uses \'secure as its argument. 
+
 `(ssl-client-context)` Returns true if '(ssl-make-client-context)' returns an expected return value. Returns false otherwise.
+
 `(ssl-listen)` Similar to a TCP listener, but secured. Not that I know what that is...
+
 
 #Here is my interpretation of what the professor asked for when he said "diagram".
 
