@@ -3,7 +3,8 @@ Library: "Slideshow: Figure and Presentation Tools"
 Name: Chhun Kim
 
 # What I did
-I used the "Slideshow: Figure and Presentation Tools" to create a few powerpoint slides. This library allows developers to create sideshow, and there are so many features that we could actually create a simple presentation slide. For what I did was creating a few slide by using slideshow library. To create a slide, we need to the biuld 
+I used the "Slideshow: Figure and Presentation Tools" to create a few powerpoint slides. This library allows developers to create sideshow, and there are so many features that we could actually create a simple presentation slide. For what I did was creating a few slide by using slideshow library. 
+To add a new slide, we need to the slide function which is a build-in function.In the slide, we can edit the font and font-size of text, and adjusting the layout as well. Like Microsoft Powerpoint, we can also use the animation such 'next and 'alts which shows text or picture one at a time. 
 
 # Code Highlights
 ```
