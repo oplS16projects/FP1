@@ -1,97 +1,44 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+## My Library: Math Library
+My name: David Bui
 
-Please choose libraries that you think you might be interested in using in your final project.
+Here, I tested out the math library and used several of the different pre-built functions. First, I made two 2x2 matrices and then performed some operations on them. Then I used functions from the basic operations part of the library and summed two randomly generated numbers. Next I did some array operations. Lastly I used a function from the statistics folder to count some samples from a list.
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
+Here is the code with explanations:
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+(require math)
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+;; Make two 2x2 matrices
+(define mymatrix (make-matrix 2 2 5))
+(define test-matrix (matrix [[2 5] [3 8]]))
+;; Add them
+(matrix+ mymatrix test-matrix)
+;; Subtract them
+(matrix- mymatrix test-matrix)
+;; Multiply all the values in the second matrix by a factor of 5
+(matrix-scale test-matrix 5)
+;; Multiply the difference of the second matrix by the first
+(matrix* (matrix- test-matrix mymatrix))
 
-You can still use these in your project, but you must explore different libraries for this assignment.
+;; Add two randomly generated numbers between two different ranges
+(+ (random-integer 20 30) (random-integer 1 10))
+;; Get the binomial of 7 and 2, 
+(binomial 7 2)
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+;; Add the elements of a constructed array by the value 23
+(array+ (array #[#[8 3 5 14]]) (array 23))
+;; Multiply 30 to all the elements of a constructed array
+(array-scale (array #[#[2 10 15]]) 30)
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+;; Get the list of samples in a list and count how many of each sample exist
+(count-samples '(16 16 4 4 4 25 18 18 3))
 ```
 
-## My Library: (library name here)
-My name:
+My output from the .rkt file is as follows:
 
-Write what you did!
-Remember that this report must include:
+![alt tag](https://github.com/buidavid16/FP1/blob/master/math_functions_output.png)
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+Here is the diagram of some of the functions going on in my code:
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+![alt tag](https://github.com/buidavid16/FP1/blob/master/math_functions_examples.png)
