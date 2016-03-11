@@ -47,7 +47,7 @@ To add a new slide, we need to the slide function which is a build-in function.I
 
 # Output 
 
-![alt tag](https://github.com/chhunkim/FP1/master/EPoutput1.png)
+![alt tag](https://github.com/chhunkim/FP1/blob/master/EPoutput1.PNG)
 
 
 Remember that this report must include:
