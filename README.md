@@ -15,6 +15,7 @@ My name: Brendan Bousquet
                        (beside x x x))))))
  ```
  ![squares.png](https://github.com/BrendanBousquet/FP1/blob/master/img/squares.png)
+ 
  The method was obviously similar for sierpinski triangles which used the same two procedure to draw the fractal, just in a slightly different way.
  
  ```racket 
