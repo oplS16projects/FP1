@@ -55,43 +55,38 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
+## My Library: (net/url) 
+My name: John Brown
+* Yes I know I used the example one, I'm totally uncreative, whatever, it interested me.
 
-Write what you did!
-Remember that this report must include:
+I broke my code largely into two sections. My goal was to learn how to interact with an SQL server the most secure way possible. (when uploading my project to a oublic repository)(hence no using the Database library as I would have to post passwords)
+The first section is the aforementioned accessing the database (ultimately using PHP queries) and the second section is accessing a raw HTML file and parsing it using handwritten codes.
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+## Section 1: Using post-pure-port
+I reiterate this numerous times throughout the comments in my code, but this was seriously annoying to get to work.
+post-pure-port allows you to use _POST http/php commands, and retrieve an echo'd value.
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+```
+(define base "http://jdbjohnbrown.net/gameSync.php")
+(define my-site (string->url base))
+(define Header (list "Content-Type: application/x-www-form-urlencoded"))
+(define target-post (string->bytes/utf-8 (format "f=tgn&id=1")))
 
-Code should be delivered in two ways:
+(define (get-player-string x)
+  (define in
+  (post-pure-port my-site (string->bytes/utf-8 (format (string-append "f=tgn&id=" (number->string x)))) Header) )
+  (begin0
+  (port->string in)
+  (close-input-port in)))
+```
+  
+Here I set up numerous variables to make future succesive calls easier.
+Finally I use what we're all here for and that's post-pure-port. 
+This calls parameters take the url in string->url form, which I pass in the website.
+Next it takes arguements for the _POST call, which have to be very specifically formated.
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
 
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+This outputs a string which is then parsed into an object (firstname lastname (number position) (goals assists points))
+Lastly, I use this object and several selectors in the code to display the information in a easy to ready way:
+![alt tag](https://github.com/JDBJohnBrown/FP1/blob/master/sample-output1.png)
+  
