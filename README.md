@@ -32,7 +32,7 @@ My name: Brendan Bousquet
   ![triangles.png](https://github.com/BrendanBousquet/FP1/blob/master/img/triangles.png)
   
  I used the `freeze` procedure for the sierpinski triangles and square because the documentation claimed that for an image of sub-images it was very efficient.  Fractals seemed like a perfect instance for that. I did not use it for the koch curve becuase it would make the image not show up on the bottom. I assume this is because the nature of the fractal is different from sierpinski and less suited to it's use.
- The koch curve was where I messed around with `rotate`. This was a little tricky to wrap my head around but I had a look at some code of how to produce it in C++ and eventually got something that was pretty good.
+ The koch curve was where I messed around with `rotate`. This was a little tricky to wrap my head around but I had a look at some code of how to produce it in C++ and eventually got something that was pretty solid using `beside/align` to align the squares, despite rotating them.
  
   ```racket 
 (define (koch n)
