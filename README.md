@@ -1,7 +1,7 @@
 ## My Library: (2htdp/image)
 My name: Brendan Bousquet
 
- For my first project exploration I decided to take a little blast from the past and relive Computing 4 with some fractals. Specifically sierpinski fractals using squares and triangles. Then also using some squares, the Koch curve. I found it really awesome how easy this was to do with Racket using the 2htdp/image library.  With all the shapes already defined, all I really had to do was read some documentation on how the procedures like `above`, `beside`, and `rotate` worked and the implementations were easy to realize.
+ For my first project exploration I decided to take a little blast from the past and relive Computing 4 with some fractals. Specifically Sierpinski fractals using squares and triangles. Then also using some squares, the Koch curve. I found it really awesome how easy this was to do with Racket using the 2htdp/image library.  With all the shapes already defined, all I really had to do was read some documentation on how the procedures like `above`, `beside`, and `rotate` worked and the implementations were easy to realize.
  For example in the sierpinski squares procedure, each recursive call defines an `x` (relative to last square drawn) and a `y` (the new square to be drawn) and uses the `above` and `beside` procedures to draw the sqaures in the fractal pattern. 
 
 ```racket 
