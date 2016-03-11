@@ -4,7 +4,7 @@ Remember that this report must include:
 
 In this exploration, I played with a library that creates slideshows. Cool library and super easy to learn!
 
-If you want to play with this library as well, you'll need this line.
+If you want to test it out you'll need this include line.
 ```
 #lang slideshow
 ```
@@ -14,15 +14,37 @@ I started my explorartion by creating a simple slide with a title.
 (slide
  #:title "Hello World")
  ```
-You can create any number of slides so that when you run your program, you can iterate to the next slide with the right-arrow key. The library includes a list of #: attribues to change the slide's layout, gap-size, timeout, etc.
+You can create any number of slides so that when you run your program, you can easily browse through them with your keys. You also have the option of specifying certain attributes using #: followed by a keyword and your specification. This includes stuff like the slide's layout, gap-size, timeout, etc.
 
-The next thing I did was experiment with body-text. After you speficy the slide's characteristics, you can add text to it in two different ways.
+The next thing I experimented with was body-text. After you speficy the slide's characteristics, you can add text to it in two different ways.
 ```
 (t string)
 
 (item string)
 ```
-The first creates 
+The first displays text using the default font and style. The second method creates a bulleted paragraph that spans (by default) the middle 2/3 of the slide.
+
+If you want the option to display your text in sequence, all you have to do is include 'next between each text object. There is also the option to display a bunch of text and replace it with other text on the same slide. You can do this using 'alt. Here's an excerpt from the demo I put together which which will hopefully clarify these concepts.
+```
+(slide
+ #:title "What Does The Fox Say?"
+ #:layout 'top
+ 'next
+ 'alts
+ (list (list (item "*proceeds to kill, skin, and sell fox to native Cherokee indians*")
+             'next
+             (item "*feels bad*")
+             'next
+             (item "*becomes fox whisperer*"))
+       (list (item "*marries cute, indpendent lady fox*")
+             'next
+             (item "*has family*")
+             'next
+             (item "*discovers that he once killed wife's father*"))
+       (list (item (tt "*dies*")))
+       (list (item (tt "*the fox says nothing*")))))
+```
+As you can see, my slide is formatted in "top" and has the title "What Does The Fox Say?". 
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
