@@ -89,6 +89,27 @@ See example below:
 
 
 
+So to make this more interesting or useful you can make the nodes look like any "pict" that you want. Or even fill 
+in the circle nodes with text to represent a family tree. Here is a fishes family tree:
+
+
+
+![screen6](https://cloud.githubusercontent.com/assets/17748575/13707635/930ee45a-e778-11e5-921b-5da8ab3fb2e9.png)
+
+
+As expected the fish in this family all look alike. If you wanted to though you could make every node different. 
+
+
+I hope that you enjoyed seeing what this library can do. 
+
+Thanks for stopping in!
+
+
+
+
+
+
+
 
 
 
