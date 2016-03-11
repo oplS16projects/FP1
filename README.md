@@ -11,7 +11,15 @@ Remember that this report must include:
 * at least one diagram or figure showing your work
 
   The libarary that I tried was the slideshow/play libary.The reason I picked this libarary was because as soon as I saw it the idea of going from a simple text document to a slideshow came to mind.At the beggining I read the documentation on how to make simple slides and there were multiple ways of doing so, such as declaring slides one at a time or using an integer n to repeatedly make them.I chose to make one at a time in order to alter them individually and be able to see the changes.
+  
   The first slide I used "item" to create multiple list elements and see how the transitioning between items were.Within this same slide I created lines in between each element using "hline" and giving it a width and height.
+  
+  For the second slide I looked at the documentation and saw that the current library has element of the pict library which is used in order to change the font size and what font is used in the slideshows.I then used the pict functions to change the font and the positioning of the text.
+  
+  ... racket 
+  
+  (text "Lets try some font changes" (cons 'bold 'roman) 50)
+(text "diagonal" null 50 (* 2 2))
   
 
 
