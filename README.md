@@ -1,63 +1,42 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+## My Library: (2htdp/image)
+My name: Brendan Bousquet
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
+ For my first project exploration I decided to take a little blast from the past and relive Computing 4 with some fractals. Specifically sierpinski fractals using squares and triangles. Then also using some squares, the Koch curve. I found it really awesome how easy this was to do with Racket using the 2htdp/image library.  With all the shapes already defined, all I really had to do was read some documentation on how the procedures like 'above', 'beside', and 'rotate' worked and the implementations were easy to realize.
+ For example in the sierpinski squares procedure, each recursive call defines an x (relative to last square drawn) and a y (the new square to be drawn) and uses the 'above' and 'beside' procedures to draw the sqaures in the fractal pattern. 
+
+```racket 
+(define (sierpinski-squares n)
+  (if (zero? n)
+      (square 5 "solid" "black")
+      (local ((define x (sierpinski-squares (- n 1)))
+              (define y (square (image-width x) "solid" "yellow")))
+        (freeze (above (beside x x x)
+                       (beside x y x)
+                       (beside x x x))))))
+ ```
+ The method was obviously similar for sierpinski triangles which used the same two procedure to draw the fractal, just in a slightly different way.
  
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
-
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
+ ```racket 
+(define (sierpinski n)
+  (if (zero? n)
+    (triangle 10 "solid" "blue")
+    (let ((x (sierpinski (- n 1))))
+      (freeze (above x (beside x x))))))
+ ```
+ I used the 'freeze' procedure for the sierpinski triangles and square because the documentation claimed that for an image of sub-images it was very efficient.  Fractals seemed like a perfect instance for that. I did not use it for the koch curve becuase it would make the image not show up on the bottom. I assume this is because the nature of the fractal is different from sierpinski and less suited to it's use.
+ The koch curve was where I messed around with 'rotate'. This was a little tricky to wrap my head around but I had a look at some code of how to produce it in C++ and eventually got something that was pretty good.
  
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
-## My Library: (library name here)
-My name:
-
+  ```racket 
+(define (koch n)
+  (if (zero? n)
+      (square 10 "solid" "red")
+      (local ((define smaller (koch (- n 1))))
+        (beside/align "bottom"
+                   smaller
+                   (rotate 60 smaller)
+                   (rotate -60 smaller)
+                   smaller))))
+ ```
 Write what you did!
 Remember that this report must include:
 
