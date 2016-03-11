@@ -1,41 +1,29 @@
 
-## My Library: (library name here)
-My name:
+## My Library: Math Library
+My name: David Bui
 
-Write what you did!
-Remember that this report must include:
+Here, I tested out the math library and used several of the different pre-built functions. First, I made two 2x2 matrices and then performed some operations on them. Then I used functions from the basic operations part of the library and summed two randomly generated numbers. Next I did some array operations. Lastly I used a function from the statistics folder to count some samples from a list.
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+Here is the code:
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+```
+(require math)
 
-Code should be delivered in two ways:
+(define mymatrix (make-matrix 2 2 5))
+(define test-matrix (matrix [[2 5] [3 8]]))
+(matrix+ mymatrix test-matrix)
+(matrix- mymatrix test-matrix)
+(matrix-scale test-matrix 5)
+(matrix* (matrix- test-matrix mymatrix))
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+(+ (random-integer 20 30) (random-integer 1 10))
+(binomial 7 2)
 
-Ask questions publicly in the email group.
+(array+ (array #[#[8 3 5 14]]) (array 23))
+(array-scale (array #[#[2 10 15]]) 30)
 
-## How to Prepare and Submit this assignment
+(count-samples '(16 16 4 4 4 25 18 18 3))
+```
 
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+My output from the .rkt file is as follows:
 
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
