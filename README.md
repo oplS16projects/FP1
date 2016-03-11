@@ -11,7 +11,7 @@ My name: Huy Huynh
       (append (list (forward x )(turn-left y)(turn-right z))
               (recursive-pattern1   y  (+ x 2) z (- times 1)))))
 ```
- What this function is doing is it is first taking in four arguments, y x z and times. Essentially this function is basically first checking if the times(acts as a counter) is 0, if it is then return empty if not append onto the list. In the list there is a forward procedure that moves the turtle forward a certain distance. There is a turn-left and turn-right procedure that does literally what their named, turning the turtle. I then recursively call this function but altering just the turn-left procedure so each time the function is called the same pattern is drawn but in a different position to create a pattern. I then had another function which is just setting up the shape that I want initially and then calling the recursive-pattern create the pattern.
+ What this function is doing is it is first taking in four arguments, y x z and times. Essentially this function is basically first checking if the times(acts as a counter) is 0, if it is then return empty if not append onto the list. In the list there is a forward procedure that moves the turtle forward a certain distance. There is a turn-left and turn-right procedure that does literally what their named, turning the turtle. I then recursively call this function but altering just the forward procedure so each time the function is called the same pattern is drawn but in a different position to create a pattern. I then had another function which is just setting up the shape that I want initially and then calling the recursive-pattern create the pattern.
  ```racket 
  (define square
   (list
@@ -21,7 +21,7 @@ My name: Huy Huynh
    (recursive-pattern1 100 90 10 90)))
 ``` 
  In this function I practiced using more procedures available like change-color, change-bg-color and the pen(line) size. 
-Here are some of patterns that I was able to create, the second one I happened to stumble on upon while I was fiddling with specific values, I ended up just recursively drawing triangles and moving them to the left slightly each time.
+Here are some of patterns that I was able to create, the second one I happened to stumble on upon while I was fiddling with specific values, I ended up just recursively drawing triangles and moving them forward slightly each time.
 
 ![Alt Text](https://github.com/HuyH0114/FP1/blob/master/Square-pattern.PNG)
 ![Alt Text](https://github.com/HuyH0114/FP1/blob/master/star-pattern.PNG)
