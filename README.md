@@ -58,10 +58,27 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 ## My Library: HTML: Parsing Library
 My name: John Adams
 
-Write what you did!
-Remember that this report must include:
+Narrative:
+ Exploring the HTML Parsing Library, (after a misunderstanding- I believed a line of code to be user-entered in the console, when it was really part of the coding within DrRacket) I've been able to create two HTML 'strings' of four and three segments, or parts: a 'head' and at least two 'body' pieces.
+ 
+ I was then able to have both HTML strings print to the console- 
+ ```
+ #lang racket
+ 
+ (require html)
+ 
+ (module html-test1 racket
+ ...)
+ 
+ (module html-test2 racket
+ ...)
+ 
+(require 'html-test1)
+(require 'html-test2)
+```
+the two (require 'html-test)'s I had originally believed to be entered into the console, when they were part of the code itself. I finally found out I was incorrect, and the two printed to the screen properly.
 
-* a narrative of what you did
+![image
 * highlights of code that you wrote, with explanation
 * output from your code demonstrating what it produced
 * at least one diagram or figure showing your work
