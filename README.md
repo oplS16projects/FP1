@@ -19,15 +19,6 @@ The last function I thought was neat was dotted-lines, which does as its name sa
 * (dotted-lines)
 
 ###Output/Diagram
-This image comprises my output itself, so I thought I would combine the output/diagram sections with this one image. Each red triangle represents a turtle. Although I cloned a few turtles from the split function, they have ultimately been multplied exponentially (and in a circular notation) due to the neato function. Although I'd like to say I took credit, I didn't draw these elaborate designs with a precise use of the draw function either, but had some help with some of the more advanced functions (neato and regular-polys).
+This image comprises my output itself, so I thought I would combine the output/diagram sections with this one image. Each red triangle represents a turtle. Although I cloned a few turtles from the split function, they have ultimately been multplied exponentially (and in a circular notation) due to the neato function. Although I'd like to say I took credit, I didn't draw these elaborate designs with a precise use of the draw function either, but did so with some of the more advanced functions (neato and regular-polys).
 
 ![alt tag](https://github.com/sberube484/FP1/blob/master/output.PNG)
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
