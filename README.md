@@ -52,3 +52,4 @@ Here is the corresponding output for the above code. (avl-pop-max tree) uses the
 
 Here is the general idea of what is going on in an avl tree
 
+![Alt text](http://faculty.kfupm.edu.sa/ICS/said/ics202Labs/lab09/lab09_files/3a.jpg)
