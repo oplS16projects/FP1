@@ -27,6 +27,9 @@ Examples of cloning the turtles (split), and giving them drawing instructions. T
 The last function I thought was neat was dotted-lines, which does as its name says - makes dotted lines emanate through each respective turtle. 
 (dotted-lines)
 
+###Output/Diagram
+![alt tag](http://url/to/img.png)
+
 Code should be delivered in two ways:
 
 1. Full files should be added to your version of this repository.
