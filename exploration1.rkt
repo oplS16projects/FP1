@@ -1,0 +1,12 @@
+#lang racket
+(require sha)
+(define (hash-list lst)
+  (if (null? lst)
+      '()
+      (cons (sha256 (car lst))
+            (hash-list (cdr lst)))))
+(define (make-num-list lst)
+  (foldl (lambda (x y)
+           (cons (foldl + 0 x) y))
+         '()
+         (map bytes->list lst)))
