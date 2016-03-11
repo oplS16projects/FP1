@@ -20,6 +20,6 @@ The last function I thought was neat was dotted-lines, which does as its name sa
 * (dotted-lines)
 
 ###Output/Diagram
-This image comprises my output itself, so I thought I would combine the output/diagram sections with this one image. Each red triangle represents a turtle. Although I cloned a few turtles from the split function, they have ultimately been multplied exponentially (and in a circular notation) due to the neato function. Although I'd like to say I took credit, I didn't draw these elaborate designs with a precise use of the draw function either, but did so with some of the more advanced functions (neato and regular-polys).
+This image comprises my output itself, so I thought I would combine the output/diagram sections with this one image. Each red triangle represents a turtle. Although I cloned a few turtles from the split function, they have ultimately been multplied exponentially (and in a circular notation) due to the neato function. 
 
 ![alt tag](https://github.com/sberube484/FP1/blob/master/output.PNG)
