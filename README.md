@@ -76,9 +76,9 @@ Narrative:
 (require 'html-test1)
 (require 'html-test2)
 ```
-the two (require 'html-test)'s I had originally believed to be entered into the console, when they were part of the code itself. I finally found out I was incorrect, and the two printed to the screen properly.
+The two (require 'html-test)'s I had originally believed to be entered into the console, when they were part of the code itself. I finally found out I was incorrect, and the two printed to the screen properly.
 
-![image
+
 * highlights of code that you wrote, with explanation
 * output from your code demonstrating what it produced
 * at least one diagram or figure showing your work
