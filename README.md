@@ -10,8 +10,11 @@ Hello.  I used an icon library, and mostly messed with stickman.  I first starte
 The code is straightforward, where as the syntax is easy to understand.  Customizing the stickman reminded me of CSS properties we used back in GUI 1 and 2.  The imports I used in my code are copied below.
 
 (require images/icons/style)
+
 (require images/icons/control) 
+
 (require images/icons/stickman)  ;this guy is my favorite 
+
 (require images/icons/symbol)
 
 
