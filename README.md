@@ -16,3 +16,5 @@ My name: Connor McGrory
 This bit of code combines the two transformations on the y and z axis.  The variable 't' is my time
 variable that will increment as the program runs.  The sine and cosine cause a circular movement, but
 as the cube rotates, the plane in which it travels in a circle also rotates.
+
+![screenshot](https://cloud.githubusercontent.com/assets/11009351/13715819/44c4aabe-e7a5-11e5-948e-e642eea918fc.png)
