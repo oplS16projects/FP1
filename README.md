@@ -31,7 +31,7 @@ a new list of ID3-tag% objects is returned and "stored" in ID3-db
 
 
 A sample procedure that builds a list of sublists, where each sublist is
-a plain-text ID3 tag. Takes a list of ID3-tag objects as argument.
+a collection of plain-text entries extracted from ID3 tag. Takes a list of ID3-tag objects as argument.
 ```racket
 (define (show-tags tag-lst)
   (map (λ(x)(list (song x)
