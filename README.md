@@ -10,7 +10,7 @@ would be included with `(require net/tcp-sig)` though if you're a windows pleb l
 http://www.cs.utah.edu/plt/mailarch/plt-scheme-2002/msg00955.html
 After completing the tutorial I wrote a small program of my own that used some of the ideas covered in the tutorial but applied them in a slightly different way.
 
-The reason I chose to explore TCP was so I could explore the possibility of building a project that involves networking for example, a card game that allows users to play against each other across a network.  The small program that I wrote after completing the tutorial demonstrates the ability to apply a server side function to a list and return the result.  It's a simple program where the client sends a list to the server, and the server returns the value of (accumulate + 0 lst).  In spite of its simplicity, it demonstrates the manipulation of lists over TCP which can serve as a framework for the networking of a simple game like a card game.
+The reason I chose to explore TCP was so I could explore the possibility of building a project that involves networking for example, a card game that allows users to play against each other across a network.  The small program that I wrote after completing the tutorial demonstrates the ability to apply a server side function to a list and return the result.  It's a simple program where the client sends a list to the server, and the server returns the value of (accumulate + 0 lst).  In spite of its simplicity, it demonstrates the manipulation of lists over TCP which can serve as a framework for a network based implementation of something like a card game.
 
 ```
 ;here is the code for the my project
