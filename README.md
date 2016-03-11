@@ -15,7 +15,7 @@ I used the turtle graphics library. At first I familiarized myself with some bas
 
 ###Highlights:
 Examples of cloning the turtles (split), and giving them drawing instructions. The two arguments of draw-offset are the amount of space to move the turtle horizontally and vertically, respectively. The argument to split makes it so the cloned turtle faces the original in a right angle.
-(draw-offset 240 250)
+ (draw-offset 240 250)
  (split (turn/radians (/ pi 2)))
  (split (turn/radians (/ pi 2)))
  (draw-offset -100 -200)
