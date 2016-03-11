@@ -23,7 +23,7 @@ The reason I chose to explore TCP was so I could explore the possibility of buil
 
 ;(close-output-port port)
 ;(close-input-port port) :closes the port - interestingly, these close-port functions are not in the racket 
-;doccumentation, I looked it up and found it in several scheme references, but it still works in racket.  
+;doccumentation, I looked it up and found them in several scheme references, but they still works in racket.  
 ;I think the equivalent racket library function would be (tcp-close listener)
 
 ;read and write are not part of the tcp library but since we haven't gone over them I'll mention them
