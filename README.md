@@ -2,15 +2,10 @@
 Library: "Slideshow: Figure and Presentation Tools"
 Name: Chhun Kim
 
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+# What I did
+I used the "Slideshow: Figure and Presentation Tools" to create a few powerpoint slides. This library allows developers to create sideshow, and there are so many features that we could actually create a simple presentation slide. For what I did was creating a few slide by using slideshow library. To create a slide, we need to the biuld 
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+# Code Highlights
 ```
 #lang racket 
 
@@ -49,7 +44,10 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
        "5. Legacy Libraries"))
 ```
 
-# What I did
+# Output 
+
+
+
 Remember that this report must include:
 
 * a narrative of what you did
