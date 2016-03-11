@@ -1,23 +1,3 @@
-
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
 ## My Library: (Slideshow: Figure and Presentation Tools)
 Write what you did!
 Remember that this report must include:
