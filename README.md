@@ -5,16 +5,6 @@ DUE Friday, March 11, 2016
 ## My Library:HTML-template
 My name: Behailu Tekletsadik
 
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
 
  So the purpose of this library is to convert Racket commands into an HTML webpage.
  This is really cool because instead of hacking around aimlessly with racket with something like this:
