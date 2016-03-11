@@ -35,3 +35,5 @@ Although not able to completely take advantage of all of the functionality of pl
 (my-plot sample3)
 (my-plot sample4)
 ```
+![alt tag](https://raw.githubusercontent.com/whand662/FP1/sample3-2D.png)
+![alt tag](https://raw.githubusercontent.com/whand662/FP1/sample4-3D.png)
