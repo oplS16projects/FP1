@@ -2,7 +2,7 @@
 ## My Library: Turtle Graphics
 
 ###Narrative:
-I used the turtle graphics library. At first I familiarized myself with some basic functions such as move, draw, erase, and turn. After figuring out how to navigate the turtle, I delved into more complex functions such as split, which clones a turtle, and regular-poly which creates a certain number of n-sided shapes. My favorite function was neato, which is the main source of the cool designs.
+I used the turtle graphics library. At first I familiarized myself with some basic functions such as move, draw, erase, and turn. After figuring out how to navigate the turtle, I delved into more complex functions such as split, which clones a turtle, and regular-poly which creates a certain number of n-sided shapes. My favorite function is neato, which is the main source of the cool designs.
 
 ###Highlights:
 The code below shows how I cloned the turtles (split) and how I navigated them while drawing lines that traced their path (draw-offset). The two arguments of draw-offset are the amount of space to move the turtle horizontally and vertically, respectively. The argument to split makes it so the cloned turtle faces the original in a right angle.
