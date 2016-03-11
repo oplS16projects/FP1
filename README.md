@@ -19,8 +19,12 @@ My name: Huy Huynh
    (change-color (list "red" "green" "blue" "yellow"))
    (change-bg-color "grey")
    (recursive-pattern1 100 90 10 90)))
-``` In this function I practiced using more procedures available like change-color, change-bg-color and the pen(line) size. 
-Here are some of patterns that I was able to create, the second one I happened to stumble on upon while I was fiddling with specific values, I ended up just recursively drawing triangles and moving them to the left slightly each time. 
+``` 
+ In this function I practiced using more procedures available like change-color, change-bg-color and the pen(line) size. 
+Here are some of patterns that I was able to create, the second one I happened to stumble on upon while I was fiddling with specific values, I ended up just recursively drawing triangles and moving them to the left slightly each time.
+
+![alt text](FP1/Square-pattern.PNG)
+
 
 
 <!-- Links -->
