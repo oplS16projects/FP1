@@ -28,7 +28,7 @@ The last function I thought was neat was dotted-lines, which does as its name sa
 (dotted-lines)
 
 ###Output/Diagram
-![alt tag](http://url/to/img.png)
+![alt tag](https://github.com/sberube484/FP1/blob/master/output.PNG)
 
 Code should be delivered in two ways:
 
