@@ -37,7 +37,7 @@ Here is the code with explanations:
 
 My output from the .rkt file is as follows:
 
-![alt tag](https://github.com/buidavid16/FP1/blob/master/math_functions_output.png)
+![alt tag](https://github.com/buidavid16/FP1/blob/master/img/math_functions_output.png|alt=octocat])
 
 Here is the diagram of what is going on in my code:
 
