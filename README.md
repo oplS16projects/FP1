@@ -53,6 +53,8 @@ In my exploration of the graph library, I also experimented in different ways to
 ```
 The code above are just two ways to graph the same thing.  The first way, defines x-point and y-point.  In this graph, the x-point values are (0, 1, 2, 3, 4, 5) and the y-point values are all squared values of the x-point values.  Also similar to the way "label" was done before, with the graph it is also possible to specify the color and the style of the line.  In this case for both methods I used red and green to differentiate betweent the two ways.  The second method is somewhat easier as it requires one line.  Also it should be noted that the points are grouped together unlike the first method.
 
+After playing with the code above, I also experimented with graphing multiple functions on one graph.  With the multiple functions I made use of the style to differentiate between the functions.  I also plotted another function with the x-axis representing years and the y-axis representing money.  I did this part to experiment with basic finance for my overall project.
+
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
 * output from your code demonstrating what it produced
