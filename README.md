@@ -40,13 +40,9 @@ This HTML-String is contained in html-test1, the first custom module.
 The output can be seen at the bottom of the screenshot, in the REPL.
 
 If it is too small, here it is as well:
+![screen-fp1-2](https://cloud.githubusercontent.com/assets/17749976/13691780/931565a6-e709-11e5-8f80-329e6101f9e9.jpg)
 
 
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
 Code should be delivered in two ways:
 
