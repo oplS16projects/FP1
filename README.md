@@ -38,6 +38,14 @@ Values between 0 and 1 will make the mouth open between those extremes.
 
 
 
+Another cool function is the "pin-balloon" function. This creates a talking bubble which can be combined with 
+another image like my fish. The result is a fish that looks like it is talking or thinking about something. 
+
+![screen2](https://cloud.githubusercontent.com/assets/17748575/13705038/fb24ad74-e76c-11e5-940c-262526c4eb8f.png)
+
+
+
+
 
 
 Write what you did!
