@@ -15,4 +15,4 @@ My favorite graphic I wrote was with the following three procedures
 
 This produced a very sweet looking image, which kept growing in small ways if I let it keep running 
 
-[Turtles!](http://i.imgur.com/QytegMq.png)
+![Turtles!](http://i.imgur.com/QytegMq.png)
