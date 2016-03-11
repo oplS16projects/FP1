@@ -1,9 +1,7 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+Cameron Oliver
 
 ## My Library: (require net/tcp-sig)
-Write what you did!
-Remember that this report must include:
 
 For my exploration I looked at one of the networking libraries, specifically the tcp library which I guess
 would be included with `(require net/tcp-sig)` though if you're a windows pleb like me and you just installed racket from the .exe you shouldn't need to download any libraries.  I began by following this tutorial:
