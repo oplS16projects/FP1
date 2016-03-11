@@ -1,61 +1,42 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
+Ryan Cauble
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+## My Library: pict
 
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+The first thing i needed to figure out was how to get the library working.
+To do this i needed to add #lang slideshow and (require pict/balloon) like this:
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+#lang slideshow
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+(require pict/balloon)
 ```
-#lang racket
+This took a little research and reading since I did not know that the #lang had to
+be changed. Once I figured this out I started reading the libraries functions and 
+learned about their capabilities.
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+The first function I decided to play around with was the "standard-fish" function. 
+This function creates a pict of a fish that can be manipulated by changing certain
+parameters. 
 ```
+(define fishy2
+     (standard-fish	100        ;; width	 	 	 	 
+ 	 	        50	                ;; height	 	 	 
+ 	 	#:direction 'right  	 	 	 	 
+ 	 	#:color "blue"	 	 	 	 
+ 	 	#:eye-color "red"	 	 	 	 
+ 	 	#:open-mouth #t)  ;; #t, #f, or between 0 and 1
+)
+```
+The open mouth parameter can be a value between 0 (closed) and 1 (open). 
+Values between 0 and 1 will make the mouth open between those extremes.
 
-## My Library: (library name here)
+
+
+
+
+
+
 Write what you did!
 Remember that this report must include:
 
