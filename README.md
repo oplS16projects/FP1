@@ -1,10 +1,6 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
 
-Cody Mulkern
-
-
-
 ## My Library: pict
 Cody Mulkern
 
