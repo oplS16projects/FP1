@@ -45,6 +45,28 @@ another image like my fish. The result is a fish that looks like it is talking o
 
 
 
+Other pict functions exist that let you make things like a computer, cloud, file-icon, thermometer, or 
+emoji type faces. Below you will see how to make a computer:
+
+```
+(define computer1
+(desktop-machine 1 '(plt binary))
+)
+
+```
+![screen3](https://cloud.githubusercontent.com/assets/17748575/13705440/e1de2f82-e76e-11e5-9a7a-92c59e464657.png)
+
+
+
+
+
+
+
+This library would be good to use if I wanted to tell a story that included pictures or make some 
+kind of game. So lets see how this can work and tell a littel story.
+
+
+
 
 
 
