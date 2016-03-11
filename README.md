@@ -1,3 +1,12 @@
+Current Final Project Idea:  Multi User Dungeon (MUD)
+Idea requirements: 
+     - Creating and hosting a server module
+     - Creating a client module that will play nice with the server module
+     - create options for interaction between clients
+     
+
+FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.
+
 #Part 2: Try a Library
 In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
 
