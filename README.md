@@ -25,6 +25,8 @@ My name: Brendan Bousquet
     (let ((x (sierpinski (- n 1))))
       (freeze (above x (beside x x))))))
  ```
+  ![triangles.png](https://github.com/BrendanBousquet/FP1/blob/master/img/triangles.png)
+  
  I used the 'freeze' procedure for the sierpinski triangles and square because the documentation claimed that for an image of sub-images it was very efficient.  Fractals seemed like a perfect instance for that. I did not use it for the koch curve becuase it would make the image not show up on the bottom. I assume this is because the nature of the fractal is different from sierpinski and less suited to it's use.
  The koch curve was where I messed around with 'rotate'. This was a little tricky to wrap my head around but I had a look at some code of how to produce it in C++ and eventually got something that was pretty good.
  
@@ -39,40 +41,4 @@ My name: Brendan Bousquet
                    (rotate -60 smaller)
                    smaller))))
  ```
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+  ![koch.png](https://github.com/BrendanBousquet/FP1/blob/master/img/koch.png)
