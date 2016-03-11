@@ -4,7 +4,7 @@ Remember that this report must include:
 
 In this exploration, I played with a library that creates slideshows. Cool library and super easy to learn!
 
-If you want to play with this library, you'll need this line.
+If you want to play with this library as well, you'll need this line.
 ```
 #lang slideshow
 ```
