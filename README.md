@@ -28,7 +28,7 @@ Here is the code with explanations:
 
 ;; Add the elements of a constructed array by the value 23
 (array+ (array #[#[8 3 5 14]]) (array 23))
-;; Add 30 to all the elements of a constructed array
+;; Multiply 30 to all the elements of a constructed array
 (array-scale (array #[#[2 10 15]]) 30)
 
 ;; Get the list of samples in a list and count how many of each sample exist
@@ -39,5 +39,6 @@ My output from the .rkt file is as follows:
 
 ![alt tag](https://github.com/buidavid16/FP1/blob/master/math_functions_output.png)
 
-Here is the diagram of what is going on in my code:
+Here is the diagram of some of the functions going on in my code:
 
+![alt tag](https://github.com/buidavid16/FP1/blob/master/math_functions_examples.png)
