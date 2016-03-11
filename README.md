@@ -55,16 +55,22 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
+## My Library: net/url
+My name: Yusuf Yildiz
 
-Write what you did!
-Remember that this report must include:
+For this exploration I created a scraper for Fred's blog page.
+The scraper grabs the latest blog post and saves it locally
+to the users local folder as "latest-blog-post.html".
+I used the net/url library to pull the source code of Fred's blog
+and the following regexp-match procedure to pull the latest entry from the blog:
+'''#rx"((?=<strong>Meeting).*?(?<=</ul>))'''
+The way that this regex works is it just looks for everything inside the given
+text that matches the first set of keys, which in this case is "<strong>Meeting"
+and then matches everything until and including "</ul>".
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+This is what the created html output looks like:
+![Image of HTML output]
+(http://i.imgur.com/r4g9td3.png)
 
 The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
