@@ -1,63 +1,66 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
-
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
-## My Library: (library name here)
+## My Library: (require net/tcp-sig)
 Write what you did!
 Remember that this report must include:
+
+For my exploration I looked at one of the networking libraries, specifically the tcp library which I guess
+would be included with `(require net/tcp-sig)` though if you're a windows pleb like me and you just installed racket from the .exe you shouldn't need to download any libraries.  I began by following this tutorial:
+http://www.cs.utah.edu/plt/mailarch/plt-scheme-2002/msg00955.html
+After completing the tutorial I wrote a small program of my own that used some of the ideas covered in the tutorial but applied them in a slightly different way.
+
+The reason I chose to explore TCP was so I could explore the possibility of building a project that involves networking for example, a card game that allows 2 users to play against each other across a network.  The small program that I wrote after completing the tutorial demonstrates the ability to apply a server side function to a list and return the result.  It's a simple program where the client sends a list to the server, and the server returns the value of (accumulate + 0 lst).  In spite of its simplicity, it demonstrates the manipulation of lists over TCP which can serve as a framework for the networking of a simple game like a card game.
+
+```
+;here is the code for the my project
+;the main functions used from the tcp library are:
+;(tcp-connect hostname port-no) :forms a connection with the specified host through the specified port
+
+;(tcp-listen port-no) :creates a listening server at the port number
+
+;(tcp-accept listener) :accepts a connection from a client waiting on the listener port
+
+;(close-output-port port)
+;(close-input-port port) :closes the port - interestingly, these close-port functions are not in the racket 
+;doccumentation, I looked it up and found it in several scheme references, but it still works in racket.  
+;I think the equivalent racket library function would be (tcp-close listener)
+
+;read and write are not part of the tcp library but since we haven't gone over them I'll mention them
+;basically write outputs a message in such a way that when it is read with read it will be returned in its
+;original form
+;so (read (write 'x)) would return 'x
+
+#lang racket
+
+(define SERVICE-PORT 2000)
+(define SERVER-HOST "localhost")
+
+(define (client lst)
+  (let-values ([(server->me me->server)
+                (tcp-connect SERVER-HOST SERVICE-PORT)]) ;assigns server->me and me->server to be tcp-connect calls
+    (write lst me->server)                               ;sends the list to the server
+    (close-output-port me->server)                       ;closes the output from the client to the server
+    (let ([response (read server->me)])                  ;the message received back from the server is named "response"
+      (display response) (newline)                       ;response is displayed followed by a newline
+      (close-input-port server->me))))                   ;closes the input from the server to the client
+
+(define (server)
+  (let ([listener (tcp-listen SERVICE-PORT)])       ;assigns listener to be a tcp-listen call
+    (let loop()                                     ;starts a loop so that the server can be called more than once without restarting
+      (let-values ([(client->me me->client)         
+                  (tcp-accept listener)])           ;assigns client->me and me->client to be tcp-accept calls
+       ((lambda (x)                                 ;foldl's the list received from the client and returns it to the client
+        (write (foldl + 0 x) me->client))(read client->me))
+      (close-output-port me->client)                ;closes the output
+      (close-input-port client->me))                ;and closes the input port
+      (loop))))                                     ;restarts the loop
+      
+      ;the client and the server have to be running in two separate instances of Racket. The easiest way to do this (the way I did it)       ;is to open two racket windows and run the server in one window and the client in the other.  This is with the server set as          ;localhost.  The server could be changed to be some other machine by changing the hostname
+  
+```
+
+
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
