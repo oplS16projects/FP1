@@ -1,45 +1,4 @@
 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
 ## My Library: (library name here)
 Write what you did!
 Remember that this report must include:
@@ -51,12 +10,28 @@ Remember that this report must include:
 
 The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
+Narrative:
+I used the turtle graphics library. At first I familiarized myself with some basic functions such as move, draw, erase, and turn. After figuring out how to navigate the turtle, I delved into more complex functions such as split (which clones a turtle), and regular-poly which creates a certain number of n-sided shapes. My favorite function was neato, which is the main source of the cool designs.
+
+Highlights:
+Examples of cloning the turtles (split), and giving them drawing instructions. The two arguments of draw-offset are the amount of space to move the turtle horizontally and vertically, respectively. The argument to split makes it so the cloned turtle faces the original in a right angle.
+(draw-offset 240 250)
+ (split (turn/radians (/ pi 2)))
+ (split (turn/radians (/ pi 2)))
+ (draw-offset -100 -200)
+ 
+ These two lines are the main cause of the aesthetic appeal to my file. Regular polys drew squares with a radius of 2, and neato did the really complex circular designs.
+(regular-polys 4 2)
+ (neato)
+
+The last function I thought was neat was dotted-lines, which does as its name says - makes dotted lines emanate through each respective turtle. 
+
 Code should be delivered in two ways:
 
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
 
-Ask questions publicly in the email group.
+
 
 ## How to Prepare and Submit this assignment
 
