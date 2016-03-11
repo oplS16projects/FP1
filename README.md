@@ -33,6 +33,8 @@ The open mouth parameter can be a value between 0 (closed) and 1 (open).
 Values between 0 and 1 will make the mouth open between those extremes.
 
 
+![screen1](https://cloud.githubusercontent.com/assets/17748575/13704660/ffe0dc9a-e76a-11e5-93f7-fadcea4292be.png)
+
 
 
 
