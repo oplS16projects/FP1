@@ -2,9 +2,9 @@
 Write what you did!
 Remember that this report must include:
 
-In this Exploration I played with a library that creates slideshows. Cool library and super easy to learn!
+In this exploration, I played with a library that creates slideshows. Cool library and super easy to learn!
 
-Here's the line to include the library.
+If you want to play with this library, you'll need this line.
 ```
 #lang slideshow
 ```
@@ -14,14 +14,15 @@ I started my explorartion by creating a simple slide with a title.
 (slide
  #:title "Hello World")
  ```
-You can create any number of slides so that when you run your program, a simple click of the right arrow key will iterate to the next slide. The library includes a long list of #: indicators that you can apply to your slides as a way to change their layout, gap-size, timeout, etc.
+You can create any number of slides so that when you run your program, you can iterate to the next slide with the right-arrow key. The library includes a list of #: attribues to change the slide's layout, gap-size, timeout, etc.
 
-The next thing I did was experiment with body-text. After you speficy the slide's characteristics, you can add text to it in a couple different ways.
+The next thing I did was experiment with body-text. After you speficy the slide's characteristics, you can add text to it in two different ways.
 ```
 (t string)
 
 (item string)
 ```
+The first creates 
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
