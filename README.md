@@ -63,7 +63,7 @@ emoji type faces. Below you will see how to make a computer:
 
 
 This library would be good to use if I wanted to tell a story that included pictures or make some 
-kind of game. So lets see how this can work and tell a littel story.
+kind of game. So lets see how this can work and tell a little story.
 
 
 ![screen4](https://cloud.githubusercontent.com/assets/17748575/13705655/c3b9eb76-e76f-11e5-8c7a-03a8cc7f8986.png)
