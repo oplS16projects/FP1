@@ -12,5 +12,5 @@ Then I proceeded to explore the library a bit.
 
 ![alt text](https://i.imgur.com/TDX3rQ5.jpg?1 "Some basic understanding of how to use a computer.")
 
-Certain procedures such as ```racket (ssl-make-client-context)``` accept an argument for what protocol should be used during the ssl session. 
+Certain procedures such as `(ssl-make-client-context)` accept an argument for what protocol should be used during the ssl session. 
 
