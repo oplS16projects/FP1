@@ -23,7 +23,7 @@ My name: Huy Huynh
  In this function I practiced using more procedures available like change-color, change-bg-color and the pen(line) size. 
 Here are some of patterns that I was able to create, the second one I happened to stumble on upon while I was fiddling with specific values, I ended up just recursively drawing triangles and moving them to the left slightly each time.
 
-![alt text](FP1/Square-pattern.PNG)
+![Alt Text](FP1/Square-pattern.PNG)
 
 
 
