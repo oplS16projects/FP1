@@ -56,27 +56,26 @@ The reason I chose to explore TCP was so I could explore the possibility of buil
       (close-input-port client->me))                ;and closes the input port
       (loop))))                                     ;restarts the loop
       
-      ;the client and the server have to be running in two separate instances of Racket. The easiest way to do this (the way I did it)       ;is to open two racket windows and run the server in one window and the client in the other.  This is with the server set as          ;localhost.  The server could be changed to be some other machine by changing the hostname
+      ;the client and the server have to be running in two separate instances of Racket. 
+      ;The easiest way to do this (the way I did it) is to open two racket windows and run 
+      ;the server in one window and the client in the other. This is with the server set as          
+      ;localhost. The server could be changed to be some other machine by changing the hostname
   
 ```
+##Code Output:
 
+###First Tutorial Example:
+-client sends 'ping to the server
+-server responds with 'pong (server can only respond once, then it must be restarted)
+![Alt Text](https://github.com/C4m0/FP1/blob/master/TCPex1.jpg)
+###Second Tutorial Example:
+-client sends a number
+-server returns that number of tokens, beginning with the token after the last token to be handed out
+![Alt Text](https://github.com/C4m0/FP1/blob/master/TCPex2.jpg)
+###Experment Program:
+-described above in code (server sums a list)
+![Alt Text](https://github.com/C4m0/FP1/blob/master/TCPexperiment.jpg)
 
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
 
 1. To start, [**fork** this repository][forking]. 
   2. (This assignment is just one README.md file, so you can edit it right in github)
