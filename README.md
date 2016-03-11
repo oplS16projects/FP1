@@ -20,8 +20,7 @@ I basically started with this example from the documentation above:
 ```
 And then re-wrote and extended it once I read through the docs a little more and understood what was going on.
 
-
-My basic player class:
+####My basic player class:
 ```racket
 ;;player class
 (define (player x y speed health)
@@ -38,16 +37,30 @@ My basic player class:
   dispatch)
 ```
 
-I also imported an image to use for the player:
+####I also imported an image to use for the player:
 ```racket
 (define bob-sprite (rotate 180 (bitmap "Plane.png")))
 ```
 
+####And added some input handling:
+```racket
+;;handle input
+(define (handle-key-down world key)
+  (cond
+    [(key=? key "left") (bob 'move-left)]
+    [(key=? key "right") (bob 'move-right)]
+    [else world]
+    )
+)
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+(define (handle-key-up world key)
+  (cond
+    [(key=? key "left") bob]
+    [(key=? key "right") bob]
+    [else world]
+    ))
+```
+This library makes input handling super easy, and now that I understand the game cycle, I can quickly add a lot more functionality to this.  Currently the ship just goes from the top to the bottom of the screen, and you can press the arrow keys to make it go a little left or a little right as it travels down.  Definitely gonna mess with this some more over the break, finally having fun in Racket!
 
 ![Image of my game](http://robdoesweb.com/images/OPL/screenie.jpg)
 
