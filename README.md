@@ -69,6 +69,25 @@ kind of game. So lets see how this can work and tell a littel story.
 ![screen4](https://cloud.githubusercontent.com/assets/17748575/13705655/c3b9eb76-e76f-11e5-8c7a-03a8cc7f8986.png)
 
 
+As you can see I am not much of a story teller. So the last thing I will drive around a little is the tree functions.
+
+This is a recursive function that makes a tree with a specified number of layers:
+
+```
+
+(define (complete layers) 
+    (cond 
+      [(zero? layers) #f] 
+      [else (define s (complete (- layers 1))) 
+            (tree-layout s s)]))
+
+```
+With this code you would use the command `(naive-layered (complete 3))` which says I want a tree of 3 layers.
+See example below:
+
+![screen5](https://cloud.githubusercontent.com/assets/17748575/13707509/00e42cf2-e778-11e5-924f-f9482e1172fc.png)
+
+
 
 
 
