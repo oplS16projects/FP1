@@ -11,8 +11,9 @@ The code below shows how I cloned the turtles (split) and how I navigated them w
 * (split (turn/radians (/ pi 2)))
 * (draw-offset -100 -200)
  
-These two lines are the main cause of the aesthetic appeal to my file. Regular polys drew squares with a radius of 2, and neato did the really complex circular designs.
+These two lines are the main cause of the aesthetic appeal to my file. Regular polys drew squares and pentagons with a radius of 2, and neato did the really complex circular designs.
 * (regular-polys 4 2)
+* (regular-polys 5 2)
 * (neato)
 
 The last function I thought was neat was dotted-lines, which does as its name says - makes dotted lines emanate through each respective turtle. However, I excluded it from my code because it would have made the output distorted and overwhelming.
