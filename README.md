@@ -10,10 +10,10 @@ Remember that this report must include:
 
 The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
-Narrative:
+#Narrative:
 I used the turtle graphics library. At first I familiarized myself with some basic functions such as move, draw, erase, and turn. After figuring out how to navigate the turtle, I delved into more complex functions such as split (which clones a turtle), and regular-poly which creates a certain number of n-sided shapes. My favorite function was neato, which is the main source of the cool designs.
 
-Highlights:
+#Highlights:
 Examples of cloning the turtles (split), and giving them drawing instructions. The two arguments of draw-offset are the amount of space to move the turtle horizontally and vertically, respectively. The argument to split makes it so the cloned turtle faces the original in a right angle.
 (draw-offset 240 250)
  (split (turn/radians (/ pi 2)))
@@ -25,6 +25,7 @@ Examples of cloning the turtles (split), and giving them drawing instructions. T
  (neato)
 
 The last function I thought was neat was dotted-lines, which does as its name says - makes dotted lines emanate through each respective turtle. 
+(dotted-lines)
 
 Code should be delivered in two ways:
 
