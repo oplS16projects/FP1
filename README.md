@@ -150,7 +150,7 @@ songs                       ;output only song names
 ## Basic ID3v2 header structure illustration
 
 ![ID3-header_www.beaglebuddy.com][screen1]
-Borrowed [here][image_source]
+Illustration taken from [here][image_source]
 
 <!-- Links -->
 [screen1]: http://www.beaglebuddy.com/content/pages/javadocs/resources/mp3_format_ID3v2.3.gif
