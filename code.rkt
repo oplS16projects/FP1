@@ -29,3 +29,5 @@
                #:servlet-regexp #rx""  ;catch all requests
                #:command-line? #t      ;don't launch web browser on init
                )
+               
+;; http://docs.racket-lang.org/web-server/dispatch.html and others were inspiration
