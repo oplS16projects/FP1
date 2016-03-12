@@ -18,6 +18,7 @@ My name: Andry Lora
 (text "Lets try some font changes" (cons 'bold 'roman) 50)
 (text "diagonal" null 50 (* 2 2))
 (text "other diagonal" null 50 (* 2 1)))
+```
 
 The next few slides after the second one were used in order to see how the transitions looked based on text sizes using lambda functions.The transitions seemed delayed because it took some time for the text to begin apearing, I tried changing some of the values but it seems that there are specific integers that it would only accept.
   
