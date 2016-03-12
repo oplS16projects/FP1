@@ -41,3 +41,7 @@ If called with `(calc-primes 50 4)`, the following output is generated:
 37
 41
 47
+
+Note that some numbers were printed out of order. A less naive implementation might store the primes in a list, and sort them before outputing.
+
+Here is a diagram outlining how the algorithm processes data:
