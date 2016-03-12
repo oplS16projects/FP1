@@ -3,9 +3,10 @@
 My name: John Perkins
 
 
-So for my Final Project Exploration 1 I decided to go into the plot library of racket and mess around with some of the procedures in
-there. I was deciding between this library and I some logo generation library that I forget the name of already. I ended up with this
-one as it just seemed more immediately useful and also easier to understand than the other one and it turned out to be pretty cool. 
+	So for my Final Project Exploration 1 I decided to go into the plot library of racket and mess around with some of the 
+procedures inthere. I was deciding between this library and I some logo generation library that I forget the name of already. I ended 
+up with this one as it just seemed more immediately useful and also easier to understand than the other one and it turned out to be
+pretty cool. 
 	
 	When I first started looking at the plot library, it was pretty standard as I started out with a normal y = x graph.
 
@@ -16,15 +17,15 @@ one as it just seemed more immediately useful and also easier to understand than
 (plot (function (lambda (x) x)))
 ```
 
-	Obviously when I loaded up the code I started to recognize some really cool features built into the library. The most immediately
-noticeable one was the ability to zoom in on certain parts of the graph. So from this little bit of code I’ve found out that plot
-works on a function which would be some sort of lambda. In addition, the function procedure itself can take many arguments such as
-color, line style, and labels. On the other hand the plot procedure just looks for either a function or a list of functions and also
-have different arguments such as a title as well as min and max values for each axis to display up to. I believe in the documentations
-it’s described as a renderer-tree.
+	Obviously when I loaded up the code I started to recognize some really cool features built into the library. The most 
+immediately noticeable one was the ability to zoom in on certain parts of the graph. So from this little bit of code I’ve found out 
+that plot works on a function which would be some sort of lambda. In addition, the function procedure itself can take many arguments 
+such as color, line style, and labels. On the other hand the plot procedure just looks for either a function or a list of functions 
+and also have different arguments such as a title as well as min and max values for each axis to display up to. I believe in the 
+documentations it’s described as a renderer-tree.
 
-	After learning that bit that it takes a renderer-tree specifically and not just a function, I tried upgrading my code for the plot
-procedure to take in a list of functions and display them with different colors.
+	After learning that bit that it takes a renderer-tree specifically and not just a function, I tried upgrading my code for the 
+plot procedure to take in a list of functions and display them with different colors.
 
 ```racket
 #lang racket
@@ -43,14 +44,16 @@ procedure to take in a list of functions and display them with different colors.
             #:y-max 10)
 ```
 
-	After a bit more time I mess around with the plot-bitmap procedure which makes a nice bitmap which is displayed in the interaction
-window which can be just right-click and saved.
+	After a bit more time I mess around with the plot-bitmap procedure which makes a nice bitmap which is displayed in the
+interaction window which can be just right-click and saved.
  
-
-	I also started to do some similar stuff with plot3d which is pretty similar except that the lambda part inside of plot3d usually has
-2 arguments with it instead of just one. Also you can move around the viewpoint which is pretty cool for 3d graphs. Min and max of it
-also extends to the z-axis. Finally to tie it all together took a quick look at the parameterize procedure that was used often which
-just seems to standardize the size of the window and other aspects across a large amount of plot(s) and 3dplot(s).
+https://github.com/raghnall6402/FP1/blob/master/2dbitmap.png
+ 
+https://github.com/raghnall6402/FP1/blob/master/3dbitmap.png
+	I also started to do some similar stuff with plot3d which is pretty similar except that the lambda part inside of plot3d 
+usually has 2 arguments with it instead of just one. Also you can move around the viewpoint which is pretty cool for 3d graphs. Min 
+and max of it also extends to the z-axis. Finally to tie it all together took a quick look at the parameterize procedure that was used
+often which just seems to standardize the size of the window and other aspects across a large amount of plot(s) and 3dplot(s).
 
 
 ```racket
