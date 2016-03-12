@@ -33,5 +33,6 @@ Racket function to print the html code for the sample webpage
     (display "<a href=\"https://mitpress.mit.edu/sicp/\"> <img src=\"http://www.cs.uml.edu/ecg/pub/uploads/OPLspr16/sicp-cover.jpg\" alt=\"Textbook\"> </a>" out)
     (display "</body></html>" out))
 ```
+Screenshot of webpage opened by program
 ![alt text](https://github.com/kennysandbum/FP1/blob/master/Screenshot.png)
 
