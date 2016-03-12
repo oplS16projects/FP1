@@ -16,10 +16,17 @@ Remember that this report must include:
   
   For the second slide I looked at the documentation and saw that the current library has element of the pict library which is used in order to change the font size and what font is used in the slideshows.I then used the pict functions to change the font and the positioning of the text.
   
-  ... racket 
+  ```racket 
+  #lang slideshow
+  (require slideshow/play)
   
-  (text "Lets try some font changes" (cons 'bold 'roman) 50)
+  (slide
+ #:title "Slide 2"
+(text "Lets try some font changes" (cons 'bold 'roman) 50)
 (text "diagonal" null 50 (* 2 2))
+(text "other diagonal" null 50 (* 2 1)))
+
+The next few slides after the second one were used in order to see how the transitions looked based on text sizes using lambda functions.The transitions seemed delayed because it took some time for the text to begin apearing, I tried changing some of the values but it seems that there are specific integers that it would only accept.
   
 
 
