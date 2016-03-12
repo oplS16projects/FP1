@@ -7,9 +7,10 @@ My name: Andry Lora
   
   The first slide I used "item" to create multiple list elements and see how the transitioning between items were.Within this same slide I created lines in between each element using "hline" and giving it a width and the spacing between the line and any other objects such as text and other lines this can be seen in figure 1.
   
- <center>Figure 1</center>
+ <p align="center">Figure 1 </p>
   
   ![Alt text](https://github.com/andrylr/FP1/blob/master/slide1.png)
+   <p align="center">Figure 1 </p>
   
   
   For the second slide I looked at the documentation and saw that the current library has element of the pict library which is used in order to change the font size and what font is used in the slideshows.I then used the pict functions to change the font and the positioning of the text.
