@@ -36,6 +36,6 @@ And the result is the following:
 > 
 ```
 
-Here's a picture of the original file:
+Here's a picture of the parsed song note list:
 
 
