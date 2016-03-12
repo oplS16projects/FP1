@@ -3,7 +3,7 @@
 ## My Library: web-server
 #### John Kilgo
 
-I tried playing around with the web-server library to try to build a simple application that could handle requests based on URL. The goal would be in the future to return specific information based on the request URL, almost like a REST api, but simpler just through request that spit out html or json, etc. This could potentially be used to produce content for a game or some sort of application that has a backend.
+I tried playing around with the web-server library to try to build a simple application that could handle requests based on the request URL. The goal would be in the future to return some sort of specific information based on the request URL, almost like a REST api, but in a simpler manner using request handlers that spit out html or json, etc. This could potentially be used to produce content for a game or some sort of application on the backend.
 
 * spent some time fooling around with the example for url-dispatch
 * the example is more tailored to using the repl and returning a symbol
