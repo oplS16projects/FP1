@@ -16,6 +16,8 @@ about = /about
 
 Pro! = http://getjsonip.com
 
+![Diagram](/diagram.png?raw=true "Diagram")
+
 Remember that this report must include:
 
 * a narrative of what you did
