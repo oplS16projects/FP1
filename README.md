@@ -37,5 +37,5 @@ And the result is the following:
 ```
 
 Here's a picture of the parsed song note list:
-[Testing!](FP1/screenshot.png)
+![Screen shot](/FP1/Screenshot.png?raw=true "Screenshot")
 
