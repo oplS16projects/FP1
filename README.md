@@ -1,7 +1,4 @@
 ## My Library: (Slideshow: Figure and Presentation Tools)
-Write what you did!
-Remember that this report must include:
-
 In this exploration, I played with a library that creates slideshows. Cool library and super easy to learn!
 
 If you want to test it out you'll need this include line.
@@ -14,9 +11,9 @@ I started my explorartion by creating a simple slide with a title.
 (slide
  #:title "Hello World")
  ```
-You can create any number of slides so that when you run your program, you can easily browse through them with your keys. You also have the option of specifying certain attributes using #: followed by a keyword and your specification. This includes stuff like the slide's layout, gap-size, timeout, etc.
+You can create any number of slides so that when you run your program, you can easily browse through them with the arrow-keys. You also have the option of specifying certain attributes using #: followed by a keyword and your specification. This includes stuff like the slide's layout, gap-size, timeout, etc.
 
-The next thing I experimented with was body-text. After you speficy the slide's characteristics, you can add text to it in two different ways.
+The next thing I experimented with was body-text. After you speficy the slide's characteristics, you can add text in two different ways.
 ```
 (t string)
 
@@ -24,7 +21,7 @@ The next thing I experimented with was body-text. After you speficy the slide's 
 ```
 The first displays text using the default font and style. The second method creates a bulleted paragraph that spans (by default) the middle 2/3 of the slide.
 
-If you want the option to display your body-text in sequence, include 'next between each text object. There's also the option to display a bunch of text and replace it with other text on the same slide. You can do this using 'alt. Here's an excerpt from the demo I put together which which will hopefully clarify these concepts.
+If you want the option to display your body-text in sequence, include *'next* between each text object. There's also the option to display a some text, erase it, and display some other text on the same slide. You can do this using *'alt*. Here's an excerpt from the demo I put together which which will hopefully clarify these concepts.
 ```
 (slide
  #:title "What Does The Fox Say?"
@@ -44,9 +41,13 @@ If you want the option to display your body-text in sequence, include 'next betw
        (list (item (tt "*dies*")))
        (list (item (tt "*the fox says nothing*")))))
 ```
-As you can see, my slide is formatted in "top" and has been given the title "What Does The Fox Say?" The 'next keyword is what sequences the content. When the presenter hits the right arrow key, it will reveal the next part of the slide. The 'alts keyword creates a somewhat complex seqeuence of text. It expects a list of lists and clears the screen after it's done outputting the current list. So if the screen currently says "*becomes fox whisperer*" this means we're currently at the end of a list, and when the presenter hits next, the screen will be cleared and 'alt will enter the new list by printing "*marries cute, indpendent lady fox*"
+As you can see, my slide is formatted in *top* mode and has been given the title "What Does The Fox Say?" The *'next* keyword is what sequences the content. When the presenter hits the right arrow key, it will reveal the next part of the slide. The *'alts* keyword creates a somewhat complex seqeuence of text. It expects a list of lists and clears the screen after it's done outputting the current list. So if the screen currently says *becomes fox whisperer*, this means we're currently at the end of a list and that when the presenter hits next, the screen will be cleared and 'alt will enter the new list by printing *marries cute, indpendent lady fox*
 
 Here are some screenshots of my output.
+
+
+
+
 
 
 * a narrative of what you did
