@@ -1,97 +1,56 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+## My Library: github-api
+My name: Brian Thomas
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+I created a racket program (fp1.rkt) that will upload itself to a gist file/repo thingie. It first prompts the user for their username and a personal-token. It uses these to create an ID, which is passed to the github-api procedure and returns a procedure that is used as an argument for other github-api procedures. Presumably allowing you to call functions associated with the previously entered username and token. The program then opens a file and reads it, line by line, appending each line to a string which eventually contains the entire file. The program then creates a gist file with some place holder text of "a". This gets overwritten with the next call to edit the file, writing in the string previously created. End of program.
 
-Please choose libraries that you think you might be interested in using in your final project.
+#Highlights of code
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
+This is the meat of the program.
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+; Read from a file line by line until eof, creating and returning a string
+; containing all lines from the file with newlines in between.
+; This is an iterative procedure because the last thing it does is call itself with no chain of deferred actions.
+; It is O(n) in time but O(1) in space.
+(define (read-file in lines)
+  (let ((new-line (read-line in 'any)))
+    (if (eof-object? new-line)
+        lines
+        (read-file in
+                   (string-append lines "\n" new-line)))))
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+; Read the file in. This just calls the previous function to read the file, passing it the file ptr and telling it to stop
+at every line or carriage return. Binds the result to mylines.
+(define mylines (read-file in (read-line in 'any)))
 
-You can still use these in your project, but you must explore different libraries for this assignment.
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+; Create a gist to begin uploading lines. This creates a gist with the file name fp1.rkt and the contents of "a". The "a" ; : ; will be overwritten later. It was not possible to create a blank gist. It also saves the return value into create-response ; so the data can be retrieved for the ID.
+(define create-response (github-create-gist github
+                                            (list (cons "fp1.rkt" "a"))
+                                            #:description "FP1"))
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
+; Get the id for the gist file
+(define gist-id (get-gist-id create-response))
 
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
+; Write to gist file. This edit's the gist file, overwriting anything in it previously (the "a"). I pass it the gist-id and mylines(the string created earlier) and writes it to the file fp1.rkt.
+(display "Writing to gist file...\n")
+(define edit-response (github-edit-gist github
+                                        gist-id
+                                        (list (cons "fp1.rkt" mylines))))
+ ```
 
-This file IS your report for the assignment, including code and your story.
+#Output from my code
+My code doesn't create much output in the REPL. Here is the full output:
 
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
+"Please eneter your username" <username>
+"Please enter your personal token"<token>
+Reading file...
+Writing to gist file...
+Done.
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
-## My Library: (library name here)
-My name:
-
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+#Pictures showing my work
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jumpyhoof/FP1/master/Photo1.png"/>
+  <img src="https://raw.githubusercontent.com/jumpyhoof/FP1/master/Photo2.png"/>
+</p>
