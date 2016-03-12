@@ -11,4 +11,4 @@ My name: Jacob Suarez
 ```              
 
 Finally, I tried rendering a 3D surface using the plot library. 
-![Figure 1](figure1.jpg)
+![Figure 1](/figure1.jpg)
