@@ -50,5 +50,5 @@ Writing to gist file...
 Done.
 
 #Pictures showing my work
-![Alt Text](_FP1/Photo1.png?raw=true)
-![Alt Text](_FP1/Photo2.png?raw=true)
+<img src="https://github.com/jumpyhoof/FP1/Photo1.png">
+<img src="https://github.com/jumpyhoof/FP1/Photo2.png">
