@@ -46,8 +46,3 @@ After a bit more time I mess around with the plot-bitmap procedure which makes a
 I also started to do some similar stuff with plot3d which is pretty similar except that the lambda part inside of plot3d usually has 2 arguments with it instead of just one. Also you can move around the viewpoint which is pretty cool for 3d graphs. Min and max of it also extends to the z-axis. Finally to tie it all together took a quick look at the parameterize procedure that was used often which just seems to standardize the size of the window and other aspects across a large amount of plot(s) and 3dplot(s).
 
 ![3d Bitmap](https://github.com/raghnall6402/FP1/blob/master/3dbitmap.png)
-
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
