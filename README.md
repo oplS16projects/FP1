@@ -24,7 +24,7 @@ The next thing I experimented with was body-text. After you speficy the slide's 
 ```
 The first displays text using the default font and style. The second method creates a bulleted paragraph that spans (by default) the middle 2/3 of the slide.
 
-If you want the option to display your text in sequence, all you have to do is include 'next between each text object. There is also the option to display a bunch of text and replace it with other text on the same slide. You can do this using 'alt. Here's an excerpt from the demo I put together which which will hopefully clarify these concepts.
+If you want the option to display your body-text in sequence, include 'next between each text object. There's also the option to display a bunch of text and replace it with other text on the same slide. You can do this using 'alt. Here's an excerpt from the demo I put together which which will hopefully clarify these concepts.
 ```
 (slide
  #:title "What Does The Fox Say?"
@@ -44,7 +44,10 @@ If you want the option to display your text in sequence, all you have to do is i
        (list (item (tt "*dies*")))
        (list (item (tt "*the fox says nothing*")))))
 ```
-As you can see, my slide is formatted in "top" and has the title "What Does The Fox Say?". 
+As you can see, my slide is formatted in "top" and has been given the title "What Does The Fox Say?" The 'next keyword is what sequences the content. When the presenter hits the right arrow key, it will reveal the next part of the slide. The 'alts keyword creates a somewhat complex seqeuence of text. It expects a list of lists and clears the screen after it's done outputting the current list. So if the screen currently says "*becomes fox whisperer*" and the presenter hits next, the screen will be cleared and the line "*marries cute, indpendent lady fox*" will be printed.
+
+Here are some screenshots of my output.
+
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
