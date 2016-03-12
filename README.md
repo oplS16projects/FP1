@@ -43,5 +43,7 @@ This function creates the design in the second image. I had it take in my first 
 ```
 
 
-
+![Alt Text](https://github.com/JohnShep/FP1/blob/master/Image_1.PNG)
+![Alt Text](https://github.com/JohnShep/FP1/blob/master/Image_2.PNG)
+![Alt Text](https://github.com/JohnShep/FP1/blob/master/Image_3.PNG)
 
