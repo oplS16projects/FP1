@@ -3,10 +3,10 @@
 (require net/url)
 (require json)
 
-(define input (get-pure-port (string->url "http://jsonip.com")))
-(define response (port->string input))
+(define in (get-pure-port (string->url "http://jsonip.com")))
+(define res (port->string in))
 (close-input-port input)
 
-(define x (string->jsexpr response))
-(for (((key val) (in-hash x)))
-  (printf "~a = ~a~%" key val))
+(define x (string->jsexpr res))
+(for (((k v) (in-hash x)))
+  (printf "~a is ~a~%" key val))
