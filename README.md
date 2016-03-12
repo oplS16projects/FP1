@@ -44,7 +44,8 @@ If you want the option to display your body-text in sequence, include *'next* be
 As you can see, my slide is formatted in *top* mode and has been given the title "What Does The Fox Say?" The *'next* keyword is what sequences the content. When the presenter hits the right arrow key, it will reveal the next part of the slide. The *'alts* keyword creates a somewhat complex seqeuence of text. It expects a list of lists and clears the screen after it's done outputting the current list. So if the screen currently says *becomes fox whisperer*, this means we're currently at the end of a list and that when the presenter hits next, the screen will be cleared and 'alt will enter the new list by printing *marries cute, indpendent lady fox*
 
 Here are some screenshots of my output.
-
+![Slide1](https://raw.githubusercontent.com/georgemitwasi/FP1/master/Slide1.jpg)
+![Slide2](https://raw.githubusercontent.com/georgemitwasi/FP1/master/Slide2.jpg)
 
 
 
