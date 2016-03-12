@@ -51,6 +51,6 @@ Done.
 
 #Pictures showing my work
 <p align="center">
-  <img src="/FP1/Photo1.png?raw=true"/>
-  <img src="/FP1/Photo2.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/jumpyhoof/FP1/master/Photo1.png"/>
+  <img src="https://raw.githubusercontent.com/jumpyhoof/FP1/master/Photo2.png"/>
 </p>
