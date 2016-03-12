@@ -6,7 +6,7 @@ I created a racket program (fp1.rkt) that will upload itself to a gist file/repo
 
 #Highlights of code
 
-It's hard to call these highlights, but it's really the meat of the program.
+This is the meat of the program.
 
 ```
 ; Read from a file line by line until eof, creating and returning a string
@@ -51,6 +51,6 @@ Done.
 
 #Pictures showing my work
 <p align="center">
-  <img src="/FP1/Photo1.png?raw=true" width="350"/>
-  <img src="/FP1/Photo2.png?raw=true" width="350"/>
+  <img src="/FP1/Photo1.png?raw=true"/>
+  <img src="/FP1/Photo2.png?raw=true"/>
 </p>
