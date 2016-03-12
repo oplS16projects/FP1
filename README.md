@@ -1,16 +1,4 @@
 # Final Project Assignment 1: Exploration (FP1)
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
 ## My Library: github-api
 My name: Brian Thomas
 
@@ -62,5 +50,5 @@ Writing to gist file...
 Done.
 
 #Pictures showing my work
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt tag](FP1/Photo2.png )
+![alt tag](https://raw.githubusercontent.com/jumpyhoof/FP1/Photo2.png )
