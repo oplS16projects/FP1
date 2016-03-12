@@ -32,7 +32,7 @@ I also set a list of colors for the design and it steps through the list everyti
 
 
 
-This function creates the design in the second image. I had it take in my first group of colors and for the spiral function the parameters is 1 for the change in x, 1 for the starting size of the pen, 60 for the change in degree which makes it into a hexagon, and 36 for the numbers of lines drawn. 
+This function creates the design in the first image. I had it take in my first group of colors and for the spiral function the parameters is 1 for the change in x, 1 for the starting size of the pen, 60 for the change in degree which makes it into a hexagon, and 36 for the numbers of lines drawn. 
 
 ```racket
 
