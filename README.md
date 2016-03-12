@@ -5,7 +5,7 @@ DUE Friday, March 11, 2016
 My name: Adam Contardo
 
  The library I decided to explore was the math library, which includes 9 packages.  This library adds a few things including common mathematical constants and has a lot of support for the use of floats (flonums).  Other features include procedures to generate random numbers. The math/special-functions library introduces a few special non-elementary procedures, which has support for real numbers 
-and flonums. A few examples are gamma, log-gamma, psi0, but there are many more and all return flonums. A few more of the packages are: bigfloat, number-theory, array, matrix, distributions, and statistics.  Bigfloat provides arbitrary-precision float functions, and number theory provides a variety of procedures working with roots, primes, powers, combinatorics, number sequences, and much more.  The array package provides functioning array data structures, although there is a performance warning for untyped racket. The statistics package takes sets of values and computes summaries, and provides procedures  for using sequences with weighted samples as well as unweighted.  There are a lot of helpful procedures here to work with large numbers, sequences of numbers, and doing calculations on number sets. Math/number-theory may be useful for the project.
+and flonums. A few examples are gamma, log-gamma, psi0, but there are many more and all return flonums. A few more of the packages are: bigfloat, number-theory, array, matrix, distributions, and statistics.  Bigfloat provides arbitrary-precision float functions, and number theory provides a variety of procedures working with roots, primes, powers, combinatorics, number sequences, and much more.  The array package provides functioning array data structures, although there is a performance warning for untyped racket. The statistics package takes sets of values and computes summaries, and provides procedures  for using sequences with weighted samples as well as unweighted.  There are a lot of helpful procedures here to work with large numbers, sequences of numbers, and doing calculations on number sets. The code below is just a small example using some of the procedures that math provides. Math/number-theory may be useful for the project.
 
 
 ```racket
@@ -48,8 +48,3 @@ list-of-constants
 (partitions 6)
 ```
 
-
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
