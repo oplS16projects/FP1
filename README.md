@@ -8,7 +8,8 @@ My name: Jacob Suarez
               (function sin (* x -1) x #:label "y = sin(x)" #:width 5)
               (function cos (* x -1) x #:label "y = cos(x)" #:color 2 #:style 'dot))))
               
-```              
+```
+![Figure 2](https://github.com/Onamar/FP1/blob/master/figure2.JPG)
 
 Finally, I tried rendering a 3D surface using the plot library.
 
