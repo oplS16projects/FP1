@@ -1,97 +1,50 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+## My Library: Plot
+My name: John Perkins
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
 
-Please choose libraries that you think you might be interested in using in your final project.
+So for my Final Project Exploration 1 I decided to go into the plot library of racket and mess around with some of the procedures in there. 
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
+When I first started looking at the plot library, it was pretty standard as I started out with a normal y = x graph. I also included (plot-new-window #t) so that graphs would open up in a new window.
+
 ```racket
 #lang racket
+(require plot)
+(plot-new-window? #t)
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+(plot (function (lambda (x) x)))   ;creates a basic y = x graph
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+Obviously when I loaded up the code I started to recognize some really cool features built into the library. The most immediately noticeable one was the ability to zoom in on certain parts of the graph. So from this little bit of code I’ve found out that plot works on a function which would be some sort of lambda. In addition, the function procedure itself can take many arguments such as color, line style, and labels. On the other hand the plot procedure just looks for either a function or a list of functions and also have different arguments such as a title as well as min and max values for each axis to display up to. I believe in the documentations it’s described as a renderer-tree.
 
-You can still use these in your project, but you must explore different libraries for this assignment.
+After learning that bit that it takes a renderer-tree specifically and not just a function, I tried upgrading my code for the plot procedure to take in a list of functions and display them with different colors.
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
+```racket
 #lang racket
+(require plot)
+(plot-new-window? #t)
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+(plot (list (function (lambda (x) x)                ;creates a graph with 2 functions one as y = x in red
+                      #:color 1
+                      #:label "y = x")              ;labels first function
+            (function (lambda (x) (+ (* 3 x) 5))    ;creates another function on the graph, y = 3x + 5 in green
+                      #:color 2
+                      #:label "y = 3x + 5"))        ;labels second function
+            #:title "My Graph!"                     ;creates a title for the graph
+            #:x-min -10                             ;boundaries for the graph
+            #:x-max 10
+            #:y-min -10
+            #:y-max 10)
 ```
 
-## My Library: (library name here)
-My name:
+This code produces the following image (when used by plot-bitmap).
 
-Write what you did!
-Remember that this report must include:
+![y = x, y = 3x + 5](https://github.com/raghnall6402/FP1/blob/master/2d-bitmap-2.png)
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+After a bit more time I mess around with the plot-bitmap procedure which makes a nice bitmap which is displayed in the interaction window which can be just right-click and saved.
+ 
+![2d Bitmap](https://github.com/raghnall6402/FP1/blob/master/2dbitmap.png)
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+I also started to do some similar stuff with plot3d which is pretty similar except that the lambda part inside of plot3d usually has 2 arguments with it instead of just one. Also you can move around the viewpoint which is pretty cool for 3d graphs. Min and max of it also extends to the z-axis. Finally to tie it all together took a quick look at the parameterize procedure that was used often which just seems to standardize the size of the window and other aspects across a large amount of plot(s) and 3dplot(s).
 
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+![3d Bitmap](https://github.com/raghnall6402/FP1/blob/master/3dbitmap.png)
