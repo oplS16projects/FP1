@@ -32,5 +32,16 @@ I also set a list of colors for the design and it steps through the list everyti
 
 
 
+This function creates the design in the second image. I had it take in my first group of colors and for the spiral function the parameters is 1 for the change in x, 1 for the starting size of the pen, 60 for the change in degree which makes it into a hexagon, and 36 for the numbers of lines drawn. 
+
+```racket
+
+(define spiral-image1 (list (change-bg-color "black")
+                            (change-color colors1) 
+                            (spiral1 1 1 60 36)))
+
+```
+
+
 
 
