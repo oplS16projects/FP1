@@ -5,11 +5,12 @@ My name: John Perkins
 
 So for my Final Project Exploration 1 I decided to go into the plot library of racket and mess around with some of the procedures in there. 
 
-When I first started looking at the plot library, it was pretty standard as I started out with a normal y = x graph.
+When I first started looking at the plot library, it was pretty standard as I started out with a normal y = x graph. I also included (plot-new-window #t) so that graphs would open up in a new window.
 
 ```racket
 #lang racket
 (require plot)
+(plot-new-window? #t)
 
 (plot (function (lambda (x) x)))   ;creates a basic y = x graph
 ```
@@ -21,6 +22,7 @@ After learning that bit that it takes a renderer-tree specifically and not just 
 ```racket
 #lang racket
 (require plot)
+(plot-new-window? #t)
 
 (plot (list (function (lambda (x) x)                ;creates a graph with 2 functions one as y = x in red
                       #:color 1
