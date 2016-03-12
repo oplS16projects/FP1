@@ -19,6 +19,8 @@ My name: Andry Lora
 (text "diagonal" null 50 (* 2 2))
 (text "other diagonal" null 50 (* 2 1)))
 ```
+![Alt text](https://github.com/andrylr/FP1/blob/master/slide1.png "Optional Title")
+https://github.com/andrylr/FP1/blob/master/slide1.png
 
 The next few slides after the second one were used in order to see how the transitions looked based on text sizes using lambda functions.The transitions seemed delayed because it took some time for the text to begin apearing, I tried changing some of the values but it seems that there are specific integers that it would only accept.
   
