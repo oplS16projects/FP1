@@ -25,3 +25,4 @@
                      (- pi) pi (- pi) pi)
           #:title "An R × R → R function"
           #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)"))
+          
