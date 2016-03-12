@@ -1,5 +1,7 @@
 Conor Finegan
+
 conor_finegan@student.uml.edu
+
 3/12/2016
 
 For my fist exploration, I used a multi-threading library called job-queue. job-queue is a multi-threading library that allows the user to create a queue with a specified number of worker threads. Jobs, which are just parameterless procedures, can then be send to the queue and executed asynchronously. To demonstrate this functionality, I created a small program that finds and outputs all the prime numbers below a given value. Each test number is represented by a job, so a higher number of worker threads means faster execution.
