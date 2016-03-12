@@ -2,96 +2,127 @@
 DUE Friday, March 11, 2016
 
 #Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
+Have it :)
  
 #Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+I played around with Racket's pict library and the 2htdp/image library.
 
-Please choose libraries that you think you might be interested in using in your final project.
+#Part 3: Report
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
+## My Library: Slideshow Library, Pict Library and 2htdp/image library
+My name: Rajia Abdelaziz
 
-(require net/url)
+I was very excited to start learning about the libraries that Racket has. I began by reading over some of the documentation found at https://docs.racket-lang.org/guide/More_Libraries.html . Two of the libraries that interested me in particular were the racket/draw library and the racket/gui library because I really like UI and making things look nice. However, the assignment specifically said nt to use either of these two libraries so I began experimenting with other libraries. 
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+The first library I played with is the Slideshow library (a slideshow for creating presentation slides). This library interested me because I am constantly using Microsoft Powerpoint to create slideshows for class presentations so I wanted to explore what a Racket Slideshow would be like in comparison. 
+
+The main function used in the Slideshow is the slide function. This adds a slide to the presentation with the given content specified. To play around with Slideshow I created a simple slideshow with Titles and Text. I used bt to make bold text, bit to make bold italic text and colorize to give the text a color. Screenshots of the presentation are shown below.
+
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+;;Playing around with the Slideshow library
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+#lang slideshow
 
-You can still use these in your project, but you must explore different libraries for this assignment.
+;; Using the slide function to create four slides
+(slide
+ #:title " "
+ ;; bt is the normal way to make bold text
+ (bt "Rajia Abdelaziz FP1") 
+ ;; bit creates bold italic text 
+ ;; colorize gives the text a color
+ (colorize (bit "A Slideshow on Why Cat's are better than Dogs :)") "purple")
+)
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+(slide
+ #:title " "
+ (bt "Reason 1: ") 
+ (colorize (bit "Cat's can be left unsupervised") "blue")
+ )
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
+(slide
+ #:title " "
+ (bt "Reason 2: ") 
+ (colorize (bit "Cat's don't need to be walked") "pink")
+ )
 
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
+(slide
+ #:title " "
+ (bt "Reason 3: ") 
+ (colorize (bit "Because Rajia said so!!!") "orange")
+ )
 
-This file IS your report for the assignment, including code and your story.
+(provide slide)
 
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
 ```
-#lang racket
+The next two libraries I played around with are the Pict Library and the 2htdp/image library. I was interested in the pict library because it is essentially a more functional abstration layer placed on top of the racket/draw library and it is useful for creating slide presentations. The pict library is one of the standard racket functional picture libraries and the other one is the 2thdp/image. 
+The image library essentially provides basic image construction functions with combinators to build more complex images. The images include bitmaps, various polygons, ellipses, shapes and text. This library allows you to rotate, scale, flip, and overlay pictures on top of each other. 
 
-(require net/url)
+I began experimenting with the library by drawing two pink stars with bold text in between them. Next, I drew a catPic by creating a bitmap from an image file. 
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
 ```
+;;Playing around with the 2htdp/image library
 
-## My Library: (library name here)
-My name:
+#lang slideshow
+(require 2htdp/image)
 
-Write what you did!
-Remember that this report must include:
+;; Draw some Stars and Text
+(star 40 "solid" "pink")
+(bt "Rajia: FP1 ")
+(star 40 "solid" "pink")
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+;;Defining a catPic
+(define catPic
+  (bitmap "catvsdog.jpg")
+)
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+;; Display the cat picture
+catPic
 
-Code should be delivered in two ways:
+```
+Finally, I decided to play a little bit more with shapes on a more high-level basis by incorporating recursive functions and lists. 
+I created a function called r-squares which takes an input n and draws n pink squares. The function checks if n is equal to 1, if so it draws the square, otherwise it calls itself again with a new input of n-1. It uses the function hc-append to draw the images horizontally 20 pixels away from each other. 
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+```
+;;Playing around with the 2htdp/image library
 
-Ask questions publicly in the email group.
+#lang slideshow
+(require 2htdp/image)
 
-## How to Prepare and Submit this assignment
+;; Defining a function to create the shape square using filled-rectangle
+(define (pink-square n)
+  (colorize (filled-rectangle n n) "pink" )
+)
+;; Defining a function to recursively draw n pink squares (50 pxs x 50 pxs)
+(define (r-squares n)
+  (if (= n 1)
+         (pink-square 50)
+         (hc-append
+                    20
+                    (pink-square 50)
+                    (r-squares (- n 1)))
+   )
+)
 
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+```
+I also followed an example in the Racket Documentation to create a function that creates a list of rainbow colored items. The function works by simply calling the map function and passing it a procedure and a list of colors. The object originally passed to the function gets transformed to each of the colors and each instance of the object is returned in a list. 
 
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
 
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+```
+;;Playing around with the 2htdp/image library
+
+#lang slideshow
+(require 2htdp/image)
+
+;; This function takes an object an creates a list of the object in a variety of colors
+(define (square n)
+  colorize (filled-rectangle n n) 
+)
+(define (rainbow p)
+  (map (lambda (color)
+         (colorize p color))
+  (list "red" "orange" "yellow" "green" "blue" "purple")))
+
+```
+Please let me know if you have any questions!
+Best,
+Rajia
