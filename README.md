@@ -50,5 +50,7 @@ Writing to gist file...
 Done.
 
 #Pictures showing my work
-<img src="https://github.com/jumpyhoof/FP1/Photo1.png">
-<img src="https://github.com/jumpyhoof/FP1/Photo2.png">
+<p align="center">
+  <img src="/FP1/Photo1.png?raw=true" width="350"/>
+  <img src="/FP1/Photo2.png?raw=true" width="350"/>
+</p>
