@@ -50,5 +50,5 @@ Writing to gist file...
 Done.
 
 #Pictures showing my work
-![Alt Text](FP1/Photo1.png?raw=true)
-![Alt Text](FP1/Photo2.png?raw=true)
+![Alt Text](_FP1/Photo1.png?raw=true)
+![Alt Text](_FP1/Photo2.png?raw=true)
