@@ -50,5 +50,5 @@ Writing to gist file...
 Done.
 
 #Pictures showing my work
-![alt tag](FP1/Photo2.png )
-![alt tag](https://raw.githubusercontent.com/jumpyhoof/FP1/Photo2.png )
+![](FP1/Photo1.png?raw=true)
+![](FP1/Photo2.png?raw=true)
