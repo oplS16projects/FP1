@@ -11,7 +11,9 @@ http://jsonip.com/ returns a JSON-based result, showing the client’s IP addres
 For example, here is what the code produced when I ran it:
 
 ip = 77.121.28.155
+
 about = /about
+
 Pro! = http://getjsonip.com
 
 Remember that this report must include:
