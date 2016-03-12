@@ -36,6 +36,7 @@ After learning that bit that it takes a renderer-tree specifically and not just 
 ```
 
 This code produces the following image (when used by plot-bitmap).
+
 ![y = x, y = 3x + 5](https://github.com/raghnall6402/FP1/blob/master/2d-bitmap-2.png)
 
 After a bit more time I mess around with the plot-bitmap procedure which makes a nice bitmap which is displayed in the interaction window which can be just right-click and saved.
