@@ -1,0 +1,39 @@
+#lang racket
+;Name: Rotana Nou
+;Web Application
+;Date: 03/11/16
+
+(require web-server/servlet
+         web-server/servlet-env)
+
+;;my-web function of servlet
+;;title of the page
+;;paragraph of the page body
+;;First cell of the page inside the body page
+;;body of the first cell which contains paragraphs and direct link
+;;body of the first cell which contains paragraphs and direct link
+;;direct link for encrypted image
+;;second cell inside the body of the page
+;;body of the second cell which contains paragraphs and direct link
+;;direct link for decrypted image
+(define (my-web require)
+  (response/xexpr
+   `(html (head (title "PHOTO MAGIC!"))
+          (body (p "Welcome to PHOTO MAGIC"))
+          (body (p "On this page you will see the example of encrypted and decreyped images.")
+                (div (h1 "First")
+                     (body (p "Encrypted picture of a cat.")
+                           (p "If you want to see the image of encrypted cat.")
+                           (p "Please visit the link provided in this section.")
+                           (a ((href "http://s27.postimg.org/hmw8z9par/Screen_Shot_2016_02_24_at_11_25_00_PM.png")) "http://s27.postimg.org/hmw8z9par/Screen_Shot_2016_02_24_at_11_25_00_PM.png")))
+                (div (h2 "Second")
+                     (body (p "Decrypted picture of a cat.")
+                           (p "If you want to see the image of encrypted cat.")
+                           (p "Please visit the link provided in this section.")
+                           (a ((href "http://s23.postimg.org/7n4sf6dez/Screen_Shot_2016_02_24_at_11_25_50_PM.png")) "http://s23.postimg.org/7n4sf6dez/Screen_Shot_2016_02_24_at_11_25_50_PM.png")))))))
+ 
+(serve/servlet my-web
+               #:servlet-path "/kitty.rkt"
+               #:port 2843
+               #:listen-ip "127.0.0.1") ;;
+	

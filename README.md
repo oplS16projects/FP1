@@ -1,97 +1,89 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+**Name:Rotana Nou
+**Assignment: FP1
+**Racket Library: Web Application
+**Date: Friday, March 11, 2016
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
 
-Please choose libraries that you think you might be interested in using in your final project.
+* Purpose of this project
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
+In this project, I used "Tools" library "Web Applications in Racket". That was provided by the racket documentations.
+The main purpose of this project that I am using this library, becuase I want create a website that could show examples of 
+the output of a program that could encryped and decrypted an image of a cat picture. Also on the websie it provides a direct
+links to viewers if the viewers would like to see the images of the encrypted and decrypted. 
+
+* Code explaination
+
 ```racket
 #lang racket
 
-(require net/url)
+(require web-server/servlet
+         web-server/servlet-env) 
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+ 
+(define (my-web require)    ;;my-web function of servlet
+  (response/xexpr
+   `(html (head (title "PHOTO MAGIC!"))    ;;title of the page 
+          (body (p "Welcome to PHOTO MAGIC"))  ;;paragraph of the page body
+          (body (p "On this page you will see the example of encrypted and decreyped images.")  ;;paragraph of the page body
+                (div (h1 "First")  ;;First cell of the page inside the body page
+                     (body (p "Encrypted picture of a cat.")  ;;body of the first cell which contains paragraphs and direct link
+                           (p "If you want to see the image of encrypted cat.")
+                           (p "Please visit the link provided in this section.")
+                           (a ((href "http://s27.postimg.org/hmw8z9par/Screen_Shot_2016_02_24_at_11_25_00_PM.png")) "http://s27.postimg.org/hmw8z9par/Screen_Shot_2016_02_24_at_11_25_00_PM.png")))  ;;direct link for encrypted image
+                (div (h2 "Second")  ;;second cell inside the body of the page
+                     (body (p "Decrypted picture of a cat.")  ;;body of the second cell which contains paragraphs and direct link
+                           (p "If you want to see the image of encrypted cat.")
+                           (p "Please visit the link provided in this section.")
+                           (a ((href "http://s23.postimg.org/7n4sf6dez/Screen_Shot_2016_02_24_at_11_25_50_PM.png")) "http://s23.postimg.org/7n4sf6dez/Screen_Shot_2016_02_24_at_11_25_50_PM.png")))))))  ;;direct link for decrypted image
+ 
+(serve/servlet my-web
+               #:servlet-path "/kitty.rkt"
+               #:port 2843
+               #:listen-ip "127.0.0.1") ;; customization of serve/servlet 
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+For the above code. In order to crate a function to create a website, my program requires web-server/servlet
+and web-server/servlet-env. Then created my-web function as a servlet that has an argument named require. 
+inside this function is a html structure that are written as racket language. Including the head of the web page which has title of the page which is called "PHOTO MAGIC" and body of the page which contains paragraphs and divides into two seperate cells. Which cell has it's own body that has paragraphs and direct links that allows viewers to click and view the oupput of encrypted and decrypted image. 
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+* Output from the code and what it produced 
+On racket console 
+```racket
+Your Web application is running at http://localhost:2843/kitty.rkt.
+Stop this program at any time to terminate the Web Server.
 ```
-#lang racket
+The output above produces a URL that has port number 2843 with a servlet-path named "kitty.rkt"
 
-(require net/url)
+######Below is the output on the website.
+**************
+Welcome to PHOTO MAGIC
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
+On this page you will see the example of encrypted and decreyped images.
 
-## My Library: (library name here)
-My name:
+First
 
-Write what you did!
-Remember that this report must include:
+Encrypted picture of a cat.
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+If you want to see the image of encrypted cat.
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+Please visit the link provided in this section.
 
-Code should be delivered in two ways:
+http://s27.postimg.org/hmw8z9par/Screen_Shot_2016_02_24_at_11_25_00_PM.png
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+Second
 
-Ask questions publicly in the email group.
+Decrypted picture of a cat.
 
-## How to Prepare and Submit this assignment
+If you want to see the image of encrypted cat.
 
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+Please visit the link provided in this section.
 
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
+http://s23.postimg.org/7n4sf6dez/Screen_Shot_2016_02_24_at_11_25_50_PM.png
+*******************
 
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+Above is the ouput displays on the website. First it intorduces the welcome to the page
+in the body it divides into two parts. First part is the encrypted image of the a cat.
+it provides the link for viewers to do directly to the imgae just simply click on the link
+then it will directly bring to new link which contains the output of the encrypted image of a cat.
+Second part it contains everything the same as part one, except that it is a decrypted part which
+provides the direct link of the output of decrypted image of a cat image. Viewers just simply click on
+the link then it would bring to a new link that dispalys the decrypted image of a cat. 
