@@ -96,4 +96,4 @@ Transfer-Encoding: chunked
 ```
 
 ###A link that satisfies confidentiality, integrity, authentication (SSL).
-![Alt text](https://github.com/ChristianEverett/FP1/blob/master/README.PNG "title")
+![Alt text](https://github.com/ChristianEverett/ChristianEverett-FP1/blob/master/README.PNG "title")
