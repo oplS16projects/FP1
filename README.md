@@ -7,7 +7,7 @@ Remember that this report must include:
 
 While initially I was hoping to get more creative than a slideshow library, after glancing over all the cool features in this
 library, it was clear that with the freedom of putting anything on a slide and the customizable  options that this would be 
-a good choice. I began by playing around with the layout options. They seem tricky and will definitely need a detailed look-through, so for now I hard-coded the newline with multiple blank spaces. This of course may render differently on other computers. Alternatively I could of used two text outputs (t "foo") and prefixed the spaces.  I went to the effects from there and that is when I implemented the revealing click. For some reason when I uploaded my output part of the image got cut off. So I also included a second image.
+a good choice. I began by playing around with the layout options. They seem tricky and will definitely need a detailed look-through, so for now I hard-coded the newline with multiple blank spaces. This of course may render differently on other computers. Alternatively I could of used two text outputs (t "foo") and prefixed the spaces.  I went to the effects from there and that is when I implemented the revealing click. 
 
 Here is the code
 
