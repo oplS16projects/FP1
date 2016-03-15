@@ -1,21 +1,3 @@
-Current Final Project Idea:  Multi User Dungeon (MUD)
-Idea requirements: 
-     - Creating and hosting a server module
-     - Creating a client module that will play nice with the server module
-     - create options for interaction between clients
-     
-
-FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.
-
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
-
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
 Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
 For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
 ```racket
@@ -29,13 +11,6 @@ For example, maybe you are interested in retrieving data from the web. If we loo
 ```
 Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
 This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
 
 #Part 3: Write your Report
 Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
@@ -57,9 +32,26 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-Write what you did!
-Remember that this report must include:
+## My Library: (net/url)
+Current Final Project Idea:  Multi User Dungeon (MUD)
+Idea requirements: 
+     - Creating and hosting a server module
+     - Creating a client module that will play nice with the server module
+     - create options for interaction between clients and/or clients and the server.
+
+FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.  I will be exploring the library with the hope that it will provide me with some of the necessary structure to build server/client code.
+
+
+First step: Blindly copy and paste the sample code and see what that gets me:
+```
+(define myurl (string->url "http://www.billnyeisalizard.com/"))
+(define myport (get-pure-port myurl))
+(display-pure-port myport)
+```
+
+Result: HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
+
+
 
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
@@ -73,16 +65,9 @@ Code should be delivered in two ways:
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
 
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+## TODO:
+1. Finish the report and commit it
+2. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
 
 ## Project Schedule
 This is the first part of a larger project. The final project schedule is [here][schedule]
