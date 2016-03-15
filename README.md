@@ -1,16 +1,3 @@
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
 
 #Part 3: Write your Report
 Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
@@ -44,6 +31,10 @@ FP1 will be an exploration of the "net/url" library at the suggestion of instruc
 
 First step: Blindly copy and paste the sample code and see what that gets me:
 ```
+#lang racket
+
+(require net/url)
+
 (define myurl (string->url "http://www.billnyeisalizard.com/"))
 (define myport (get-pure-port myurl))
 (display-pure-port myport)
