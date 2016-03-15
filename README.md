@@ -36,7 +36,7 @@ FP1 will be an exploration of the "net/url" library at the suggestion of instruc
 
 Result: HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
 
-![Look at me im alt text](http://i.imgur.com/QoN8NgI.png "Oooooooooooooh nooooooooo. . .")
+![Look at me im alt text](http://i.imgur.com/QoN8NgI.png?1 "Oooooooooooooh nooooooooo. . .")
 
 
 ####Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
