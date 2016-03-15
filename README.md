@@ -41,6 +41,13 @@ Result: HTML source code for the site, ugly and not particularly useful in this 
 
 ####Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
 
+There are a lot of interesting commands in the library pertaining to conversions of things to and from the url format.
+
+An interesting command I stumbled across was `(get-pure-port/headers)`,  It looks like this just pulled all information out of the head tag of the html file.
+
+Result: Finally some ledgible information.
+![more alt text](http://i.imgur.com/c4r20fL.png "I can actually read this like a person")
+
 TODO:
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
