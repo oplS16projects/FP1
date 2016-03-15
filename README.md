@@ -2,12 +2,6 @@
 #Part 3: Write your Report
 Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
 Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
 ```
 #lang racket
@@ -40,10 +34,13 @@ First step: Blindly copy and paste the sample code and see what that gets me:
 (display-pure-port myport)
 ```
 
-Result: HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
+Result: 
+~(Ooooooooooooooooooh noooooooooooooooooooo)[http://imgur.com/QoN8NgI]
+HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
 
+Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
 
-
+TODO:
 * a narrative of what you did
 * highlights of code that you wrote, with explanation
 * output from your code demonstrating what it produced
