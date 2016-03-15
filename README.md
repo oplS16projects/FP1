@@ -23,7 +23,7 @@ Idea requirements:
 FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.  I will be exploring the library with the hope that it will provide me with some of the necessary structure to build server/client code.
 
 
-First step: Blindly copy and paste the sample code and see what that gets me:
+####First step: Blindly copy and paste the sample code and see what that gets me:
 ```
 #lang racket
 
@@ -35,9 +35,11 @@ First step: Blindly copy and paste the sample code and see what that gets me:
 ```
 
 Result: HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
+
 ![Look at me im alt text](http://i.imgur.com/QoN8NgI.png "Oooooooooooooh nooooooooo. . .")
 
-Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
+
+####Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
 
 TODO:
 * a narrative of what you did
