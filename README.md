@@ -14,7 +14,7 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 ```
 
 ## My Library: (net/url)
-Current Final Project Idea:  Multi User Dungeon (MUD)
+######Current Final Project Idea:  Multi User Dungeon (MUD)
 Idea requirements: 
      1. Creating and hosting a server module
      2. Creating a client module that will play nice with the server module
