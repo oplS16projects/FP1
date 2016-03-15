@@ -35,7 +35,7 @@ First step: Blindly copy and paste the sample code and see what that gets me:
 ```
 
 Result: 
-~[Ooooooooooooooooooh noooooooooooooooooooo](http://i.imgur.com/QoN8NgI.png "HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.")
+![Look at me im alt text](http://i.imgur.com/QoN8NgI.png "Oooooooooooooh nooooooooo. . .")
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
 
