@@ -20,7 +20,7 @@ Idea requirements:
      2. Creating a client module that will play nice with the server module
      3. create options for interaction between clients and/or clients and the server.
 
-FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.  I will be exploring the library with the hope that it will provide me with some of the necessary structure to build server/client code.
+FP1 will be an exploration of the "net/url" library at the suggestion of instructor Fred Martin.  I will be exploring the library with the hope that it will provide me with some of the necessary structure to build server/client code.  The target of my experimentations with this library will be a small website designed by a friend of mine.
 
 
 ####First step: Blindly copy and paste the sample code and see what that gets me:
@@ -47,6 +47,8 @@ An interesting command I stumbled across was `(get-pure-port/headers)`,  It look
 
 Result: Finally some ledgible information.
 ![more alt text](http://i.imgur.com/c4r20fL.png "I can actually read this like a person")
+
+With this I can see when he last updated it, the page's content type, and the host server.
 
 TODO:
 * a narrative of what you did
