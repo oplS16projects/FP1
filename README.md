@@ -35,7 +35,7 @@ First step: Blindly copy and paste the sample code and see what that gets me:
 ```
 
 Result: 
-~[Ooooooooooooooooooh noooooooooooooooooooo](http://imgur.com/QoN8NgI "HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.")
+~[Ooooooooooooooooooh noooooooooooooooooooo](http://i.imgur.com/QoN8NgI.png "HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.")
 HTML source code for the site, ugly and not particularly useful in this state, or for my purposes at all really.
 
 Second step:  Actually do some reading on the library and see what it can do for me aside of spit out raw HTML files.
