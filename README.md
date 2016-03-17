@@ -34,27 +34,7 @@ An interesting command I stumbled across was `(get-pure-port/headers)`,  It look
 Result: Finally some ledgible information.
 ![more alt text](http://i.imgur.com/c4r20fL.png "I can actually read this like a person")
 
-With this I can see when he last updated it, the page's content type, and the host server.
-
-TODO:
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-## TODO:
-1. Finish the report and commit it
-2. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
+With this I can see when my friend last updated the site, the page's content type, and the host server.
 
 <!-- Links -->
 [schedule]: https://github.com/oplS16projects/FP-Schedule
