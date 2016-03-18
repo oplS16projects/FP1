@@ -22,6 +22,32 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 ## My Library: Plot
 My name: Wesley Nuzzo
 
+Racket's plot library is pretty obvious as to its purpose: plot things!
+It can support a whole bunch of interesting kinds of graphs, including scatter plots and bar graphs, but I'm mostly interested in the more function-based (in the mathematical sense) aspects of its capabilities.
+
+The very first thing to do with the library is to simply test that it works.
+For 2d plots, I'll start by testing the ability to plot two functions at the same time. I'll choose the sine and cosine functions because they're related, and I'll make them different colors so that we can tell them apart.
+For 3d plots, I'll just use the same plot used in the documentation. I'll go with the contours3d graph because that one looks slightly cooler.
+The 3d graph can be rotated:
+The 2d graph can be zoomed in on, but that looks slightly less interesting.
+
+Now to play around a bit.
+
+First, circles.
+
+Okay, now squares, using a similar approach. (The library has a rectangle function for bar graphs, but those are filled rectangles, and it won't give me the rotated square.)
+
+One more thing for two dimensions: I want to play with the lines function (and linear-seq).
+First, a very slightly modified version of the example in the documentation:
+After playing with this for a while, I came up with this:
+
+Now into three dimensions!
+
+Spheres:
+Cubes:
+
+Done!
+
 <!--
 
 Write what you did!
