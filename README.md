@@ -19,7 +19,7 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: Plot
+# My Library: Plot
 My name: Wesley Nuzzo
 
 Racket's plot library is pretty obvious as to its purpose: plot things!
@@ -95,6 +95,8 @@ Here's a square made using a similar approach. (The library has a rectangle func
                     x-min x-max #:color 2))))
 ```
 
+### Polar Renderers
+
 There's also a renderer called (polar), which uses polar coordinates.
 It's very easy to make a circle using this, but filling it in requires a bit of a trick:
 ```
@@ -116,7 +118,11 @@ We can also make a square:
   (polar (λ (θ) (/ side-length (+ (abs (cos θ)) (abs (sin θ)))))))
 ```
 
+### Parametric Renderers
+
 Finally, a renderer called (parametric). This involves generating x and y coordinates based on a third variable, called t. Creating a square using this function required me to create a new function, analogous to the sin and cos functions (which can be used by (parametric) to make a circle).
+
+### Lines and Linear-Seq
 
 One more thing for two dimensions: I want to play with the lines function (and linear-seq).
 First, a very slightly modified version of the example in the documentation:
