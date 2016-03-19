@@ -28,25 +28,143 @@ It can support a whole bunch of interesting kinds of graphs, including scatter p
 The very first thing to do with the library is to simply test that it works.
 For 2d plots, I'll start by testing the ability to plot two functions at the same time. I'll choose the sine and cosine functions because they're related, and I'll make them different colors so that we can tell them apart.
 For 3d plots, I'll just use the same plot used in the documentation. I'll go with the contours3d graph because that one looks slightly cooler.
-The 3d graph can be rotated:
-The 2d graph can be zoomed in on, but that looks slightly less interesting.
+
+I define the renderers like this:
+```
+;; 2D
+(define sine (function sin (- pi) pi
+                       #:label "y = sin(x)"))
+(define cosine (function cos (- pi) pi
+                         #:label "y = cos(x)" #:color 2))
+;; 3D
+(define 3d-surface
+  (contour-intervals3d (λ (x y) (* (cos x) (sin y)))
+                       (- pi) pi (- pi) pi))
+```
+
+To display them I then call this function:
+```
+;; plot and display
+(define (display-basic-plots)
+  (display (list (plot (list sine cosine)
+                       #:title "Two functions on the same graph.")
+                 (plot3d 3d-surface
+                         #:title "An R × R → R function"
+                         #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)"))))
+```
+Both graphs can be interacted with: the 3d graph can be rotated and the 2d graph can be zoomed in and out.
 
 Now to play around a bit.
+The library has a whole collection of "renderers" that can be passed to the plot or plot3d function to display them. I'm going to experiment with creating simple geometric shapes using these renderers.
 
-First, circles.
+## 2 dimensions
 
-Okay, now squares, using a similar approach. (The library has a rectangle function for bar graphs, but those are filled rectangles, and it won't give me the rotated square.)
+The simplest renderer is called (function), and it simply plots the values of a single-argument function using cartesian coordinates.
+
+Here's some circles I made using this function.
+```
+;; circle
+(define (circle radius)
+  ;; One upper semicircle and one lower semicircle
+  (list (function (λ (x) (sqrt (- radius (* x x))))
+                  (- radius) radius
+                  #:label "circle top")
+        (function (λ (x) (- (sqrt (- radius (* x x)))))
+                  #:label "circle bottom" #:color 2)))
+;; filled
+(define (filled-circle radius)
+  ;; simply the interval between the two semicircles
+  (function-interval (λ (x) (sqrt (- radius (* x x))))
+                     (λ (x) (- (sqrt (- radius (* x x)))))
+                     -1 1))
+```
+The top and bottom half of the first circle are different colors in order to demonstrate the fact that they are plotted using different lines.
+
+Here's a square made using a similar approach. (The library has a rectangle function for bar graphs, but that won't give me a rotated square.)
+```
+(define (rotated-square side-length)
+  ;; divide by (sqrt 2) for x-min and x-max
+  ;; because of the pythagorean theorem / 45-45-90 triangles
+  (let ((x-min (- (* side-length (sqrt 2))))
+        (x-max (* side-length (sqrt 2))))
+    ;; use absolute value function to get v-shape
+    ;; we need one pointing up and one pointing down
+    (list (function (λ (x) (- x-max (abs x))) 
+                    x-min x-max)
+          (function (λ (x) (- (abs x) x-max))
+                    x-min x-max #:color 2))))
+```
+
+There's also a renderer called (polar), which uses polar coordinates.
+It's very easy to make a circle using this, but filling it in requires a bit of a trick:
+```
+(define (filled-polar-circle radius)
+  ;; fill from the center of the circle, but make that "line" transparent
+  ;; so there's no dot in the center of the circle
+  (polar-interval (λ (θ) radius)
+                  (λ (θ) 0)
+                  #:line2-style 'transparent))
+```
+Self-explanatory.
+
+We can also make a square:
+```
+(define (rotated-polar-square side-length)
+  ;; |x|+|y|=1, ergo
+  ;; |r*cos|+|r*sin|=1, ergo
+  ;; r=1/(|cos|+|sin|)
+  (polar (λ (θ) (/ side-length (+ (abs (cos θ)) (abs (sin θ)))))))
+```
+
+Finally, a renderer called (parametric). This involves generating x and y coordinates based on a third variable, called t. Creating a square using this function required me to create a new function, analogous to the sin and cos functions (which can be used by (parametric) to make a circle).
 
 One more thing for two dimensions: I want to play with the lines function (and linear-seq).
 First, a very slightly modified version of the example in the documentation:
+```
+;;; This function returns a shape that approximates a parabola.
+;;; The higher n is, the more closely it approximates the correct shape.
+(define (parabola1 n)
+  (define xs (linear-seq -1 1 n))
+  (lines (map vector xs (map sqr xs))))
+```
 After playing with this for a while, I came up with this:
+```
+;; This extends the previous function to go beyond -1 to 1 on x axis
+;; note a few key differences
+(define (parabola2 n)
+  (define inner-xs (linear-seq -1 1 (- (expt 2 n) 1)))
+  (define outer-xs (map (λ (x) (/ x))
+                       (filter (λ (x) (not (or (= x 0) (= x 1))))
+                               inner-xs)))
+  (define xs (sort (append inner-xs outer-xs)
+                   <))
+  (lines (map vector xs (map sqr xs))))
+```
 
-Now into three dimensions!
+## 3 dimensions
 
 Spheres:
-Cubes:
+```
+(define sphere-polar (polar3d (λ (θ ρ) 1)))
+(define isosphere (isosurface3d
+                   (λ (x y z) (sqrt (+ (sqr x) (sqr y) (sqr z)))) 1
+                   -1 1 -1 1 -1 1))
+```
+The double-cone:
+```
+(define double-cone (isosurface3d
+                     (λ (x y z) (- (sqr z) (sqr x) (sqr y))) 0
+                     -1 1 -1 1 -1 1))
+```
+An octahedron:
+```
+(define octahedron (isosurface3d
+                    (λ (x y z) (+ (abs x) (abs y) (abs z))) 1
+                    -1 1 -1 1 -1 1))
+```
 
-Done!
+## Miscelleneous
+Not yet
 
 <!--
 
