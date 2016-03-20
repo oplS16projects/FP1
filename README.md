@@ -5,19 +5,20 @@ DUE Friday, March 11, 2016
 My name: Krin Yongvongphaiboon
 
 #About API
-The API that I'm using is called "bencode", it is simply parsing the bencoding format of the BitTorrent network protocol into basic Racket data types. The format interpretation is based on the undated [**BitTorrent protocol documentation Web page**][ref-bit-pro].
+The API that I'm using is called "bencode", it is simply parsing the bencoding format of the BitTorrent network protocol into basic Racket data types. The format interpretation is based on the undated [**BitTorrent protocol documentation Web page**](http://www.bittorrent.com/protocol.html).
 
 # How to install
-First of all, bencode is not a builtin API which means it required you to install the package youself. I didn't know about this until I read the OPL group on [**uml-opl-spr16**][ref-opl-group] and found out that it required additional installation. So here is not to import the API:
-1. Open DrRacket
-2. Go to File -> Package Manager
-3. There's going to be 5 tabs: Do What I Mean, Currently Installed, Avaliable from Catalog, Copy from Version, and Settings. Click on Avaliable from Catolog tab.
-4. Go on filter and search any API you want (in this case I just typed "torrent").
-5. The list of API will pop up, click on the one you want and hit "install"
-6. Once finished, you should see the message "raco setup: --- post-installing collections ---"
+First of all, bencode is not a builtin API which means it required you to install the package youself. I didn't know about this until I read the OPL group on [**uml-opl-spr16**](https://groups.google.com/forum/#!forum/uml-opl-spr16) and found out that it required additional installation. So here is not to import the API:
+- Open DrRacket
+- Go to File -> Package Manager
+- There's going to be 5 tabs: Do What I Mean, Currently Installed, Avaliable from Catalog, Copy from Version, and Settings. Click on Avaliable from Catolog tab.
+- Go on filter and search any API you want (in this case I just typed "torrent").
+- The list of API will pop up, click on the one you want and hit "install"
+- Once finished, you should see the message "raco setup: --- post-installing collections ---"
 ![alt tag](http://i68.tinypic.com/oieucn.png)
-#Runing the code
-First of all, I went on internet and fine an example .torrent code. I found it [**here**][ref-torrent]. To retrive the torrent file you need to get the path of the file. The code to retrive .torrent file is: 
+
+# Runing the code
+First of all, I went on internet and fine an example .torrent code. I found it [**here**](http://sample-file.bazadanni.com/2012/01/torrent.html). To retrive the torrent file you need to get the path of the file. The code to retrive .torrent file is: 
 ```racket
 (unbencode (open-input-file path))
 ```
@@ -36,7 +37,4 @@ Edit "path" to the path of the torrent file. It have to be string. The sameple t
 ```
 ![alt tag](http://i67.tinypic.com/10ooh2v.png)
 
-<!-- Links -->
-[ref-bit-pro] http://www.bittorrent.com/protocol.html
-[ref-opl-group] https://groups.google.com/forum/#!forum/uml-opl-spr16
-[ref-torrent] http://sample-file.bazadanni.com/2012/01/torrent.html
+
