@@ -1,97 +1,42 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+## My Library: bencode
+My name: Krin Yongvongphaiboon
 
-Please choose libraries that you think you might be interested in using in your final project.
+#About API
+The API that I'm using is called "bencode", it is simply parsing the bencoding format of the BitTorrent network protocol into basic Racket data types. The format interpretation is based on the undated [**BitTorrent protocol documentation Web page**][ref-bit-pro].
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
+# How to install
+First of all, bencode is not a builtin API which means it required you to install the package youself. I didn't know about this until I read the OPL group on [**uml-opl-spr16**][ref-opl-group] and found out that it required additional installation. So here is not to import the API:
+1. Open DrRacket
+2. Go to File -> Package Manager
+3. There's going to be 5 tabs: Do What I Mean, Currently Installed, Avaliable from Catalog, Copy from Version, and Settings. Click on Avaliable from Catolog tab.
+4. Go on filter and search any API you want (in this case I just typed "torrent").
+5. The list of API will pop up, click on the one you want and hit "install"
+6. Once finished, you should see the message "raco setup: --- post-installing collections ---"
+![alt tag](http://i68.tinypic.com/oieucn.png)
+#Runing the code
+First of all, I went on internet and fine an example .torrent code. I found it [**here**][ref-torrent]. To retrive the torrent file you need to get the path of the file. The code to retrive .torrent file is: 
 ```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+(unbencode (open-input-file path))
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+Edit "path" to the path of the torrent file. It have to be string. The sameple torrent file given me this information:
 ```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+'((dictionary
+   (#"announce" . #"udp://tracker.openbittorrent.com:80")
+   (#"creation date" . 1327049827)
+   (#"info"
+    dictionary
+    (#"length" . 20)
+    (#"name" . #"sample.txt")
+    (#"piece length" . 65536)
+    (#"pieces" . #"\\\305\346R\276\r\346\362x\5\263\4d\377\233\0\364\211\360\311")
+    (#"private" . 1))))
 ```
-
-## My Library: (library name here)
-My name:
-
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
+![alt tag](http://i67.tinypic.com/10ooh2v.png)
 
 <!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+[ref-bit-pro] http://www.bittorrent.com/protocol.html
+[ref-opl-group] https://groups.google.com/forum/#!forum/uml-opl-spr16
+[ref-torrent] http://sample-file.bazadanni.com/2012/01/torrent.html
