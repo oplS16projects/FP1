@@ -1,6 +1,9 @@
 # Final Project Assignment 1: Exploration (FP1)
+
 DUE Friday, March 11, 2016
+
 My Library: (require net/url) with regular expressions
+
 My name: Connor McLaughlin
  
 Part 3:
