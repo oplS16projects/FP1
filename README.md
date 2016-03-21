@@ -34,7 +34,7 @@ The issue is when you try to do two regexps on my port:
 (regexp-match* #rx"P. Bergeron.*\"gp\">..<" myport)
 ```
 This would output 
-'(#68)
+'(#67)
 '()
 
 What is happening is the port is being modified by the first regexp-match call so it cant be match again.
@@ -51,7 +51,7 @@ After solving this issue I made a function that generates a list of stats for th
        (car (regexp-match #rx"[0-9][0-9]" (car (regexp-match #rx"plusminus\">..<" 
                                                  (car (regexp-match #rx"P. Bergeron.*\"plusminus\">..<" teststring)))))))
 ```
-The first regex narrows it down to P.Bergeron (random code) "goals"<68> and the second regexp just gets the 68 this ouputs
+The first regex narrows it down to P.Bergeron (random code) "gp"<67> and the second regexp just gets the 68 this ouputs
 '("P. Bergeron" #"67" "28" "33" "14")
 
 
