@@ -14,9 +14,7 @@ I used the 2htdp/image. The library gives me the tools of making shapes, lines a
 
 
 In the program i created the following procedures
-
-/// <procedure:chains>  
-(above)
+(chain)
 ```
 
 The procedure takes in one argument, then that argument is passed onto the overlay/offset procedure nested in the procedure. It will generate two of that object you passed in a chain form. You can nest the procedure to create more chains of chains.
