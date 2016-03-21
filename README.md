@@ -8,3 +8,27 @@
 >would allow the user to make one, then created a function
 >that would allow a user to make a list of strings of
 >websites into QR codes.
+
+```racket
+(qr-code "https://github.com/simmone" "gitSource.png")
+
+(qr-code "https://github.com/alexcushing" "myGitHub.png")
+
+(qr-code "https://github.com/alexcushing/FP1" "ExplorationPartOne.png")
+
+(define (makeQRForME mystring namestring)
+  (qr-code mystring (string-append namestring ".png")))
+
+(define count 0)
+
+(define (addqrlist lst)
+  (let loop ((rest lst)
+             (count 0))
+    (unless (null? rest)
+      (makeQRForME (car rest) (format "stringQR~a" count))
+      (loop (cdr rest) (add1 count)))))
+```
+
+this code above creates the desired QR codes as pictured below:
+
+![outputted QR codes](https://github.com/alexcushing/FP1/blob/master/example%20of%20it%20working.png "QR CODES")
