@@ -54,6 +54,8 @@ After solving this issue I made a function that generates a list of stats for th
 The first regex narrows it down to P.Bergeron (random code) "goals"<68> and the second regexp just gets the 68 this ouputs
 '("P. Bergeron" #"67" "28" "33" "14")
 
-![output](FP1/output.png)
+
+
+![output](https://github.com/CJMcLaughlin/FP1/blob/master/output.png "Please Work!")
 
 
