@@ -1,6 +1,5 @@
-
-## My Library: Turtle Graphics
 ## Sean Berube
+## My Library: Turtle Graphics
 
 ###Narrative:
 I used the turtle graphics library. At first I familiarized myself with some basic functions such as move, draw, erase, and turn. After figuring out how to navigate the turtle, I delved into more complex functions such as split, which clones a turtle, and regular-poly which creates a certain number of n-sided shapes. My favorite function is neato, which is the main source of the cool designs.
