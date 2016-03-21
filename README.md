@@ -1,5 +1,8 @@
 # Final Project Assignment 1: Exploration (FP1)
+
 My Library: (Plot Library)
+Name: Muhammed Khalid
+Section: Dr. Fred G. Martin MWF 12-12:50
 
 # What did I Do? 
 I played around with the Plot library which simply plots 
