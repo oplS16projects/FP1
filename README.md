@@ -3,11 +3,11 @@ My name: Aliyu Zakari
 
 I used the 2htdp/image. The library gives me the tools of making shapes, lines and polygons. I played around and used the following procedures; 
 
-/// (circle)
-/// (rectangle)
-/// (overlay/offset)
-/// (besides)
-/// (above)
+'''(circle)
+ (rectangle)
+(overlay/offset)
+(besides)
+(above)'''
 
 In the program i created the following procedures
 
