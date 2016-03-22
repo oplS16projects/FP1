@@ -8,14 +8,14 @@ START
 Hello.  I used an icon library, and mostly messed with stickman.  I first started off with the basics, generating an image.  I then got into more detail, like changing the size and color of the images to my liking.  The final thing I did was produce a stickman in a list to make it look like he is running.  So, I generated a big stickman, and made it look like the running stickman was running away from him.  I also added a title saying RUN STICKMAN! RUN!
 
 The code is straightforward, where as the syntax is easy to understand.  Customizing the stickman reminded me of CSS properties we used back in GUI 1 and 2.  The imports I used in my code are copied below.
-(require net/url)
-(require images/icons/style)
+
+```(require images/icons/style)
 
 (require images/icons/control) 
 
 (require images/icons/stickman)  ;this guy is my favorite 
 
-(require images/icons/symbol)
+(require images/icons/symbol)```
 
 I attached the racket file to this repository which contains the 'juicy' code I wrote.  The image file that captures what my code produces is below.
 
