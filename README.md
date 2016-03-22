@@ -1,13 +1,18 @@
 **SIMPLE QR LIBRARY**
 **-ALEXANDER CUSHING**
 
->I decided to use the "simple-QR" plugin
+I decided to use the "simple-QR" plugin
 
->for the exploration part of this experiment/project,
->I created some basic QR codes, created a function that
->would allow the user to make one, then created a function
->that would allow a user to make a list of strings of
->websites into QR codes.
+for the exploration part of this experiment/project,
+I created some basic QR codes, created a function that
+would allow the user to make one, then created a function
+that would allow a user to make a list of strings of
+websites into QR codes.
+
+In this code I create a QR for the original source, my GitHub, the FP1 source,
+and I also allow the user to input a website string using the function
+"makeQRForME", and a list of website strings using the function "addqrlist" and a
+count variable.
 
 ```racket
 (qr-code "https://github.com/simmone" "gitSource.png")
