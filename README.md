@@ -12,10 +12,6 @@ Planning to look on adding images.
 
 
 ;; Displayed message
+![alt tag](https://raw.githubusercontent.com/LauraLucaciu/FP1/master/DisplayMessage.jpg)
+![alt tag](https://raw.githubusercontent.com/LauraLucaciu/FP1/master/UserName.jpg)
 
-
-OPL Project Spring 2016!
-********************************************
-
-Fred Martin & Marc Sherman
-They are challenging us but they rock :)!!!.
