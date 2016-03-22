@@ -25,6 +25,7 @@ Finally I played around with `(jsexpr? x)` to determine json expressions. As per
 * (or exact-integer? inexact-real?)
 * (listof jsexpr?)
 * (hasheqof symbol? jsexpr?)
+
 My x, y, and z would be valid jsexpr, as would 'null as I havent changed jsnull's default. I worked out `(jsexpr? 2.7+3i)` as a test case that should fail which worked in my tests.
 ```racket
 (jsexpr? 'null)  ;; #t
