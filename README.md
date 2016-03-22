@@ -54,6 +54,9 @@ The main function used in the Slideshow is the slide function. This adds a slide
 (provide slide)
 
 ```
+Running the output produced a slide with a black title and purple text:
+![alt tag] (https://github.com/rajiaxoxo/FP1/blob/master/screenshot_0.png)
+
 The next two libraries I played around with are the Pict Library and the 2htdp/image library. I was interested in the pict library because it is essentially a more functional abstration layer placed on top of the racket/draw library and it is useful for creating slide presentations. The pict library is one of the standard racket functional picture libraries and the other one is the 2thdp/image. 
 The image library essentially provides basic image construction functions with combinators to build more complex images. The images include bitmaps, various polygons, ellipses, shapes and text. This library allows you to rotate, scale, flip, and overlay pictures on top of each other. 
 
@@ -79,6 +82,12 @@ I began experimenting with the library by drawing two pink stars with bold text 
 catPic
 
 ```
+
+The output produced indeed contained two pink stars with bold text in between them and an image of a cat and dog:
+
+![alt tag] (https://github.com/rajiaxoxo/FP1/blob/master/screenshot_1.png)
+
+
 Finally, I decided to play a little bit more with shapes on a more high-level basis by incorporating recursive functions and lists. 
 I created a function called r-squares which takes an input n and draws n pink squares. The function checks if n is equal to 1, if so it draws the square, otherwise it calls itself again with a new input of n-1. It uses the function hc-append to draw the images horizontally 20 pixels away from each other. 
 
@@ -104,8 +113,11 @@ I created a function called r-squares which takes an input n and draws n pink sq
 )
 
 ```
-I also followed an example in the Racket Documentation to create a function that creates a list of rainbow colored items. The function works by simply calling the map function and passing it a procedure and a list of colors. The object originally passed to the function gets transformed to each of the colors and each instance of the object is returned in a list. 
+To test my r-squares function, I ran the function with several different parameters. The output showed that the function was working properly:
 
+![alt tag] (https://github.com/rajiaxoxo/FP1/blob/master/screenshot_2.png)
+
+I also followed an example in the Racket Documentation to create a function that creates a list of rainbow colored items. The function works by simply calling the map function and passing it a procedure and a list of colors. The object originally passed to the function gets transformed to each of the colors and each instance of the object is returned in a list. 
 
 ```
 ;;Playing around with the 2htdp/image library
@@ -123,6 +135,11 @@ I also followed an example in the Racket Documentation to create a function that
   (list "red" "orange" "yellow" "green" "blue" "purple")))
 
 ```
+
+To test the function, I ran it by passing it a square. The output produced created a rainbow of squares:
+
+![alt tag] (https://github.com/rajiaxoxo/FP1/blob/master/screenshot_3.png)
+
 Please let me know if you have any questions!
 Best,
 Rajia
