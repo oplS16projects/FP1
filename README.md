@@ -21,11 +21,17 @@ count variable.
 
 (qr-code "https://github.com/alexcushing/FP1" "ExplorationPartOne.png")
 
+
+;;this function will take a string and create a png QR code
+;;with the inputted string
 (define (makeQRForME mystring namestring)
   (qr-code mystring (string-append namestring ".png")))
 
 (define count 0)
 
+;;this loops through a list of strings which should all be websites
+;;and creates QR codes for each until it reaches the end
+;;of the user defined list. This uses a count variable defined before
 (define (addqrlist lst)
   (let loop ((rest lst)
              (count 0))
