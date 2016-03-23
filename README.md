@@ -48,3 +48,4 @@ list-of-constants
 (partitions 6)
 ```
 
+![mathimg](https://cloud.githubusercontent.com/assets/17789863/13977355/9910cc04-f09e-11e5-83af-7783b6f98fc0.png)
