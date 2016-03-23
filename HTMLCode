@@ -1,7 +1,7 @@
 (define (border-practice border)
 (html-template
   (html (h1 "People")
-        (p "The people are:")
+        (p "We are humans:")
         (table (@ (border "1"))
                (tr (th "Name") (th "Color"))
                (%write
