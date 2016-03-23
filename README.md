@@ -52,4 +52,4 @@ Here is the corresponding output for the above code. (avl-pop-max tree) uses the
 
 Here is the general idea of what is going on in an avl tree
 
-[[FP1/Construction of AVL tree3.PNG]]
+
