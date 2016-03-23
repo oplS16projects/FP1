@@ -19,11 +19,9 @@ Screenshot
 
 Code Excerpt
 ```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.talenttechlabs.com/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+#lang web-server/insta
+ 
+(define (start request)
+  (response/xexpr
+   '(html
 ```
