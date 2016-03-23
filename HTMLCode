@@ -1,0 +1,22 @@
+(define (border-practice border)
+(html-template
+  (html (h1 "People")
+        (p "The people are:")
+        (table (@ (border "1"))
+               (tr (th "Name") (th "Color"))
+               (%write
+                (for-each (lambda (person)
+                            (html-template
+                              (tr (td (% (person-name  person)))
+                                  (td (% (person-color person))))))
+                          people)))
+        (p "Fin."))))
+  (define (write-essay my-title)
+  (html-template
+    (html (head (title (% my-title)))
+          (body (h1 (% my-title))
+                (p "Kittens claw."
+                   (br)
+                   "Puppies pee.")))))
+ 
+(write-essay "All About Kittens & Puppies")
