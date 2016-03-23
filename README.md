@@ -3,9 +3,8 @@ DUE Friday, March 11, 2016
 
 ## My Library: (web-server/insta)
 ## My Name : Laura Lucaciu
-Web Server provides a way to quickly configure and start a servlet 
-Constructs a function that checks whether particular Digest credentials (the second argument of the returned function) are correct given the HTTP method provided as the first argument and the secret hash computed by lookup-HA1.
-I have played around providing username and password and displaying messages.
+I have played around with this library and provided username, password also displaying messages.
+The original code was displaying a username.
 
 This block of code returns a header that instructs the Web browser to request a username and password from the client using Digest authentication with realm as the realm, private-key as the server’s contribution to the nonce, and opaque as the data passed through the client.
 
@@ -23,7 +22,7 @@ This block of code returns a header that instructs the Web browser to request a 
              (format "Basic Authorization: ~a" (gensym))
                     private-key opaque)) void)]
  ```
-  This part is checking whether particular Digest credentials (the second argument of the returned function) are correct
+  The function check is checking whether particular Digest credentials (the second argument of the returned function) are correct
   given the HTTP method provided as the first argument and the secret hash computed by lookup-HA1.
   An username "LauraLuc" and password "pass" is provided.
   
