@@ -53,5 +53,5 @@ Here is the corresponding output for the above code. (avl-pop-max tree) uses the
 Here is the general idea of what is going on in an avl tree
 
 [[https://github.com/Aurelas/FP1/blob/master/avlTree.jpg]]
-
+[[https://github.com/Aurelas/FP1/blob/master/Construction%20of%20AVL%20tree3.PNG]]
 
