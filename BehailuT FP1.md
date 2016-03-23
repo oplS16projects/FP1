@@ -33,7 +33,7 @@ now turns to this:
 ```
 
 
-![myimage-alt-tag](file:///home/behailu/Pictures/Screenshot%20from%202016-03-11%2015-58-19.png)
+![Image](https://raw.githubusercontent.com/OhBehive/FP1/master/Screenshot from 2016-03-11 15-58-19.png)
 I can actually have structured function based language which makes it a lot easier to sort webpages and work with realtime modifiable webpages. It may be more code, but it's much more readable. Especially since HTML is one of those languages where its easy to get lost in, a racket format is appreciated.
 From this, I can change color of text, resize, move, animate, add images and html objects of various natures to my project.
 Unfortunately documentation is completely lacking. Could only find one tutorial.
