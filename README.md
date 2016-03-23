@@ -15,13 +15,15 @@ My name: Udit Bhansali
 Although I began with the (net/url) library, I took a stab at the card games library before going back to the (net/url) library. I started by reading part of the first section of the accompanying racket documentation, then modifying the given code as per FP1 to start off with the assignment. The purpose of using this library was to get a better understanding of libraries in racket. For FP1 I've used my freelance project. I found one interesting thing, when url is an "https" nothing shows up on the screen
 
 Screenshot
-![FP2](http://i.imgur.com/Ts9kav4.png?1)
+![FP1](http://i.imgur.com/vonTgcj.png?1)
 
 Code Excerpt
 ```
-#lang web-server/insta
- 
-(define (start request)
-  (response/xexpr
-   '(html
+#lang racket
+
+(require net/url)
+
+(define myurl (string->url "http://www.talenttechlabs.com/"))
+(define myport (get-pure-port myurl))
+(display-pure-port myport)
 ```
