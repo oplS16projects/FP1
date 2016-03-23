@@ -5,7 +5,7 @@ This whole assignment will be done and submitted via github, and you're already 
 ##Part 2: Try a Library
 I have used (net/url) library which was used in the example code given to us for FP1
 
-#Part 3: Write your Report
+##Part 3: Write your Report
 
 I used the same example code to start off with this assignment. It looks like the code is similar to "HTTP GET". I plan on exploring  html-parsing.plt	for my next assignment.
 
