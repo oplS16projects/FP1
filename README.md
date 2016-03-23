@@ -3,7 +3,7 @@ Michael Antrobus
 
 #What I did: Avl trees
 
-At first i was interested in the library called 3d-model which would take 3 dimensional data and then plot that data as a form of verticies and polygons making a unique shape that would be curbed by data. However the 3d-model library didn't seem to want to work properly so i decided to work with avl trees. All i did was a i added some numbers to an avl tree and decided to test out all of it's functions to see what it could do and to give myself an example of how to called specific things.
+At first i was interested in the library called 3d-model which would take 3 dimensional data and then plot that data as a form of vertices and polygons making a unique shape that would be curbed by data. However the 3d-model library didn't seem to want to work properly so i decided to work with avl trees. All i did was a i added some numbers to an avl tree and decided to test out all of it's functions to see what it could do and to give myself an example of how to called specific things.
 
 
 #Code:
