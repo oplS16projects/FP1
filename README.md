@@ -13,3 +13,5 @@ For example, here is the output that was displayed in DrRacket's Interactions wi
     Pro! = http://getjsonip.com
 
 ![Diagram](/diagram.png?raw=true "Diagram")
+
+Diagram by Saurabh Verma
