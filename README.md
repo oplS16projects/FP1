@@ -69,6 +69,6 @@ Here is the corresponding output for the above code. (avl-pop-max tree) uses the
 
 Here is the general idea of what is going on in an avl tree, these are pictures found online because this library doesn't really have any methods to "draw" a tree only to output it.
 
-![alt text](https://github.com/Aurelas/FP1/blob/master/ConstructionofAVLtree3.PNG?raw=true)
+![alt text](https://github.com/Aurelas/FP1/blob/master/Construction%20of%20AVL%20tree3.PNG?raw=true)
 ![alt text](https://github.com/Aurelas/FP1/blob/master/avlTree.jpg?raw=true)
 
