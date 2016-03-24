@@ -53,7 +53,7 @@ To display them I then define this function:
                          #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)"))))
 ```
 Calling this function displays a list of two graphs:
-[Image Placeholder]
+![Basic Plots](Basic Plots.png)
 Both graphs can be interacted with: the 3d graph can be rotated and the 2d graph can be zoomed in and out.
 
 ## 2 dimensions
@@ -75,7 +75,7 @@ This function takes a single argument, `radius`, and returns a list of two rende
 The first renderer plots the top half of the circle, and the second renderer plots the bottom half. To help tell the two apart, the functions are labeled and the second one is given a different color.
 
 The output of `(plot (circle 1))` looks like this:
-[Image Placeholder]
+![Cartesian Circle]((plot (circle 1)).png)
 
 I can fill in the circle using the function-interval renderer, which plots two functions simultaneusly and also fills in the space between those two functions.
 ```
@@ -87,7 +87,7 @@ I can fill in the circle using the function-interval renderer, which plots two f
                      -1 1))
 ```
 The output of `(plot (filled-circle 1))` looks like this:
-[Image Placeholder]
+![Filled Circle]((plot (filled-circle 1)).png)
 
 
 I can also create a square using a similar approach. (The library has a rectangle function for bar graphs, but that won't give me a rotated square.)
@@ -108,7 +108,7 @@ Since I want the square to be rotated 45 degrees, I set the size of the horizont
 As with the circle, the square is plotted using two lines, but this time they are the same color.
 
 The output of `(plot (rotated-square 1))` looks like:
-[Image Placeholder]
+![Square rotated 45 degrees]((plot (rotated-square 1)).png)
 
 
 ### Polar Renderers
@@ -126,7 +126,7 @@ It's very easy to make a circle using this, but filling it in requires a bit of 
 `(λ (θ) radius)` creates the outer circle, while `(λ (θ) 0)` is the center. Thus, the interval fills in the circle from the center to the circumerence. However, to avoid having a dot at the center of the circle, I make the line drawn by `(λ (θ) 0)` transparent.
 
 The output of `(plot (filled-polar-circle 1))` is indistinguishible from the output of the `(function)` implementation:
-[Image Placeholder]
+![Filled Polar Circle]((plot (filled-polar-circle 1)).png)
 
 We can also make a square:
 ```
@@ -140,7 +140,7 @@ We can also make a square:
 The comments show the logic I followed to come up with this function.
 
 The output of `(plot (rotated-polar-square 1))` is again indistinguishible from the previous version:
-[Image Placeholder]
+![Square in polar coordinates]((plot (rotated-polar-square 1)).png)
 
 
 ### Lines and Linear-Seq
@@ -194,7 +194,7 @@ To test this, I'll create a new function:
                        #:x-min -4 #:x-max 4 #:y-min 0 #:y-max 16))))
 ```
 Calling `(display-parabola2)` gives the following output:
-[Image Placeholder]
+![Parabola Approximations](Parabola2 Plots.png)
 
 ## 3 dimensions
 
@@ -218,7 +218,9 @@ An octahedron:
                     -1 1 -1 1 -1 1))
 ```
 What these look like depends on the viewing angle, but at (angle=45, altitude=20), they are:
-[Image Placeholder * 3]
+![Sphere](sphere.png)
+![Double Cone](double-cone.png)
+![Octahedron](octahedron.png)
 
 ## Miscelleneous
 
@@ -230,14 +232,14 @@ oval
   (parametric (λ (t) (vector (sin (- 1 t)) (sin t)))
               0 (* 2 pi)))
 ```
-[Image Placeholder]
+![Oval]((plot oval).png)
 
 spiral
 ```
 (define spiral
   (polar (λ (θ) θ)))
 ```
-[Image Placeholder]
+![Spiral](plot spiral.png)
 
 I don't have a name for this one, so I'm just calling it a "bow-shape"
 ```
@@ -254,7 +256,7 @@ I don't have a name for this one, so I'm just calling it a "bow-shape"
                        (else a)))
                0 (* 5/2 pi))))
 ```
-[Image Placeholder]
+![Bow-Shape]((plot bow).png)
 
 I attempted to create a sphere the using the surface3d renderer, but it didn't quite work out:
 ```
@@ -264,8 +266,9 @@ I attempted to create a sphere the using the surface3d renderer, but it didn't q
                           (surface3d (λ (x y) (- (sqrt (- 1 (sqr x) (sqr y)))))
                                     -1 1 -1 1)))
 ```
-[Image Placeholder]
-Because it's really two seperate functions, the shape gets a bit deformed at z=0.
+![Messed up sphere]((plot3d sphere-cartesian).png)
+
+As you can see, the shape gets a bit deformed at z=0. This is because it's really two seperate functions, and they don't cross that plane.
 
 <!--
 
