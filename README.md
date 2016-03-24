@@ -8,7 +8,7 @@ At first i was interested in the library called 3d-model which would take 3 dime
 
 #Code:
 
-I started off by creating and avl tree and filling it with numbers. There are 3 different types of trees that use 3 different predicates, equal? eq? and eqv? to compare data that they are given. Here make-avl is using equal? I start off by adding a bunch of numbers to the tree and testing if the tree is empty or not, then seeing whether it can tell if it has its own numbers or not then i pop the max off of the tree.
+I started off by creating and avl tree and filling it with numbers. There are 3 different types of trees that use 3 different predicates, equal? eq? and eqv? to compare data that they are given. Here make-avl is using equal? Using avl-add and a reference to the tree that we created we can add as many numbers as we want to our tree. These avl trees in racket have pretty much the same functionality as avl trees in C/C++. We can use the avl-empty? function to test whether or not there are items in our tree. We can also use avl-contains? to determine if our tree hold specific numbers or not. We can remove numbers from the tree using avl-remove as well as check the min and max of a tree using avl-min/max. There are two types of pop-min and pop-max, the pop-min and pop-max also returns the new tree container itself, i assume it allows me to pass the updated tree off to another function at the same time. pop-min! and pop-max! just return the number that is popped off. The last few functions tree the avl tree as a list, in-avl/reverse will traverse the list in reverse order and then apply the function given to each member of the tree, in-avl will just do the same thing but in order and avl->list will convert the tree to an ordered list.
 
 ```racket
 #lang racket
@@ -29,7 +29,19 @@ I started off by creating and avl tree and filling it with numbers. There are 3 
 (avl-remove tree 7)
 (avl-contains? tree 7)
 
-(avl-pop-max tree)
+(avl-min tree)
+(avl-max tree)
+
+(avl-pop-min! tree)
+(avl-pop-max! tree)
+
+(for/list ((value (in-avl/reverse tree)))
+  (* value 1))
+
+(for/list ((value (in-avl tree)))
+  (* value 1))
+
+(avl->list tree)
 
 ```
 
@@ -44,13 +56,18 @@ Here is the corresponding output for the above code. (avl-pop-max tree) uses the
 #f
 #<avl>
 #t
+4
 8
-#<avl>
+4
+8
+'(7 6 5)
+'(5 6 7)
+'(5 6 7)
 ```
 
 #Picture:
 
-Here is the general idea of what is going on in an avl tree
+Here is the general idea of what is going on in an avl tree, these are pictures found online because this library doesn't really have any methods to "draw" a tree only to output it.
 
 ![alt text](https://github.com/Aurelas/FP1/blob/master/Construction%20of%20AVL%20tree3.PNG?raw=true)
 
