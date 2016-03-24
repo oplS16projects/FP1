@@ -1,24 +1,4 @@
 
-# Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-
 # My Library: Plot
 My name: Wesley Nuzzo
 
@@ -75,6 +55,7 @@ This function takes a single argument, `radius`, and returns a list of two rende
 The first renderer plots the top half of the circle, and the second renderer plots the bottom half. To help tell the two apart, the functions are labeled and the second one is given a different color.
 
 The output of `(plot (circle 1))` looks like this:
+
 ![Cartesian Circle]((plot (circle 1)).png)
 
 I can fill in the circle using the function-interval renderer, which plots two functions simultaneusly and also fills in the space between those two functions.
@@ -87,6 +68,7 @@ I can fill in the circle using the function-interval renderer, which plots two f
                      -1 1))
 ```
 The output of `(plot (filled-circle 1))` looks like this:
+
 ![Filled Circle]((plot (filled-circle 1)).png)
 
 
@@ -108,6 +90,7 @@ Since I want the square to be rotated 45 degrees, I set the size of the horizont
 As with the circle, the square is plotted using two lines, but this time they are the same color.
 
 The output of `(plot (rotated-square 1))` looks like:
+
 ![Square rotated 45 degrees]((plot (rotated-square 1)).png)
 
 
@@ -126,6 +109,7 @@ It's very easy to make a circle using this, but filling it in requires a bit of 
 `(λ (θ) radius)` creates the outer circle, while `(λ (θ) 0)` is the center. Thus, the interval fills in the circle from the center to the circumerence. However, to avoid having a dot at the center of the circle, I make the line drawn by `(λ (θ) 0)` transparent.
 
 The output of `(plot (filled-polar-circle 1))` is indistinguishible from the output of the `(function)` implementation:
+
 ![Filled Polar Circle]((plot (filled-polar-circle 1)).png)
 
 We can also make a square:
@@ -140,6 +124,7 @@ We can also make a square:
 The comments show the logic I followed to come up with this function.
 
 The output of `(plot (rotated-polar-square 1))` is again indistinguishible from the previous version:
+
 ![Square in polar coordinates]((plot (rotated-polar-square 1)).png)
 
 
@@ -269,44 +254,3 @@ I attempted to create a sphere the using the surface3d renderer, but it didn't q
 ![Messed up sphere]((plot3d sphere-cartesian).png)
 
 As you can see, the shape gets a bit deformed at z=0. This is because it's really two seperate functions, and they don't cross that plane.
-
-<!--
-
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
--->
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
