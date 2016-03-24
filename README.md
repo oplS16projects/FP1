@@ -16,6 +16,7 @@ The sucessful QR codes that I was able to generate were output in a new file in 
 '''
 (qr-code "https://github.com/" "normal.png")
 '''
+![Alt text](/normal.png?raw=true "Normal")
 
 Changing the size of the code was easy:
 '''
