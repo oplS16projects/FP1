@@ -1,95 +1,127 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE --tbd--
-
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
-
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- jjj
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
 #lang racket
 
-(require net/url)
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+;;; I tried to use semi-persistent Matrices
+;;; and semi-persistant Vectors
+;;; and dbm all without any luck--
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+;;; So I tried Browser: Simple HTML Rendering
+;;; and it finally did not give an error
+;;; I don't know what any of the rest of the page was for so I moved on.
+;;;(require browser )
 
-You can still use these in your project, but you must explore different libraries for this assignment.
+;;;I next tried Web Applications in Racket
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+;;; I read the intro which says to use Stateless Servlets
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
+;;; I began 1 Running Web Servlets
 
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
+;;; But #lang web/server/insta didn't work until I got rid of #lang racket
 
-This file IS your report for the assignment, including code and your story.
+;;#lang web-server/insta
+ 
+;;(define (start req)
+;;  (response/xexpr
+;;   `(html (head (title "Hello world!"))
+;;          (body (p "Hey out there!")))))
+;;; It opened a new tab with Hello world as a title and Hey out there! as text
 
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
+;;; DrRacket used a serve/servlet to start a new server that uses the start function
+;;; as the servlet.
 
-(require net/url)
+;;(no-web-browser)
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
 
-## My Library: (library name here)
-Write what you did!
-Remember that this report must include:
+;;Your Web application is running at http://localhost:55482.
+;;Stop this program at any time to terminate the Web Server.
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+;;Web Server stopped.
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+;; tried this(static-files-path "C:\Users\Tyrone\Pictures\solo.jpg") didn't work
+;; so I kept reading
 
-Code should be delivered in two ways:
+;;(require web-server/servlet-env)
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+;; It is suggested that the web-server/servlet-env is somehow beter and more
+;; customizabile then an example is given that reproduces the above action within
+;; the #lang racket and not #lang web-server/insta
+;;  #lang racket
+;;   (require web-server/servlet
+;;         web-server/servlet-env)
+ 
+;;(define (start req)
+;;  (response/xexpr
+;;   `(html (head (title "Hello world!"))
+;;          (body (p "Hey out there!")))))
+ 
+;;(serve/servlet start) also it is shown that (serve/servlet my-app ) works
 
-Ask questions publicly in the email group.
+;;the port is customizable   (serve/servlet my-app #:port 808) and
+;; external machines (serve/servlet my-app #:listen-ip #f)
 
-## How to Prepare and Submit this assignment
+;; the default URO for this servlet is
+;; "http://localhost:8000/servlets/standalone.rkt" but can be changed
+;; "http://localhost:8000/hello.rkt
 
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+;; style sheets can be used (serve/servlet my-app #:extra-files-paths
+;;                                                (list
+;;                                                (build-path "/Users/jay/Desktop")))
 
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
+;; To do without DrRacket banner
+;;#lang racket
+;;(require web-server/servlet
+;;         web-server/servlet-env)
+ 
+;;(define (my-app req)
+;;  (response/xexpr
+;;   `(html (head (title "Hello world!"))
+;;          (body (p "Hey out there!")))))
+ 
+;;(serve/servlet my-app)
+;;(serve/servlet my-app #:command-line? #t )
 
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+;; a generic style.css file was added
+;;(serve/servlet my-app
+;;               #:extra-files-paths
+;;               (list
+;;                (build-path "C:/Users/Tyrone/Documents/HTML/opl/index.css")))
+
+;; which didn't do anything
+
+;; It says some stuff about stateless servlet and jumps to Full API
+;; A large set-up of A Full API and an explanation of each part
+;; I am now lost with a discussion of servers and API stuff
+
+;; I move on to 3 Stateless Servlets as that is what is suggested
+
+;;The first example is tried
+;;#lang web-server
+;;(require web-server/http)
+;;(provide interface-version stuffer start)
+;;(define interface-version 'stateless)
+;;(define stuffer
+;;  (stuffer-chain
+;;   serialize-stuffer
+;;   (md5-stuffer (build-path (find-system-path 'home-dir) ".urls"))))
+;;(define (start req)
+;;  (response/xexpr
+;;   `(html (body (h2 "Look ma, no state!")))))
+
+;; Everything in the file is printed and then the not much else occurs
+;; I don't know anything about the rest of Stateless Servlets-- or HTTP or
+;; anything else in this file--- there wasn't much I understood so I'll try
+;; another one
+
+;; I moved to 3D Model Library
+;; immediately I had to learn how to use planet or to put it in racket staticly
+;; but could not figure that out
+
+;; I tried Data: Data Structures
+;;(require data) which could not be used
+
+;; I moved to Math Library
+(require math)
+(require math/matrix)
+
+;; The explanation of matrices in this library begin-- but I don't know enough
+;; to follow
