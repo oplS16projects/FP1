@@ -1,6 +1,3 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
-
 ## My Library: net/url & json
 My name: Saurabh Verma
 
