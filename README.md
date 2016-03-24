@@ -125,3 +125,65 @@
 
 ;; The explanation of matrices in this library begin-- but I don't know enough
 ;; to follow
+
+;; I started over.
+
+;; HTML: Parsing Library
+
+;; (require html)  but again I don't know anything about this
+
+;; I stumbled upon 2.4 Worlds and the Universe "universe.rkt"
+;; (require 2htdp/universe)
+
+;;(define (create-UFO-scene height)
+;;  (underlay/xy (rectangle 100 100 "solid" "white") 50 height UFO))
+ 
+;;(define UFO
+;;  (underlay/align "center"
+;;                  "center"
+;;                  (circle 10 "solid" "green")
+;;                  (rectangle 40 4 "solid" "green")))
+ 
+;;(animate create-UFO-scene)
+
+;; But this seamed to be based on scheme rather than Dr Racket
+
+;; Tried package manager and updated catalog
+;; Retried semi-persistent matrices
+;; (build-matrix 2 3 3 )
+
+;;build-matrix: contract violation
+;;  expected: a procedure
+;;  given: 3
+;;  in: the 3rd argument of
+;;      (->
+;;       Integer
+;;       Integer
+;;       (-> any/c any/c any/c)
+;;       (struct/c
+;;        Array
+;;        (vectorof Index)
+;;        any/c
+;;        (box/c (or/c #f #t))
+;;        (-> any)
+;;        (-> (vectorof Index) any)))
+;;  contract from: 
+;;      <pkgs>/math-lib/math/private/matrix/matrix-constructors.rkt
+;;  blaming: C:\Users\Tyrone\Desktop\spring_2016\prog_lang\project\ex1.rkt
+;;   (assuming the contract is correct)
+;;  at: <pkgs>/math-lib/math/private/matrix/matrix-constructors.rkt:17.9
+;;(require data/spvector)
+;; I didn't get any where with this either.
+;; Plot Graph Plotting
+   (require plot )
+   (plot (function sin (- pi) pi #:label "y = sin(x )"))
+;; which worked out fine
+
+(plot3d (surface3d (λ (x y) (* (cos x) (sin y)))
+                     (- pi) pi (- pi) pi)
+          #:title "An R × R → R function"
+          #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)")
+
+;; Which also seemed to work as expected
+(plot3d (polar3d (λ (θ ρ) 1) #:color 2 #:line-style 'transparent)
+          #:altitude 25)
