@@ -1,97 +1,74 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+Michael Antrobus
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
 
-Please choose libraries that you think you might be interested in using in your final project.
+#What I did: Avl trees
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
+At first i was interested in the library called 3d-model which would take 3 dimensional data and then plot that data as a form of vertices and polygons making a unique shape that would be curbed by data. However the 3d-model library didn't seem to want to work properly so i decided to work with avl trees. All i did was a i added some numbers to an avl tree and decided to test out all of it's functions to see what it could do and to give myself an example of how to called specific things.
+
+
+#Code:
+
+I started off by creating and avl tree and filling it with numbers. There are 3 different types of trees that use 3 different predicates, equal? eq? and eqv? to compare data that they are given. Here make-avl is using equal? Using avl-add and a reference to the tree that we created we can add as many numbers as we want to our tree. These avl trees in racket have pretty much the same functionality as avl trees in C/C++. We can use the avl-empty? function to test whether or not there are items in our tree. We can also use avl-contains? to determine if our tree hold specific numbers or not. We can remove numbers from the tree using avl-remove as well as check the min and max of a tree using avl-min/max. There are two types of pop-min and pop-max, the pop-min and pop-max also returns the new tree container itself, i assume it allows me to pass the updated tree off to another function at the same time. pop-min! and pop-max! just return the number that is popped off. The last few functions tree the avl tree as a list, in-avl/reverse will traverse the list in reverse order and then apply the function given to each member of the tree, in-avl will just do the same thing but in order and avl->list will convert the tree to an ordered list.
+
 ```racket
 #lang racket
 
-(require net/url)
+(require avl)
 
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+(define tree (make-avl <=))
+(avl-add! tree 4)
+(avl-add! tree 5)
+(avl-add! tree 6)
+(avl-add! tree 7)
+(avl-add! tree 8)
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
+(avl-empty? tree)
+(avl-contains? tree 7)
+(avl-contains? tree 10)
 
-You can still use these in your project, but you must explore different libraries for this assignment.
+(avl-remove tree 7)
+(avl-contains? tree 7)
 
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
+(avl-min tree)
+(avl-max tree)
 
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
+(avl-pop-min! tree)
+(avl-pop-max! tree)
 
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
+(for/list ((value (in-avl/reverse tree)))
+  (* value 1))
 
-This file IS your report for the assignment, including code and your story.
+(for/list ((value (in-avl tree)))
+  (* value 1))
 
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
+(avl->list tree)
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
 
-Write what you did!
-Remember that this report must include:
+#Output:
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+Here is the corresponding output for the above code. (avl-pop-max tree) uses the last 2 lines output because the procedure returns both the number popped off and a copy of the new tree.
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+```racket
+#f
+#t
+#f
+#<avl>
+#t
+4
+8
+4
+8
+'(7 6 5)
+'(5 6 7)
+'(5 6 7)
+```
 
-Code should be delivered in two ways:
+#Picture:
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+Here is the general idea of what is going on in an avl tree, these are pictures found online because this library doesn't really have any methods to "draw" a tree only to output it.
 
-Ask questions publicly in the email group.
+![alt text](https://github.com/Aurelas/FP1/blob/master/Construction%20of%20AVL%20tree3.PNG?raw=true)
+![alt text](https://github.com/Aurelas/FP1/blob/master/avlTree.jpg?raw=true)
 
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
