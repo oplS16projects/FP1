@@ -1,97 +1,33 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+## My Library: Simple-Qr
+My name: Kevin Dibble
 
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+When I was looking through the list of libraries, I stopped at Simple-QR because I thought it was going to be an interesting exploration. Unfortunately, there didn't seem to be that much to do with the library.
+The interface is very simple and was documented well enough. However, there was a complete discrepancy in one of the modes to generate QR codes with. There was supposed to be a way to select Alphanumeric vs Numeric, but the supplied documentation produced errors:
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+> (qr-code "https://github.com/" "alpha.png" #:mode "A")
+  hash-ref: no value found for key
+    key: "h"
 ```
-#lang racket
+I tried playing around with different strings, but I wasn't able to get anywhere.
+The module width and error level options did work as described however, so I was able to test those.
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+The sucessful QR codes that I was able to generate were output in a new file in a path I specified. The following line created a default code that links to github.com and was created in the current directory:
 ```
+(qr-code "https://github.com/" "normal.png")
+```
+![Alt text](/normal.png?raw=true "Normal")
 
-## My Library: (library name here)
-My name:
+Changing the size of the code was easy:
+```
+(qr-code "https://github.com/" "small.png" #:module_width 2)
+```
+![Alt text](/small.png?raw=true "Normal")
 
-Write what you did!
-Remember that this report must include:
+Setting the error level was also easy:
+```
+(qr-code "https://github.com/" "errorL.png" #:error_level "L")
+```
+![Alt text](/errorL.png?raw=true "Normal")
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+Hopefully, the FP2 library will be more interesting
