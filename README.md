@@ -196,7 +196,7 @@ Plot Graph Plotting
    `(plot (function sin (- pi) pi #:label "y = sin(x )"))`
  which worked out fine
 
-![Plot1] (https//1.jpg)
+![Plot1] (https//raw/1.jpg)
 
 
 
