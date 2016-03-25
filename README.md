@@ -212,8 +212,6 @@ Plot Graph Plotting
 ```
 
 
-## My Library: (Plot Graph Plotting)
-My name: Tyrone Turrell
 
 
 ## Project Schedule
