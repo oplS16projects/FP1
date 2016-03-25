@@ -205,12 +205,14 @@ Plot Graph Plotting
                      (- pi) pi (- pi) pi)
           #:title "An R × R → R function"
           #:x-label "x" #:y-label "y" #:z-label "cos(x) sin(y)")
+ ```
 ![Plot2](https://github.com/tturrell/FP1/blob/master/2.jpg)
  Which also seemed to work as expected
+ ```racket
 (plot3d (polar3d (λ (θ ρ) 1) #:color 2 #:line-style 'transparent)
           #:altitude 25)
 ```
-[Plot3](https://github.com/tturrell/FP1/blob/master/3.jpg
+![Plot3](https://github.com/tturrell/FP1/blob/master/3.jpg)
 
 
 
