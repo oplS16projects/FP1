@@ -1,10 +1,11 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
 
-## My Library: (library name here)
-My name: Plot
+## My Library: Plot
+My name: Kyle Jolicoeur - Professor Martin's section
 
 What I did:
+
  I browsed a good 5 or so libraries when I first started. All the libraries I found were either very hard 
  to understand the API, or the API was too vague that I didnt understand how to use it. One of the 3d graphics
  libraries nearly broke my laptop. This old laptop couldn't handle the graphics. I eventually came across Plot
@@ -15,6 +16,7 @@ What I did:
  what I learned about it.
 
 Highlights:
+
  1. One kind of 'highlight' is how I made some of the graphs using lists. When I put "list" before "plot", I created
     several different frames of graphs. When you run my program, 4 seperate windows pop up. Putting "list" here was 
     the basis for creating graphs that were unrelated to each other on seperate windows to avoid confusion. If I had 
