@@ -5,6 +5,11 @@ DUE Friday, March 11, 2016
 My name: Plot
 
 What I did:
+ I browsed a good 5 or so libraries when I first started. All the libraries I found were either very hard 
+ to understand the API, or the API was too vague that I didnt understand how to use it. One of the 3d graphics
+ libraries nearly broke my laptop. This old laptop couldn't handle the graphics. I eventually came across Plot
+ which had a very easy API to understand, and was interesting enough to get me hooked.
+ 
  I started figuring out how to use Plot by using the documentation on the racket website.
  I looked at the first 3-4 sections of the documentation and made a few examples based on
  what I learned about it.
