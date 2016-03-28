@@ -55,18 +55,39 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
+##Library: Sugar
+Tyler Bezuka
 
-Write what you did!
-Remember that this report must include:
+For my first library exploration I worked with sugar. Sugar is a simple library designed to help with debugging in racket,
+improve performance, and make certain tasks (i.e. trimming a string) simpler. The first procedure I worked with was
+```
+(->int v) -> integer?
+v: any/c
+```
+This procedure takes any argument and converts it to an integer or returns false if a conversion cannot be made. To use this
+procedure I defined a function
+``` 
+(define (round-off-procedure x y func)
+  (->int (func x y)))
+```
+Example output:
+(http://imgur.com/z2M9E2t)
+This function takes any two numbers and applies a function to them. For example (round-off-procedure 23 3 /). ->int is then
+applied to the value of this function rounding the value returned to a whole number. 
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+The next procedure I experimented with was 
+```
+(make-caching-proc proc) -> procedure?
+proc: procedure?
+```
+This function makes a caching version of the procedure passed by creating a hash table of the attached procedure where
+values are saved/retrieved. The hash keys are the arguments passed to proc. To test this procedure I created a function: 
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+
+
+The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be
+embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and
+easy!
 
 Code should be delivered in two ways:
 
