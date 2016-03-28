@@ -26,7 +26,7 @@ Highlights:
     Also, the generic format for the "plot" procedure can take renderable objects, or a list of renderable objects.
     As opposed to the code highlight 1, I also put several different curves on one graph. I did this by making a list of the
     objects to be rendered after the "plot" procedure.
-3.  I played around with some of Plot's 3d rendering, despite the resistance of my quite underperforming and old laptop.
+ 3. I played around with some of Plot's 3d rendering, despite the resistance of my quite underperforming and old laptop.
     The "3d functions 1" and "3d functions 2" are the examples I created. "3d functions 1" is a simple 3d cosine wave,
     while "3d functions 2" is 2x 3d objects rendered together in a strange way.
 Output/Photos:
