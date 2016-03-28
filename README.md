@@ -14,7 +14,7 @@ procedure I defined a function
   (->int (func x y)))
 ```
 Example output:
-(http://imgur.com/z2M9E2t)
+![example output](https://github.com/tylerbezuka/FP1/blob/patch-1/fp1-ex.png)
 This function takes any two numbers and applies a function to them. For example (round-off-procedure 23 3 /). ->int is then
 applied to the value of this function rounding the value returned to a whole number. 
 
