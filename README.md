@@ -17,7 +17,7 @@ What I did:
 
 Highlights:
 
- 1. One kind of 'highlight' is how I made some of the graphs using lists. When I put "list" before "plot", I created
+ 1. One kind of 'highlight' is how I made the entire display using a list. When I put "list" before "plot", I created
     several different frames of graphs. When you run my program, 4 seperate windows pop up. Putting "list" here was 
     the basis for creating graphs that were unrelated to each other on seperate windows to avoid confusion. If I had 
     the "Trig Functions" graph in the same window as the "Powers of x", it would be hard to read  and not look as neat. 
