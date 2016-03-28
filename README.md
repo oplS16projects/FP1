@@ -30,7 +30,7 @@ Highlights:
     The "3d functions 1" and "3d functions 2" are the examples I created. "3d functions 1" is a simple 3d cosine wave,
     while "3d functions 2" is 2x 3d objects rendered together in a strange way.
 Output/Photos:
-![Powers of x output]( FP1/Powers of x.png )
-![Trig Functions output]( FP1/Trig Functions.png )
-![3d functions 1 output]( FP1/3d functions 1.png )
-![3d functions 2 output]( FP1/3d functions 2.png )
+![Powers of x output](https://github.com/kjolicoeur/FP1/blob/master/Powers%20of%20x.png?raw=true)
+![Trig Functions output](https://github.com/kjolicoeur/FP1/blob/master/Trig%20Functions.png?raw=true)
+![3d functions 1 output](https://github.com/kjolicoeur/FP1/blob/master/3d%20functions%201.png?raw=true)
+![3d functions 2 output](https://github.com/kjolicoeur/FP1/blob/master/3d%20functions%202.png?raw=true)
