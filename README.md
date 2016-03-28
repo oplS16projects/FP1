@@ -21,7 +21,9 @@ Highlights:
     ```
     
  2. Another highlight I would like to draw attention to is this line of my code of the "Powers of x" window:
+ 3. 
     `(function (lambda (x) (* x x x x)) -4.9 4.9 #:color 0 #:style 'dot #:label "y = x^2")`
+
     The parameters #:color, #:style, and #:label are a weird type of object. There are a handful of different 
     parameters of this type in the Plot library. They are used as style modifiers, axes/curve labels, and window titles.
     Also, the generic format for the "plot" procedure can take renderable objects, or a list of renderable objects.
