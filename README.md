@@ -19,7 +19,7 @@ Highlights:
     (list
     (plot (list ...)))
     ```
-    ---
+    
  2. Another highlight I would like to draw attention to is this line of my code of the "Powers of x" window:
     `(function (lambda (x) (* x x x x)) -4.9 4.9 #:color 0 #:style 'dot #:label "y = x^2")`
     The parameters #:color, #:style, and #:label are a weird type of object. There are a handful of different 
@@ -27,13 +27,13 @@ Highlights:
     Also, the generic format for the "plot" procedure can take renderable objects, or a list of renderable objects.
     As opposed to the code highlight 1, I also put several different curves on one graph. I did this by making a list of the
     objects to be rendered after the "plot" procedure.
----
+
  3. I played around with some of Plot's 3d rendering, despite the resistance of my quite underperforming and old laptop.
     The "3d functions 1" and "3d functions 2" are the examples I created. "3d functions 1" is a simple 3d cosine wave,
     while "3d functions 2" is 2x 3d objects rendered together in a strange way.
----
+
 Output/Photos:
----
+
 ![Powers of x output](https://github.com/kjolicoeur/FP1/blob/master/Powers%20of%20x.png?raw=true)
 ![Trig Functions output](https://github.com/kjolicoeur/FP1/blob/master/Trig%20Functions.png?raw=true)
 ![3d functions 1 output](https://github.com/kjolicoeur/FP1/blob/master/3d%20functions%201.png?raw=true)
