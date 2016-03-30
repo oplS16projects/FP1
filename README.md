@@ -13,7 +13,7 @@ I created my first slide with the following code.
  (t "this is my racket show")))
 ```
 The Output Can Be Seen Below:
-%%put image here%%
+![slide1](https://github.com/nickfinocchiaro/FP1/blob/master/slide1.png)
 
 The Second Slide I Created Showed off a simple implimentation of italics, bold, and bold italic fonts. 
 The Code Below Shows my Implementation:
@@ -26,7 +26,7 @@ The Code Below Shows my Implementation:
 ```
 
 The Output is Below:
-%%PutIMAGEHERE%%
+![slide2](https://github.com/nickfinocchiaro/FP1/blob/master/slide2.png)
 
 The Third Slide I created came straight from section 1.2 of the [slideshow documentation][slideshow-doc]. I took the implementation of
 the demo code initially to observe the behavior of the slide with the code as is, seen below:
@@ -74,7 +74,7 @@ Naturally next brings us to the next item.
 ```
 Where 'args can be used in conjunction with 'next that uses a list to cycle through lists of items in that list. 
 Output of my final code for this slide can be found below:
-%%image here
+![slide3](https://github.com/nickfinocchiaro/FP1/blob/master/slide3.png)
 
 The fourth Slide Shows off procedure 
 ```
@@ -83,7 +83,7 @@ bitmap
 bitmap takes a path of an image and creates a pict. 
 I used a picture of 2 Chainz because everyone loves 2 Chainz. 
 See Below:
-%%image
+![slide4](https://github.com/nickfinocchiaro/FP1/blob/master/slide4.png)
 
 
 
