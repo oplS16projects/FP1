@@ -1,77 +1,91 @@
 # Final Project Assignment 1: Exploration (FP1)
-DUE --tbd--
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+## My Library: Slideshow
 
-Please choose libraries that you think you might be interested in using in your final project.
+For FP1 I used the slideshow library. I created 5 Slides in total that show some of the built in functions of the library. 
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
+I followed along with the racket docs for this one as I wanted to learn the very basics of this library. 
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+I created my first slide with the following code. 
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+(define myslide (slide
+ #:title "I Made a slideshow in Racket"
+ (t "this is my racket show")))
 ```
-#lang racket
+The Output Can Be Seen Below:
+%%put image here%%
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+The Second Slide I Created Showed off a simple implimentation of italics, bold, and bold italic fonts. 
+The Code Below Shows my Implementation:
+```
+(define mysecondslide (slide
+  #:title "second demo slide"
+  (it "we can write italic text")
+  (bt "we can write bold text")
+  (bit "we can also do both")))
 ```
 
-## My Library: (library name here)
-Write what you did!
-Remember that this report must include:
+The Output is Below:
+%%PutIMAGEHERE%%
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+The Third Slide I created came straight from section 1.2 of the [slideshow documentation][slideshow-doc]. I took the implementation of
+the demo code initially to observe the behavior of the slide with the code as is, seen below:
+```
+(slide
+ #:title "Example"
+ (item "First step")
+ 'next
+ (item "Second step")
+ 'next
+ 'alts
+ (list (list (item "Tentative third step")
+             'next
+             (item "This isn't working... back up"))
+       (list (item "Third step that works")))
+ 'next
+ (item "Fourth step"))
+```
+I then changed the output text below to my own to explain how we can cycle through different items in the same bullet point. Seen Below:
+```
+(define myThirdslide (slide
+ #:title "Display Bullet points"
+ (item "We Can Add Bullets")
+ 'next
+ (item "And Then view them sequencially")
+ 'next
+ 'alts
+ (list (list (item "Like this")
+             'next
+             (item "Now Replace This bullet"))
+       (list (item "With a different one")
+             'next
+             (item "and another one"))
+       (list (item "BECAUSE")))
+ 'next
+ (item "indeciveness is a way of life")))
+```
+Like I stated above, I was trying to learn how 'next and 'args worked on different elements in the slide.
+```
+'next
+```
+Naturally next brings us to the next item. 
+```
+`args 
+```
+Where 'args can be used in conjunction with 'next that uses a list to cycle through lists of items in that list. 
+Output of my final code for this slide can be found below:
+%%image here
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+The fourth Slide Shows off procedure 
+```
+bitmap
+```
+bitmap takes a path of an image and creates a pict. 
+I used a picture of 2 Chainz because everyone loves 2 Chainz. 
+See Below:
+%%image
 
-Code should be delivered in two ways:
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
 
 ## How to Prepare and Submit this assignment
 
@@ -93,3 +107,4 @@ This is the first part of a larger project. The final project schedule is [here]
 [ref-commit]: http://gitref.org/basic/#commit
 [ref-push]: http://gitref.org/remotes/#push
 [pull-request]: https://help.github.com/articles/creating-a-pull-request
+[slideshow-doc]: https://docs.racket-lang.org/slideshow/Creating_Slide_Presentations.html?q=slideshow
