@@ -1,97 +1,47 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+#Tyler Bezuka
+##Library: Sugar
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
-
-Please choose libraries that you think you might be interested in using in your final project.
-
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+For my first library exploration I worked with sugar. Sugar is a simple library designed to help with debugging in racket,
+improve performance, and make certain tasks (i.e. trimming a string) simpler. The first procedure I worked with was
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+(->int v) -> integer?
+v: any/c
 ```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+This procedure takes any argument and converts it to an integer or returns false if a conversion cannot be made. To use this
+procedure I defined a function
+``` 
+(define (round-off-procedure x y func)
+  (->int (func x y)))
 ```
+Example output:
+![example output](https://github.com/tylerbezuka/FP1/blob/patch-1/fp1-ex.png)
+This function takes any two numbers and applies a function to them. For example (round-off-procedure 23 3 /). ->int is then
+applied to the value of this function rounding the value returned to a whole number. 
 
-## My Library: (library name here)
-My name:
+The next procedure I experimented with was 
+```
+(make-caching-proc proc) -> procedure?
+proc: procedure?
+```
+This function makes a caching version of the procedure passed by creating a hash table of the attached procedure where
+values are saved/retrieved. The hash keys are the arguments passed to proc. To test this procedure I created a function:
+```
+(define (make-fast func)
+  (make-caching-proc func))
+```
+And tested the function with: 
+```
+(define (compare-time func1 x)
+  (time (make-fast (func1 x)))
+  (time (func1 x)))
+```
+Compare-time takes two functions and compares output the time it takes to complete the function before and after calling the make-fast procedure. The time is significantly shorter after make-fast is called due to values being saved and retrieved in the has table created by (make-caching-proc). 
 
-Write what you did!
-Remember that this report must include:
+Using the example problem from a previous homework I was able to cut the execution time in half: 
+![make fast output](https://github.com/tylerbezuka/FP1/blob/patch-1/make-fast.png)
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+The last function I tested in the sugar library was
+```
+(define (report expr))
+```
+This function takes an expression and outputs the evaluation whether it be a boolean, integer, or string. This function is extremely useful for debugging and can be thrown before any expression to determine where a bug or incorrect output may exist. 
