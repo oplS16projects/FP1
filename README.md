@@ -38,7 +38,7 @@ And tested the function with:
 Compare-time takes two functions and compares output the time it takes to complete the function before and after calling the make-fast procedure. The time is significantly shorter after make-fast is called due to values being saved and retrieved in the has table created by (make-caching-proc). 
 
 Using the example problem from a previous homework I was able to cut the execution time in half: 
-
+![make-fast-output](https://github.com/tylerbezuka/FP1/blob/patch-1/make-fast.png)
 
 The last function I tested in the sugar library was
 ```
