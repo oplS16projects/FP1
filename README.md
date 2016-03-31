@@ -19,6 +19,7 @@ dissapears. I didn't like how it was going off the screen so I edited the code a
                         (empty-scene Width Height))))
 
 ```
+![stack Overflow](FP1/Letterh1.jpg)
 One when the height of the image is less than or equal to the base and another when the height is greator than the base. It starts off at the right corner of the window and when it touches the bottom it jumps to the left corner.
 
 #Part 3: Animation
