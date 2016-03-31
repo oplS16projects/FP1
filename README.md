@@ -19,7 +19,9 @@ dissapears. I didn't like how it was going off the screen so I edited the code a
                         (empty-scene Width Height))))
 
 ```
-![stack Overflow](FP1/Letterh1.jpg)
+
+![letterh1](https://cloud.githubusercontent.com/assets/12664198/14191419/cf83fcc0-f765-11e5-8d19-9635114e286a.jpg)
+![letterh2](https://cloud.githubusercontent.com/assets/12664198/14191523/392bf13c-f766-11e5-89f4-b6908fc61d77.jpg)
 One when the height of the image is less than or equal to the base and another when the height is greator than the base. It starts off at the right corner of the window and when it touches the bottom it jumps to the left corner.
 
 #Part 3: Animation
@@ -35,12 +37,15 @@ and the star spins in a counter-clockwise direction becuase of
 ```
 if you change the 2 to -2 it would turn the other way.
 
+![spinstar](https://cloud.githubusercontent.com/assets/12664198/14191546/5b92eb54-f766-11e5-88a0-6b18c2df610b.jpg)
+
+
 The last program was the free moving angry bird. The only thing that you needed to make the image more was to chance the coordinates and you can do that by using car and cdr to access the X(car) and Y(cdr). Below is a sample if I was to move the image to the left, all I would need to chance in the X coordinate.
 ```racket
 #lang racket
 [(key=? a-key "left")  (cons (- (car w) 1) (cdr w))]
 ```
- 
+ ![angrybird](https://cloud.githubusercontent.com/assets/12664198/14191527/40e12de8-f766-11e5-8fd0-ab2fd269eaf7.png)
 
 
 
