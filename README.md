@@ -44,4 +44,4 @@ The last function I tested in the sugar library was
 ```
 (define (report expr))
 ```
-This function takes an expression and outputs the evaluation whether it be a boolean, integer, or string. 
+This function takes an expression and outputs the evaluation whether it be a boolean, integer, or string. This function is extremely useful for debugging and can be thrown before any expression to determine where a bug or incorrect output may exist. 
