@@ -24,4 +24,8 @@ This will call parameterize which takes a title and x, y values. And that is wha
  ```
  It plots x, y, and z values. Then the area is shaded to illustrate parameterization. 
  
+ The Output is below 
+ 
+ ![alt tag](https://github.com/naman1255/FP1/blob/master/my_output.png)
+ 
  
