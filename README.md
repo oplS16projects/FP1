@@ -32,3 +32,21 @@ iterate through the ring-buffer as I fill it.  The following is the procedure I 
         (helper (and (ring-buffer-push! rb v) rb) v (+ count 1) size)))
   (helper rb value 0 (ring-buffer-length rb)))
   ```
+
+This code will produce a ring buffer filled with any value given.  I tested it and was able to produce the following:
+
+```
+> (fill-ring-buffer ring 2)
+#<ring-buffer>
+> (ring-buffer-ref ring 1)
+2
+> (ring-buffer-ref ring 2)
+2
+> (ring-buffer-ref ring 3)
+2
+> (ring-buffer-ref ring 4)
+2
+> (ring-buffer-ref ring 5)
+2
+> 
+```
