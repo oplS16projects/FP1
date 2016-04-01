@@ -27,8 +27,9 @@ What I liked most about it was creating a list of items and how simple and alege
 .....
 
 Output:
+
 ![alt tag](http://output.jpg)
-<img src="output.jpg">
+
  
  
  
