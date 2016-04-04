@@ -46,7 +46,11 @@ This code will produce a ring buffer filled with any value given.  I tested it a
 2
 > (ring-buffer-ref ring 4)
 2
-> (ring-buffer-ref ring 5)
+>
+(ring-buffer-ref ring 5)
 2
 > 
 ```
+
+I also have included a picture of the working code below.
+![alt tag](https://github.com/HTDesjardins/FP1/blob/master/FP1.jpg)
