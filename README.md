@@ -10,9 +10,13 @@ The first silde that comes up is a slow transtion of text welcoming people to th
 I thought the text fading in was pretty neat but my favorite code part would have to be the bullet points brought up with every click.
 
 (slide
+
 .....
+
  (list
+ 
   (list (item "Third point")'next
+  
         (item "Fourth point in list")))
 ......
 
