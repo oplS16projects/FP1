@@ -10,18 +10,24 @@ The first silde that comes up is a slow transtion of text welcoming people to th
 I thought the text fading in was pretty neat but my favorite code part would have to be the bullet points brought up with every click.
 
 (slide
-....
+
  (list
+  
   (list (item "Third point")'next
+  
    (item "Fourth point in list")))
-......
+
 
 What I liked most about it was creating a list of items and how simple and alegant the code looked. Compared to the following:
 
 (slide
+
  (item "First point")
+ 
   'next
+  
   (subitem "Second sub item")
+  
   'next
 
 Output:
