@@ -1,5 +1,6 @@
 #lang slideshow
-(require slideshow/play)
+(require slideshow/slides-to-picts
+         slideshow/play)
 
 ;(play-n	 	gen*	 	 	 	 
 ; 	 [	#:steps steps	 	 	 	 
@@ -39,8 +40,7 @@
 ; 	 	condense?	 	 	 	 
 ; 	 [	stop-after])	 	→	 	(listof pict?)
 
-(require slideshow/slides-to-picts
-         slideshow/play)
+
 
 (define slides1 (get-slides-as-picts "awesome.jpg" 640 480 #f))
 (slides1)
