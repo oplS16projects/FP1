@@ -24,7 +24,7 @@ I am going to go over some of the code below:
 	 (item "Fifth step"))
 
 
-I thought the text fading in was pretty neat but my favorite code part would have to be setting up the bullet point through list's, like below
+I thought the text fading in was pretty neat but my favorite code part would have to be setting up the bullet point through list's, like below.
 
     (slide ............
      (list
@@ -32,7 +32,7 @@ I thought the text fading in was pretty neat but my favorite code part would hav
       (item "Fourth point in list"))) ......
 
 
-What I liked most about it was creating a list of items and how simple and alegant the code looked. Compared to the following:
+What I liked most about it was creating a list of items and how simple and alegant the code looked. Compared to the following.
 
     (slide................
      (item "First point")
