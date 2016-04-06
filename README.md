@@ -22,6 +22,7 @@ syntax. For example, head in html is -- head -- in aplomb.
 Output:
 ==========
 Welcome to Ebenezer's Sports Blog --
+![alt tag](/soccer-logo.jpg)
 
 The Blog for Champions
 
