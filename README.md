@@ -1,97 +1,58 @@
-# Final Project Assignment 1: Exploration (FP1)
-DUE Friday, March 11, 2016
+## My Library: Racket Turtle
+By Douglas Richardson
 
-#Part 1: Get github
-If you don't have a github account, go get one. https://github.com/
-This whole assignment will be done and submitted via github, and you're already here!
- 
-#Part 2: Try a Library
-In this exercise, you will play with at least one library provided by the Racket developers. You will have the opportunity to explore another library later.
+At first I wanted to do something with data management and file manipulation, but I couldn't find anything like that so I am going with my backup which is messing around with Racket Turtle.
 
-Please choose libraries that you think you might be interested in using in your final project.
+First of all let me say that actually getting the library to was supprisingly difficult. After doing quite a bit of searching I found out that the turtle that I wanted to install isn't in racket by default (unlike some options I think) and I needed to install something called a "Package".After looking into that I found this (https://pkgn.racket-lang.org/package/teachpacks) github page with the teachpacks package.Installation wasn't difficult after I found out how (put it in the racket folder for collects.) After that I was able to get to work on the actual library.
 
-Start off at the Racket home page, http://racket-lang.org/, and then click on the Documentation link, taking you here: http://docs.racket-lang.org/.
- 
-There are lots of libraries. Play with one.
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
+The basics of the turtle language is it is a list of procedures given to a draw function. So the function draw takes a list of procedures as an argument. Each procedure does something different with the turtle.
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+First I experimented with getting the simple forward procedure working with the draw procedure. Simple enough, but it is important to pass the forward procedure in as a list. So the command I had to use was
+```(racket)
+(define test_line (list(forward 100)))
+(draw test_line)
 ```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
+![Figure 1](https://github.com/Doug-Richardson/FP1/blob/master/Fig1.jpg)
 
-### The following libraries are not allowed for project explorations:
-* games/cards
-* racket/gui
-* racket/draw 
-
-You can still use these in your project, but you must explore different libraries for this assignment.
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
+I then tried using the rotate command to draw a square which was also fairly simple.
+```(racket)
+(define line (forward 100))
+(define rotate(turn-right 90))
+(define square(list
+               line rotate line rotate line rotate line))
+(draw square)
 ```
-#lang racket
+![Figure 2](https://github.com/Doug-Richardson/FP1/blob/master/Fig2.jpg)
 
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
+After getting a line and a square I did what any mathematician would do which was create a function to draw any equilateral polygon. I decided all polygons should have equal perimeter of 400 pixels (perimeter of that square in figure 2). This wasn't particularly challenging but I did mess it up once since the turtle should rotate 180-interior angle not just interior angle, if it was just the interior angle it would ether overshoot or not rotate far enough (unless it was a 4 sided polygon since 180-90 = 90) I used this code to get the function working
+```(racket)
+(define (draw-polygon n)
+  (define line (forward (/(* 4 100) n)))
+  (define rotate(turn-left (- 180(/(* 180 (- n 2)) n))))
+  (define (polygon temp tot)
+    (if (< temp tot)
+        (cons line (cons rotate (polygon (+ temp 1) tot)))
+        '()))
+  (draw (cons (turn-right 90)(polygon 0 n))))
+```  
+And then I could run the code like this
 ```
+(draw-polygon 3)
+```
+![Figure 3c](https://github.com/Doug-Richardson/FP1/blob/master/Fig3c.jpg)  
+```(racket)
+(draw-polygon 6)
+```
+![Figure 3a](https://github.com/Doug-Richardson/FP1/blob/master/Fig3a.jpg)
+```(racket)
+(draw-polygon 10)
+```
+![Figure 3b](https://github.com/Doug-Richardson/FP1/blob/master/Fig3b.jpg)
 
-## My Library: (library name here)
-My name:
+and lastly I attempted to approximate a circle as a 100 sided polygon with this result.
+```(racket)
+(draw-polygon 100)
+```
+![Figure 3d](https://github.com/Doug-Richardson/FP1/blob/master/Fig3d.jpg)
 
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
-<!-- Links -->
-[schedule]: https://github.com/oplS16projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+However because the turtle can only rotat in integer angle and move in integer pixels,100 was actually too precise and it ended up drawing over it's self a little bit.I found that 90 sided polygon was a slightly closer approximation of a circle without too much overlap, and 80 sided was not quite enough.
